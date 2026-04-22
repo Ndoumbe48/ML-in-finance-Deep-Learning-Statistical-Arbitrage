@@ -14,27 +14,25 @@ def run_pca_crypto():
     pca = CryptoPCA(logdir=os.path.join('residuals', 'crypto_pca'))
 
     tickers = [
-        # Top capitalisations (2013-2017)
+        # TIER 1: Les plus grosses et anciennes (indispensables)
         'BTC-USD', 'ETH-USD', 'XRP-USD', 'LTC-USD', 'DOGE-USD',
         'ADA-USD', 'BNB-USD', 'DOT-USD', 'LINK-USD', 'XLM-USD',
         'BCH-USD', 'ETC-USD', 'TRX-USD', 'EOS-USD', 'XMR-USD',
+
+        # TIER 2: Anciennes et liquides (2017-2018)
         'DASH-USD', 'ZEC-USD', 'NEO-USD', 'QTUM-USD', 'ZIL-USD',
-
-        # Moyennes capitalisations (2017-2018)
         'VET-USD', 'XTZ-USD', 'ATOM-USD', 'ALGO-USD', 'KSM-USD',
-        'WAVES-USD', 'ICX-USD', 'LSK-USD', 'DCR-USD', 'REP-USD',
-        'ANT-USD', 'LOOM-USD', 'BAT-USD', 'KNC-USD', 'GNT-USD',
-        'ZRX-USD', 'CHZ-USD', 'ENJ-USD', 'MANA-USD', 'SAND-USD',
+        'WAVES-USD', 'BAT-USD', 'ZRX-USD', 'ENJ-USD', 'MANA-USD',
 
-        # DéFi et L1 (2019-2020)
+        # TIER 3: Les meilleures de 2019-2020 (capitalisation solide)
         'MATIC-USD', 'SOL-USD', 'AVAX-USD', 'NEAR-USD', 'FIL-USD',
         'AAVE-USD', 'UNI-USD', 'MKR-USD', 'SNX-USD', 'COMP-USD'
     ]
 
     returns, dates = pca.load_crypto_data(
         tickers=tickers,
-        start_date='2018-01-01',
-        end_date='2024-12-31'
+        start_date='2020-01-01',
+        end_date='2026-01-01'
     )
 
     print("STATISTIQUES DES DONNÉES")

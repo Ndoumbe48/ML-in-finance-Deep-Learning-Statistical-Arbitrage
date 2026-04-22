@@ -18,21 +18,13 @@ class CryptoPCABinance:
         self.hourly_dates = None
         self.tickers = None
 
-    def load_crypto_data(self, symbols, start_date='2018-06-22', end_date='2024-12-31', 
-                         interval=Client.KLINE_INTERVAL_1HOUR):
-        """
-        Charge données crypto depuis Binance
-        
-        symbols: liste, ex ['BTCUSDT', 'ETHUSDT', 'SOLUSDT']
-        start_date, end_date: str format 'YYYY-MM-DD'
-        interval: Client.KLINE_INTERVAL_1HOUR, Client.KLINE_INTERVAL_4HOUR, Client.KLINE_INTERVAL_1DAY
-        
-     
-        """
+    def load_crypto_data(self, symbols, start_date='2020-06-22', end_date='2024-12-31',
+                         interval=Client.KLINE_INTERVAL_4HOUR):  # ← CHANGÉ: 4HOUR
+
         print(f" Chargement depuis Binance")
         print(f"   Symboles: {len(symbols)}")
         print(f"   Plage: {start_date} à {end_date}")
-        print(f"   Interval: {interval}")
+        print(f"   Interval: 4 HOURS")
 
         prices = pd.DataFrame()
         volumes = pd.DataFrame()
@@ -40,15 +32,15 @@ class CryptoPCABinance:
 
         for symbol in symbols:
             try:
-                print(f"  ⏳ {symbol}...", end=' ', flush=True)
-                
+                print(f"   {symbol}...", end=' ', flush=True)
+
                 klines = self.client.get_historical_klines(
                     symbol,
                     interval,
                     start_str=start_date,
                     end_str=end_date
                 )
-                
+
                 if not klines:
                     failed.append(symbol)
                     print(f"✗ Pas de data")
@@ -64,27 +56,27 @@ class CryptoPCABinance:
                 # Nettoyer les types
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
                 df.set_index('timestamp', inplace=True)
-                
+
                 for col in ['open', 'high', 'low', 'close', 'volume']:
                     df[col] = pd.to_numeric(df[col], errors='coerce')
 
                 prices[symbol] = df['close']
                 volumes[symbol] = df['volume']
-                print(f"✓ {len(df)} candles")
-                
+                print(f" {len(df)} candles")
+
                 # Rate limit: 1200 req/min
                 time.sleep(0.1)
 
             except Exception as e:
                 failed.append(symbol)
-                print(f"✗ Erreur: {str(e)[:50]}")
+                print(f" Erreur: {str(e)[:50]}")
                 continue
 
         if len(prices) == 0:
-            raise ValueError(f"❌ Aucune donnée chargée de Binance! Vérifier les symboles.")
+            raise ValueError(f" Aucune donnée chargée de Binance! Vérifier les symboles.")
 
         print(f"\n Nettoyage des données...")
-        
+
         # Supprimer les colonnes avec trop de nan (< 70% data)
         prices = prices.dropna(axis=1, thresh=len(prices) * 0.7)
         volumes = volumes.dropna(axis=1, thresh=len(volumes) * 0.7)
@@ -102,26 +94,26 @@ class CryptoPCABinance:
         self.hourly_dates = returns.index
         self.tickers = returns.columns.tolist()
 
-        print(f" ✓ Données chargées: {len(returns)} periodes, {len(self.tickers)} symboles")
+        print(f" Données chargées: {len(returns)} périodes, {len(self.tickers)} symboles")
         if len(self.tickers) > 0:
             print(f"   Période: {self.hourly_dates[0]} à {self.hourly_dates[-1]}")
         if failed:
-            print(f" ⚠️  Symboles échoués ({len(failed)}): {failed}")
+            print(f" Symboles échoués ({len(failed)}): {failed[:10]}...")
 
         return self.crypto_returns, self.hourly_dates
 
     def OOSRollingWindowCrypto(self, save=True, printOnConsole=True,
-                               initialOOSYear=2024,
-                               sizeWindow=24,  # 24 heures
-                               sizeCovarianceWindow=168,  # 1 semaine
-                               factorList=[5]):
+                               initialOOSYear=2023,  # ← AJUSTÉ pour 4h
+                               sizeWindow=24,  # 24 périodes de 4h = 4 jours
+                               sizeCovarianceWindow=168,  # 168 périodes = 28 jours
+                               factorList=[5, 10]):
+
         """
         PCA Factor model - Out-of-sample rolling window
-        
-        Paramètres:
-        - sizeWindow: 24h (fenêtre pour estimer les loadings)
-        - sizeCovarianceWindow: 168h (1 semaine pour covariance)
-        - factorList: [5] → nombre de factors PCA à extraire
+
+        Pour intervalle 4h:
+        - sizeWindow = 24 → 4 jours de données
+        - sizeCovarianceWindow = 168 → 28 jours (4 semaines)
         """
 
         if self.crypto_returns is None:
@@ -132,12 +124,12 @@ class CryptoPCABinance:
 
         Rdaily = self.crypto_returns.copy()
         T, N = Rdaily.shape
-        
+
         # Index du début OOS
         firstOOSDailyIdx = np.argmax(self.hourly_dates.year >= initialOOSYear)
-        
+
         if firstOOSDailyIdx == 0:
-            print(f"⚠️  Attention: aucune donnée après {initialOOSYear}")
+            print(f"  Attention: aucune donnée après {initialOOSYear}")
             firstOOSDailyIdx = max(1, T // 2)
 
         assetsToConsider = np.ones(N, dtype=bool)
@@ -184,7 +176,7 @@ class CryptoPCABinance:
 
                     # Matrice de corrélation
                     Corr = np.dot(res_normalized.T, res_normalized) / res_normalized.shape[0]
-                    
+
                     # Eigendecomposition
                     eigenValues, eigenVectors = np.linalg.eigh(Corr)
                     loadings = eigenVectors[:, -factor:].real  # Top 'factor' components
@@ -202,26 +194,26 @@ class CryptoPCABinance:
                     current_factors = np.dot(current_returns / res_vol, loadings)
                     fitted_returns = np.dot(current_factors, estimated_loadings.T)
                     residuals = current_returns - fitted_returns
-                    
+
                     residualsOOS[t:t + 1, idxsSelected] = residuals
 
                 # Progress
-                if t % 100 == 0 and printOnConsole and t > 0:
+                if t % 500 == 0 and printOnConsole and t > 0:
                     print(f"   t={t}/{T - firstOOSDailyIdx}, Actifs: {np.sum(idxsSelected)}")
 
             # Nettoyer les NaN
             residualsOOS = np.nan_to_num(residualsOOS)
             residuals_dict[factor] = residualsOOS
 
-            print(f" ✓ Factor {factor} terminé - {valid_count} dates valides sur {T - firstOOSDailyIdx}")
+            print(f" Factor {factor} terminé - {valid_count} dates valides sur {T - firstOOSDailyIdx}")
 
             if save:
                 save_path = os.path.join(
-                    self._logdir, 
-                    f"Crypto_PCA_residuals_{factor}factors_{initialOOSYear}start_binance.npy"
+                    self._logdir,
+                    f"Crypto_PCA_residuals_{factor}factors_{initialOOSYear}start_binance_4h.npy"
                 )
                 np.save(save_path, residualsOOS)
-                print(f"   Sauvegardé: {save_path}")
+                print(f"    Sauvegardé: {save_path}")
 
         return residuals_dict
 
@@ -231,48 +223,61 @@ class CryptoPCABinance:
 # ============================================================================
 
 def main():
-    """Demo: Charger données Binance et lancer PCA"""
-    
+    """Charger données Binance (intervalle 4h) et lancer PCA"""
+
+    print("=" * 60)
+    print(" PCA CRYPTO - BINANCE 4H INTERVAL")
+    print("=" * 60)
+
     # Initialiser
-    pca = CryptoPCABinance(logdir=os.getcwd())
-    
+    pca = CryptoPCABinance(logdir=os.path.join('../residuals', 'binance_4h'))
+
     # Symboles Binance (format: BTCUSDT, ETHUSDT, etc.)
     symbols = [
-        'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'ADAUSDT', 'DOGUSDT',
+        'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'ADAUSDT', 'DOGEUSDT',  # ← DOGEUSDT (pas DOGUSDT)
         'XRPUSDT', 'AVAXUSDT', 'MATICUSDT', 'DOTUSDT', 'LINKUSDT',
         'UNIUSDT', 'ATOMUSDT', 'AAVEUSDT', 'FTMUSDT', 'NEARUSDT',
-        'MANAUSDT', 'XLMUSDT', 'VETUSDT', 'FILUSDT', 'SANDUSDT'
+        'MANAUSDT', 'XLMUSDT', 'VETUSDT', 'FILUSDT', 'SANDUSDT',
+        'LTCUSDT', 'ETCUSDT', 'BCHUSDT', 'EOSUSDT', 'XMRUSDT'
     ]
-    
+
+    print(f" Symboles à charger: {len(symbols)}")
 
     try:
+        # Charger données (intervalle 4H)
         returns, dates = pca.load_crypto_data(
             symbols=symbols,
-            start_date='2020-06-22',
+            start_date='2020-01-01',  # Plus tôt pour plus de données
             end_date='2024-12-31',
-            interval=pca.client.KLINE_INTERVAL_1HOUR  # hourly
+            interval=pca.client.KLINE_INTERVAL_4HOUR  # ← 4 HOURS
         )
-        
-        print(f"\n Returns shape: {returns.shape}")
-        print(f"Première date: {dates[0]}")
-        print(f"Dernière date: {dates[-1]}")
-        
+
+        print(f"\n Statistiques des données:")
+        print(f"   Shape des returns: {returns.shape}")
+        print(f"   Première période: {dates[0]}")
+        print(f"   Dernière période: {dates[-1]}")
+        print(f"   Total observations: {returns.shape[0] * returns.shape[1]:,}")
+
         # Lancer PCA
         residuals = pca.OOSRollingWindowCrypto(
             save=True,
             printOnConsole=True,
-            initialOOSYear=2024,
-            sizeWindow=24,  # 1 jour en heures
-            sizeCovarianceWindow=168,  # 1 semaine en heures
-            factorList=[5, 10]  # 2 modèles: 5 et 10 factors
+            initialOOSYear=2022,  # Commence en 2022
+            sizeWindow=360,  # 24 périodes de 4h = 4 jours
+            sizeCovarianceWindow=1512,  # 168 périodes = 28 jours
+            factorList=[5, 8, 10]  # 5, 8 et 10 facteurs
         )
-        
-        print(f"\n✓ Analyse complète!")
+
+        print("\n" + "=" * 60)
+        print(" Analyse complète!")
+        print("=" * 60)
         for factor, res in residuals.items():
             print(f"  Factor {factor}: {res.shape}")
-        
+
+        print(f"\n Résidus sauvegardés dans: residuals/binance_4h/")
+
     except Exception as e:
-        print(f"❌ Erreur: {e}")
+        print(f" Erreur: {e}")
         import traceback
         traceback.print_exc()
 

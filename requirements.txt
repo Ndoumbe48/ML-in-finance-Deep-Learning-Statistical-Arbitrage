@@ -1,0 +1,11 @@
+numpy
+pandas
+petname
+psutil
+torch
+gpuinfo
+matplotlib
+twilio
+PyYAML
+scikit_learn
+python.binance

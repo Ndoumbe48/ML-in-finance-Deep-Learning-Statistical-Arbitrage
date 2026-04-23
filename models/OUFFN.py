@@ -3,30 +3,32 @@ import torch.nn as nn
 
 
 class OUFFN(nn.Module):
-    """
-    Baseline : FFN sur paramètres Ornstein-Uhlenbeck
-    (kappa, mu, sigma, X_L, R²)
-    """
+    def __init__(self, 
+                 logdir,
+                 lookback = 30,
+                 random_seed=0, 
+                 device = "cpu",
+                 hidden_units = [4,4,4,4], 
+                 dropout = 0.25):
+        
+        super(OUFFN, self).__init__()
+        self.logdir = logdir
+        self.random_seed = random_seed 
+        torch.manual_seed(self.random_seed)
+        self.device = torch.device(device)
+        self.hidden_units = hidden_units
+        self.is_trainable = True
 
-    def __init__(self, n_assets=40, hidden_units=[5, 4, 4, 4], dropout=0.25):
-        super().__init__()
-
-        self.n_assets = n_assets
-
-        layers = []
-        prev_dim = 5  # 5 paramètres OU (kappa, mu, sigma, X_L, R²)
-
-        for h in hidden_units:
-            layers.append(nn.Linear(prev_dim, h))
-            layers.append(nn.Sigmoid())  # OU utilise Sigmoid (valeurs entre 0 et 1)
-            layers.append(nn.Dropout(dropout))
-            prev_dim = h
-
-        layers.append(nn.Linear(prev_dim, 1))
-        layers.append(nn.Tanh())
-
-        self.net = nn.Sequential(*layers)
-
-    def forward(self, x):
-        # x: (batch * n_assets, 5)
-        return self.net(x).squeeze()
+        self.hiddenLayers = nn.ModuleList()
+        for i in range(len(hidden_units)-1):
+            self.hiddenLayers.append(nn.Sequential(
+                nn.Linear(hidden_units[i], hidden_units[i+1]),
+                # nn.ReLU(True),
+                nn.Sigmoid(),
+                nn.Dropout(dropout)))           
+        self.finalLayer = nn.Linear(hidden_units[-1],1)
+                
+    def forward(self,x):
+        for i in range(len(self.hidden_units)-1):
+            x = self.hiddenLayers[i](x)
+        return self.finalLayer(x).squeeze()

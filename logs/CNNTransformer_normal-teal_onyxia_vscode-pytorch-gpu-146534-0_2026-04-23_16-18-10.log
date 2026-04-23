@@ -1,0 +1,520 @@
+[2026-04-23 16:18:10] INFO - Logging initialized for 'CNNTransformer' by 'onyxia' on host 'vscode-pytorch-gpu-146534-0' with ID 'normal-teal'
+[2026-04-23 16:18:10] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 84,
+    "dropout": 0.4,
+    "filter_numbers": [
+      1,
+      8
+    ],
+    "filter_size": 2,
+    "attention_heads": 4,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 360,
+  "retrain_freq": 360,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-23 16:18:10] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-23 16:18:10] INFO - Loading residuals
+[2026-04-23 16:18:10] INFO - Residuals loaded
+[2026-04-23 16:18:10] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal
+[2026-04-23 16:18:10] INFO - Running on devices ['cuda:0']
+[2026-04-23 16:18:10] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-23 16:18:10] INFO - AT SUBPERIOD 0/12
+[2026-04-23 16:18:10] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:18:10] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:18:10] INFO - train(): T 3000 N 50
+[2026-04-23 16:18:10] INFO - train(): windows.shape (2916, 50, 84) idxs_selected.shape torch.Size([2916, 50])
+[2026-04-23 16:18:12] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 50])
+[2026-04-23 16:18:15] INFO - Epoch: 0/100, train Sharpe: -0.03, ret: -0.0055, std: 0.2078, turnover: 0.701, short proportion: 0.959 
+        time per epoch: 3.91s, dev loss 0.03, dev Sharpe: 0.48, ret: 0.1038, std: 0.2142, turnover: 0.206, short proportion: 0.994
+
+[2026-04-23 16:18:42] INFO - Epoch: 10/100, train Sharpe: 0.11, ret: 0.0127, std: 0.1181, turnover: 1.069, short proportion: 0.574 
+        time per epoch: 2.74s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0113, std: 0.1210, turnover: 0.416, short proportion: 0.547
+
+[2026-04-23 16:18:42] INFO - Reducing learning rate
+[2026-04-23 16:19:08] INFO - Epoch: 20/100, train Sharpe: 0.18, ret: 0.0240, std: 0.1313, turnover: 1.035, short proportion: 0.645 
+        time per epoch: 2.70s, dev loss -0.01, dev Sharpe: -0.14, ret: -0.0198, std: 0.1422, turnover: 0.487, short proportion: 0.464
+
+[2026-04-23 16:19:08] INFO - Reducing learning rate
+[2026-04-23 16:19:35] INFO - Epoch: 30/100, train Sharpe: 0.06, ret: 0.0096, std: 0.1670, turnover: 0.901, short proportion: 0.818 
+        time per epoch: 2.69s, dev loss -0.00, dev Sharpe: -0.03, ret: -0.0059, std: 0.1682, turnover: 0.504, short proportion: 0.830
+
+[2026-04-23 16:19:35] INFO - Reducing learning rate
+[2026-04-23 16:20:02] INFO - Epoch: 40/100, train Sharpe: -0.04, ret: -0.0064, std: 0.1714, turnover: 0.865, short proportion: 0.846 
+        time per epoch: 2.69s, dev loss -0.01, dev Sharpe: -0.14, ret: -0.0241, std: 0.1754, turnover: 0.424, short proportion: 0.900
+
+[2026-04-23 16:20:02] INFO - Reducing learning rate
+[2026-04-23 16:20:29] INFO - Epoch: 50/100, train Sharpe: -0.08, ret: -0.0155, std: 0.1853, turnover: 0.804, short proportion: 0.904 
+        time per epoch: 2.69s, dev loss 0.02, dev Sharpe: 0.26, ret: 0.0536, std: 0.2066, turnover: 0.294, short proportion: 0.983
+
+[2026-04-23 16:20:29] INFO - Reducing learning rate
+[2026-04-23 16:20:56] INFO - Epoch: 60/100, train Sharpe: -0.01, ret: -0.0016, std: 0.1968, turnover: 0.755, short proportion: 0.931 
+        time per epoch: 2.69s, dev loss 0.03, dev Sharpe: 0.44, ret: 0.0924, std: 0.2121, turnover: 0.232, short proportion: 0.992
+
+[2026-04-23 16:20:56] INFO - Early stopping max trials reached
+[2026-04-23 16:20:56] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod0, seed: 0
+[2026-04-23 16:20:56] INFO - AT SUBPERIOD 1/12
+[2026-04-23 16:20:56] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:20:56] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:20:56] INFO - train(): T 3000 N 51
+[2026-04-23 16:20:56] INFO - train(): windows.shape (2916, 51, 84) idxs_selected.shape torch.Size([2916, 51])
+[2026-04-23 16:20:56] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 51])
+[2026-04-23 16:20:59] INFO - Epoch: 0/100, train Sharpe: -0.01, ret: -0.0018, std: 0.2103, turnover: 0.611, short proportion: 0.978 
+        time per epoch: 2.84s, dev loss 0.02, dev Sharpe: 0.37, ret: 0.0955, std: 0.2559, turnover: 0.118, short proportion: 0.999
+
+[2026-04-23 16:21:26] INFO - Epoch: 10/100, train Sharpe: 0.08, ret: 0.0176, std: 0.2112, turnover: 0.480, short proportion: 0.981 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.31, ret: 0.0789, std: 0.2539, turnover: 0.191, short proportion: 0.991
+
+[2026-04-23 16:21:26] INFO - Reducing learning rate
+[2026-04-23 16:21:54] INFO - Epoch: 20/100, train Sharpe: 0.03, ret: 0.0060, std: 0.2138, turnover: 0.460, short proportion: 0.990 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.35, ret: 0.0890, std: 0.2561, turnover: 0.113, short proportion: 0.999
+
+[2026-04-23 16:21:54] INFO - Reducing learning rate
+[2026-04-23 16:22:21] INFO - Epoch: 30/100, train Sharpe: 0.00, ret: 0.0007, std: 0.2116, turnover: 0.498, short proportion: 0.986 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.36, ret: 0.0911, std: 0.2559, turnover: 0.115, short proportion: 0.999
+
+[2026-04-23 16:22:21] INFO - Reducing learning rate
+[2026-04-23 16:22:49] INFO - Epoch: 40/100, train Sharpe: 0.03, ret: 0.0071, std: 0.2126, turnover: 0.479, short proportion: 0.990 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.37, ret: 0.0943, std: 0.2560, turnover: 0.111, short proportion: 0.999
+
+[2026-04-23 16:22:49] INFO - Reducing learning rate
+[2026-04-23 16:23:16] INFO - Epoch: 50/100, train Sharpe: 0.00, ret: 0.0007, std: 0.2129, turnover: 0.522, short proportion: 0.987 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.37, ret: 0.0947, std: 0.2559, turnover: 0.115, short proportion: 0.999
+
+[2026-04-23 16:23:16] INFO - Reducing learning rate
+[2026-04-23 16:23:44] INFO - Epoch: 60/100, train Sharpe: -0.01, ret: -0.0017, std: 0.2125, turnover: 0.533, short proportion: 0.987 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.37, ret: 0.0951, std: 0.2559, turnover: 0.116, short proportion: 0.999
+
+[2026-04-23 16:23:44] INFO - Early stopping max trials reached
+[2026-04-23 16:23:44] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod1, seed: 0
+[2026-04-23 16:23:44] INFO - AT SUBPERIOD 2/12
+[2026-04-23 16:23:44] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:23:44] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:23:44] INFO - train(): T 3000 N 51
+[2026-04-23 16:23:44] INFO - train(): windows.shape (2916, 51, 84) idxs_selected.shape torch.Size([2916, 51])
+[2026-04-23 16:23:44] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 51])
+[2026-04-23 16:23:47] INFO - Epoch: 0/100, train Sharpe: 0.07, ret: 0.0141, std: 0.2083, turnover: 0.718, short proportion: 0.961 
+        time per epoch: 2.83s, dev loss -0.05, dev Sharpe: -0.83, ret: -0.1609, std: 0.1926, turnover: 0.173, short proportion: 0.996
+
+[2026-04-23 16:24:14] INFO - Epoch: 10/100, train Sharpe: 0.03, ret: 0.0046, std: 0.1336, turnover: 0.918, short proportion: 0.694 
+        time per epoch: 2.72s, dev loss -0.03, dev Sharpe: -0.49, ret: -0.0652, std: 0.1341, turnover: 0.217, short proportion: 0.673
+
+[2026-04-23 16:24:41] INFO - Epoch: 20/100, train Sharpe: 0.00, ret: 0.0005, std: 0.1201, turnover: 0.936, short proportion: 0.573 
+        time per epoch: 2.72s, dev loss -0.02, dev Sharpe: -0.30, ret: -0.0402, std: 0.1337, turnover: 0.243, short proportion: 0.577
+
+[2026-04-23 16:25:09] INFO - Epoch: 30/100, train Sharpe: 0.14, ret: 0.0168, std: 0.1200, turnover: 0.962, short proportion: 0.595 
+        time per epoch: 2.73s, dev loss -0.03, dev Sharpe: -0.44, ret: -0.0575, std: 0.1314, turnover: 0.276, short proportion: 0.596
+
+[2026-04-23 16:25:09] INFO - Reducing learning rate
+[2026-04-23 16:25:36] INFO - Epoch: 40/100, train Sharpe: 0.16, ret: 0.0184, std: 0.1187, turnover: 0.954, short proportion: 0.570 
+        time per epoch: 2.73s, dev loss -0.02, dev Sharpe: -0.33, ret: -0.0436, std: 0.1335, turnover: 0.270, short proportion: 0.569
+
+[2026-04-23 16:25:36] INFO - Reducing learning rate
+[2026-04-23 16:26:03] INFO - Epoch: 50/100, train Sharpe: 0.04, ret: 0.0049, std: 0.1207, turnover: 0.952, short proportion: 0.595 
+        time per epoch: 2.73s, dev loss -0.02, dev Sharpe: -0.38, ret: -0.0493, std: 0.1295, turnover: 0.266, short proportion: 0.593
+
+[2026-04-23 16:26:03] INFO - Reducing learning rate
+[2026-04-23 16:26:30] INFO - Epoch: 60/100, train Sharpe: 0.18, ret: 0.0226, std: 0.1226, turnover: 0.953, short proportion: 0.601 
+        time per epoch: 2.73s, dev loss -0.02, dev Sharpe: -0.38, ret: -0.0490, std: 0.1273, turnover: 0.274, short proportion: 0.605
+
+[2026-04-23 16:26:30] INFO - Reducing learning rate
+[2026-04-23 16:26:57] INFO - Epoch: 70/100, train Sharpe: 0.09, ret: 0.0103, std: 0.1201, turnover: 0.944, short proportion: 0.592 
+        time per epoch: 2.73s, dev loss -0.02, dev Sharpe: -0.36, ret: -0.0463, std: 0.1282, turnover: 0.269, short proportion: 0.600
+
+[2026-04-23 16:26:57] INFO - Reducing learning rate
+[2026-04-23 16:27:25] INFO - Epoch: 80/100, train Sharpe: 0.02, ret: 0.0021, std: 0.1217, turnover: 0.944, short proportion: 0.595 
+        time per epoch: 2.72s, dev loss -0.02, dev Sharpe: -0.37, ret: -0.0475, std: 0.1287, turnover: 0.265, short proportion: 0.600
+
+[2026-04-23 16:27:25] INFO - Early stopping max trials reached
+[2026-04-23 16:27:25] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod2, seed: 0
+[2026-04-23 16:27:25] INFO - AT SUBPERIOD 3/12
+[2026-04-23 16:27:25] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:27:25] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:27:25] INFO - train(): T 3000 N 51
+[2026-04-23 16:27:25] INFO - train(): windows.shape (2916, 51, 84) idxs_selected.shape torch.Size([2916, 51])
+[2026-04-23 16:27:25] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 51])
+[2026-04-23 16:27:28] INFO - Epoch: 0/100, train Sharpe: -0.04, ret: -0.0092, std: 0.2063, turnover: 0.687, short proportion: 0.960 
+        time per epoch: 2.82s, dev loss -0.03, dev Sharpe: -0.46, ret: -0.1683, std: 0.3619, turnover: 0.123, short proportion: 0.999
+
+[2026-04-23 16:27:55] INFO - Epoch: 10/100, train Sharpe: -0.08, ret: -0.0137, std: 0.1698, turnover: 0.714, short proportion: 0.568 
+        time per epoch: 2.72s, dev loss -0.07, dev Sharpe: -1.07, ret: -0.3513, std: 0.3278, turnover: 0.169, short proportion: 0.627
+
+[2026-04-23 16:27:55] INFO - Reducing learning rate
+[2026-04-23 16:28:22] INFO - Epoch: 20/100, train Sharpe: -0.29, ret: -0.0451, std: 0.1580, turnover: 0.828, short proportion: 0.750 
+        time per epoch: 2.72s, dev loss -0.05, dev Sharpe: -0.81, ret: -0.2653, std: 0.3259, turnover: 0.178, short proportion: 0.774
+
+[2026-04-23 16:28:22] INFO - Reducing learning rate
+[2026-04-23 16:28:49] INFO - Epoch: 30/100, train Sharpe: -0.16, ret: -0.0259, std: 0.1647, turnover: 0.803, short proportion: 0.839 
+        time per epoch: 2.73s, dev loss -0.05, dev Sharpe: -0.73, ret: -0.2431, std: 0.3333, turnover: 0.228, short proportion: 0.907
+
+[2026-04-23 16:28:49] INFO - Reducing learning rate
+[2026-04-23 16:29:17] INFO - Epoch: 40/100, train Sharpe: -0.06, ret: -0.0105, std: 0.1852, turnover: 0.738, short proportion: 0.919 
+        time per epoch: 2.73s, dev loss -0.03, dev Sharpe: -0.47, ret: -0.1689, std: 0.3589, turnover: 0.146, short proportion: 0.998
+
+[2026-04-23 16:29:17] INFO - Reducing learning rate
+[2026-04-23 16:29:44] INFO - Epoch: 50/100, train Sharpe: -0.14, ret: -0.0275, std: 0.1903, turnover: 0.733, short proportion: 0.923 
+        time per epoch: 2.73s, dev loss -0.03, dev Sharpe: -0.46, ret: -0.1674, std: 0.3605, turnover: 0.137, short proportion: 0.999
+
+[2026-04-23 16:30:11] INFO - Epoch: 60/100, train Sharpe: -0.03, ret: -0.0053, std: 0.1723, turnover: 0.775, short proportion: 0.883 
+        time per epoch: 2.73s, dev loss -0.05, dev Sharpe: -0.77, ret: -0.2514, std: 0.3274, turnover: 0.183, short proportion: 0.982
+
+[2026-04-23 16:30:11] INFO - Reducing learning rate
+[2026-04-23 16:30:39] INFO - Epoch: 70/100, train Sharpe: -0.14, ret: -0.0258, std: 0.1847, turnover: 0.745, short proportion: 0.911 
+        time per epoch: 2.73s, dev loss -0.03, dev Sharpe: -0.49, ret: -0.1752, std: 0.3564, turnover: 0.150, short proportion: 0.997
+
+[2026-04-23 16:30:39] INFO - Early stopping max trials reached
+[2026-04-23 16:30:39] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod3, seed: 0
+[2026-04-23 16:30:39] INFO - AT SUBPERIOD 4/12
+[2026-04-23 16:30:39] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:30:39] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:30:39] INFO - train(): T 3000 N 51
+[2026-04-23 16:30:39] INFO - train(): windows.shape (2916, 51, 84) idxs_selected.shape torch.Size([2916, 51])
+[2026-04-23 16:30:39] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 51])
+[2026-04-23 16:30:42] INFO - Epoch: 0/100, train Sharpe: -0.35, ret: -0.0830, std: 0.2378, turnover: 0.630, short proportion: 0.974 
+        time per epoch: 2.85s, dev loss 0.08, dev Sharpe: 1.25, ret: 0.4330, std: 0.3455, turnover: 0.154, short proportion: 0.995
+
+[2026-04-23 16:31:09] INFO - Epoch: 10/100, train Sharpe: -0.26, ret: -0.0499, std: 0.1900, turnover: 0.790, short proportion: 0.864 
+        time per epoch: 2.74s, dev loss 0.08, dev Sharpe: 1.30, ret: 0.3898, std: 0.2999, turnover: 0.491, short proportion: 0.851
+
+[2026-04-23 16:31:36] INFO - Epoch: 20/100, train Sharpe: -0.14, ret: -0.0260, std: 0.1923, turnover: 0.748, short proportion: 0.846 
+        time per epoch: 2.73s, dev loss -0.00, dev Sharpe: -0.08, ret: -0.0208, std: 0.2629, turnover: 0.694, short proportion: 0.655
+
+[2026-04-23 16:31:36] INFO - Reducing learning rate
+[2026-04-23 16:32:04] INFO - Epoch: 30/100, train Sharpe: -0.08, ret: -0.0158, std: 0.1897, turnover: 0.736, short proportion: 0.856 
+        time per epoch: 2.73s, dev loss 0.00, dev Sharpe: 0.07, ret: 0.0181, std: 0.2646, turnover: 0.668, short proportion: 0.705
+
+[2026-04-23 16:32:04] INFO - Reducing learning rate
+[2026-04-23 16:32:31] INFO - Epoch: 40/100, train Sharpe: -0.18, ret: -0.0339, std: 0.1853, turnover: 0.819, short proportion: 0.844 
+        time per epoch: 2.73s, dev loss 0.02, dev Sharpe: 0.33, ret: 0.0893, std: 0.2709, turnover: 0.610, short proportion: 0.673
+
+[2026-04-23 16:32:31] INFO - Reducing learning rate
+[2026-04-23 16:32:58] INFO - Epoch: 50/100, train Sharpe: -0.24, ret: -0.0452, std: 0.1879, turnover: 0.792, short proportion: 0.862 
+        time per epoch: 2.73s, dev loss 0.05, dev Sharpe: 0.77, ret: 0.2159, std: 0.2811, turnover: 0.539, short proportion: 0.772
+
+[2026-04-23 16:32:58] INFO - Reducing learning rate
+[2026-04-23 16:33:26] INFO - Epoch: 60/100, train Sharpe: -0.27, ret: -0.0498, std: 0.1868, turnover: 0.789, short proportion: 0.864 
+        time per epoch: 2.73s, dev loss 0.05, dev Sharpe: 0.85, ret: 0.2420, std: 0.2833, turnover: 0.538, short proportion: 0.786
+
+[2026-04-23 16:33:26] INFO - Reducing learning rate
+[2026-04-23 16:33:53] INFO - Epoch: 70/100, train Sharpe: -0.27, ret: -0.0515, std: 0.1905, turnover: 0.791, short proportion: 0.872 
+        time per epoch: 2.73s, dev loss 0.07, dev Sharpe: 1.12, ret: 0.3270, std: 0.2917, turnover: 0.513, short proportion: 0.826
+
+[2026-04-23 16:33:53] INFO - Early stopping max trials reached
+[2026-04-23 16:33:53] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod4, seed: 0
+[2026-04-23 16:33:53] INFO - AT SUBPERIOD 5/12
+[2026-04-23 16:33:53] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:33:53] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:33:53] INFO - train(): T 3000 N 49
+[2026-04-23 16:33:53] INFO - train(): windows.shape (2916, 49, 84) idxs_selected.shape torch.Size([2916, 49])
+[2026-04-23 16:33:53] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 49])
+[2026-04-23 16:33:56] INFO - Epoch: 0/100, train Sharpe: 0.03, ret: 0.0076, std: 0.2632, turnover: 0.632, short proportion: 0.978 
+        time per epoch: 2.86s, dev loss -0.05, dev Sharpe: -0.72, ret: -0.1697, std: 0.2343, turnover: 0.129, short proportion: 0.999
+
+[2026-04-23 16:34:23] INFO - Epoch: 10/100, train Sharpe: 0.13, ret: 0.0361, std: 0.2680, turnover: 0.504, short proportion: 0.982 
+        time per epoch: 2.73s, dev loss -0.04, dev Sharpe: -0.58, ret: -0.1349, std: 0.2326, turnover: 0.211, short proportion: 0.987
+
+[2026-04-23 16:34:50] INFO - Epoch: 20/100, train Sharpe: 0.16, ret: 0.0413, std: 0.2627, turnover: 0.564, short proportion: 0.967 
+        time per epoch: 2.73s, dev loss -0.03, dev Sharpe: -0.53, ret: -0.1197, std: 0.2267, turnover: 0.328, short proportion: 0.964
+
+[2026-04-23 16:35:18] INFO - Epoch: 30/100, train Sharpe: 0.31, ret: 0.0685, std: 0.2198, turnover: 0.860, short proportion: 0.876 
+        time per epoch: 2.73s, dev loss 0.03, dev Sharpe: 0.42, ret: 0.0879, std: 0.2107, turnover: 0.622, short proportion: 0.875
+
+[2026-04-23 16:35:45] INFO - Epoch: 40/100, train Sharpe: 0.50, ret: 0.0962, std: 0.1914, turnover: 1.053, short proportion: 0.791 
+        time per epoch: 2.73s, dev loss 0.01, dev Sharpe: 0.13, ret: 0.0248, std: 0.1923, turnover: 0.692, short proportion: 0.789
+
+[2026-04-23 16:35:45] INFO - Reducing learning rate
+[2026-04-23 16:36:12] INFO - Epoch: 50/100, train Sharpe: 0.35, ret: 0.0734, std: 0.2104, turnover: 0.909, short proportion: 0.854 
+        time per epoch: 2.73s, dev loss 0.02, dev Sharpe: 0.37, ret: 0.0772, std: 0.2082, turnover: 0.652, short proportion: 0.869
+
+[2026-04-23 16:36:12] INFO - Reducing learning rate
+[2026-04-23 16:36:40] INFO - Epoch: 60/100, train Sharpe: 0.37, ret: 0.0817, std: 0.2189, turnover: 0.882, short proportion: 0.873 
+        time per epoch: 2.73s, dev loss 0.01, dev Sharpe: 0.22, ret: 0.0451, std: 0.2056, turnover: 0.630, short proportion: 0.882
+
+[2026-04-23 16:36:40] INFO - Reducing learning rate
+[2026-04-23 16:37:07] INFO - Epoch: 70/100, train Sharpe: 0.30, ret: 0.0647, std: 0.2186, turnover: 0.875, short proportion: 0.874 
+        time per epoch: 2.73s, dev loss 0.02, dev Sharpe: 0.30, ret: 0.0625, std: 0.2083, turnover: 0.617, short proportion: 0.885
+
+[2026-04-23 16:37:07] INFO - Reducing learning rate
+[2026-04-23 16:37:35] INFO - Epoch: 80/100, train Sharpe: 0.38, ret: 0.0840, std: 0.2216, turnover: 0.858, short proportion: 0.877 
+        time per epoch: 2.73s, dev loss 0.02, dev Sharpe: 0.30, ret: 0.0620, std: 0.2093, turnover: 0.601, short proportion: 0.889
+
+[2026-04-23 16:37:35] INFO - Reducing learning rate
+[2026-04-23 16:38:02] INFO - Epoch: 90/100, train Sharpe: 0.30, ret: 0.0655, std: 0.2180, turnover: 0.879, short proportion: 0.866 
+        time per epoch: 2.73s, dev loss 0.02, dev Sharpe: 0.38, ret: 0.0809, std: 0.2100, turnover: 0.619, short proportion: 0.879
+
+[2026-04-23 16:38:02] INFO - Early stopping max trials reached
+[2026-04-23 16:38:02] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod5, seed: 0
+[2026-04-23 16:38:02] INFO - AT SUBPERIOD 6/12
+[2026-04-23 16:38:02] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:38:02] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:38:02] INFO - train(): T 3000 N 49
+[2026-04-23 16:38:02] INFO - train(): windows.shape (2916, 49, 84) idxs_selected.shape torch.Size([2916, 49])
+[2026-04-23 16:38:02] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 49])
+[2026-04-23 16:38:05] INFO - Epoch: 0/100, train Sharpe: 0.02, ret: 0.0061, std: 0.2583, turnover: 0.685, short proportion: 0.970 
+        time per epoch: 2.86s, dev loss 0.04, dev Sharpe: 0.57, ret: 0.1253, std: 0.2207, turnover: 0.157, short proportion: 0.997
+
+[2026-04-23 16:38:33] INFO - Epoch: 10/100, train Sharpe: 0.18, ret: 0.0346, std: 0.1916, turnover: 1.158, short proportion: 0.745 
+        time per epoch: 2.76s, dev loss -0.01, dev Sharpe: -0.20, ret: -0.0363, std: 0.1845, turnover: 0.933, short proportion: 0.754
+
+[2026-04-23 16:38:33] INFO - Reducing learning rate
+[2026-04-23 16:39:00] INFO - Epoch: 20/100, train Sharpe: 0.12, ret: 0.0227, std: 0.1868, turnover: 0.913, short proportion: 0.780 
+        time per epoch: 2.75s, dev loss 0.02, dev Sharpe: 0.36, ret: 0.0687, std: 0.1886, turnover: 0.585, short proportion: 0.795
+
+[2026-04-23 16:39:00] INFO - Reducing learning rate
+[2026-04-23 16:39:27] INFO - Epoch: 30/100, train Sharpe: 0.14, ret: 0.0259, std: 0.1870, turnover: 0.852, short proportion: 0.776 
+        time per epoch: 2.75s, dev loss 0.04, dev Sharpe: 0.68, ret: 0.1276, std: 0.1867, turnover: 0.386, short proportion: 0.750
+
+[2026-04-23 16:39:55] INFO - Epoch: 40/100, train Sharpe: 0.23, ret: 0.0454, std: 0.1946, turnover: 0.876, short proportion: 0.788 
+        time per epoch: 2.75s, dev loss 0.03, dev Sharpe: 0.46, ret: 0.0863, std: 0.1870, turnover: 0.557, short proportion: 0.776
+
+[2026-04-23 16:39:55] INFO - Reducing learning rate
+[2026-04-23 16:40:22] INFO - Epoch: 50/100, train Sharpe: 0.19, ret: 0.0364, std: 0.1919, turnover: 0.845, short proportion: 0.792 
+        time per epoch: 2.75s, dev loss 0.04, dev Sharpe: 0.62, ret: 0.1157, std: 0.1878, turnover: 0.457, short proportion: 0.783
+
+[2026-04-23 16:40:22] INFO - Reducing learning rate
+[2026-04-23 16:40:50] INFO - Epoch: 60/100, train Sharpe: 0.16, ret: 0.0311, std: 0.1941, turnover: 0.848, short proportion: 0.781 
+        time per epoch: 2.75s, dev loss 0.04, dev Sharpe: 0.66, ret: 0.1235, std: 0.1871, turnover: 0.425, short proportion: 0.766
+
+[2026-04-23 16:40:50] INFO - Reducing learning rate
+[2026-04-23 16:41:17] INFO - Epoch: 70/100, train Sharpe: 0.10, ret: 0.0198, std: 0.1892, turnover: 0.851, short proportion: 0.781 
+        time per epoch: 2.75s, dev loss 0.04, dev Sharpe: 0.67, ret: 0.1263, std: 0.1873, turnover: 0.408, short proportion: 0.763
+
+[2026-04-23 16:41:17] INFO - Early stopping max trials reached
+[2026-04-23 16:41:17] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod6, seed: 0
+[2026-04-23 16:41:17] INFO - AT SUBPERIOD 7/12
+[2026-04-23 16:41:17] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:41:17] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:41:17] INFO - train(): T 3000 N 49
+[2026-04-23 16:41:17] INFO - train(): windows.shape (2916, 49, 84) idxs_selected.shape torch.Size([2916, 49])
+[2026-04-23 16:41:17] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 49])
+[2026-04-23 16:41:20] INFO - Epoch: 0/100, train Sharpe: 0.21, ret: 0.0560, std: 0.2651, turnover: 0.604, short proportion: 0.983 
+        time per epoch: 2.89s, dev loss -0.03, dev Sharpe: -0.50, ret: -0.1133, std: 0.2240, turnover: 0.136, short proportion: 0.999
+
+[2026-04-23 16:41:48] INFO - Epoch: 10/100, train Sharpe: 0.56, ret: 0.0963, std: 0.1706, turnover: 0.838, short proportion: 0.767 
+        time per epoch: 2.78s, dev loss 0.00, dev Sharpe: 0.02, ret: 0.0035, std: 0.1855, turnover: 0.252, short proportion: 0.810
+
+[2026-04-23 16:42:16] INFO - Epoch: 20/100, train Sharpe: 0.39, ret: 0.0622, std: 0.1579, turnover: 0.852, short proportion: 0.708 
+        time per epoch: 2.78s, dev loss -0.01, dev Sharpe: -0.12, ret: -0.0201, std: 0.1729, turnover: 0.339, short proportion: 0.750
+
+[2026-04-23 16:42:16] INFO - Reducing learning rate
+[2026-04-23 16:42:43] INFO - Epoch: 30/100, train Sharpe: 0.58, ret: 0.0891, std: 0.1524, turnover: 0.955, short proportion: 0.713 
+        time per epoch: 2.77s, dev loss -0.01, dev Sharpe: -0.10, ret: -0.0167, std: 0.1721, turnover: 0.361, short proportion: 0.703
+
+[2026-04-23 16:42:43] INFO - Reducing learning rate
+[2026-04-23 16:43:11] INFO - Epoch: 40/100, train Sharpe: 0.34, ret: 0.0565, std: 0.1669, turnover: 0.857, short proportion: 0.748 
+        time per epoch: 2.77s, dev loss -0.00, dev Sharpe: -0.06, ret: -0.0104, std: 0.1839, turnover: 0.295, short proportion: 0.799
+
+[2026-04-23 16:43:11] INFO - Reducing learning rate
+[2026-04-23 16:43:39] INFO - Epoch: 50/100, train Sharpe: 0.57, ret: 0.0941, std: 0.1653, turnover: 0.853, short proportion: 0.764 
+        time per epoch: 2.77s, dev loss 0.00, dev Sharpe: 0.02, ret: 0.0045, std: 0.1843, turnover: 0.258, short proportion: 0.797
+
+[2026-04-23 16:44:06] INFO - Epoch: 60/100, train Sharpe: 0.43, ret: 0.0709, std: 0.1646, turnover: 0.858, short proportion: 0.738 
+        time per epoch: 2.77s, dev loss 0.00, dev Sharpe: 0.03, ret: 0.0059, std: 0.1814, turnover: 0.262, short proportion: 0.766
+
+[2026-04-23 16:44:34] INFO - Epoch: 70/100, train Sharpe: 0.54, ret: 0.0876, std: 0.1626, turnover: 0.863, short proportion: 0.739 
+        time per epoch: 2.77s, dev loss -0.00, dev Sharpe: -0.01, ret: -0.0019, std: 0.1803, turnover: 0.288, short proportion: 0.764
+
+[2026-04-23 16:44:34] INFO - Reducing learning rate
+[2026-04-23 16:45:02] INFO - Epoch: 80/100, train Sharpe: 0.50, ret: 0.0834, std: 0.1675, turnover: 0.867, short proportion: 0.751 
+        time per epoch: 2.77s, dev loss -0.00, dev Sharpe: -0.02, ret: -0.0044, std: 0.1822, turnover: 0.293, short proportion: 0.790
+
+[2026-04-23 16:45:02] INFO - Reducing learning rate
+[2026-04-23 16:45:29] INFO - Epoch: 90/100, train Sharpe: 0.28, ret: 0.0463, std: 0.1659, turnover: 0.855, short proportion: 0.746 
+        time per epoch: 2.77s, dev loss 0.00, dev Sharpe: 0.00, ret: 0.0008, std: 0.1818, turnover: 0.276, short proportion: 0.777
+
+[2026-04-23 16:45:29] INFO - Early stopping max trials reached
+[2026-04-23 16:45:29] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod7, seed: 0
+[2026-04-23 16:45:29] INFO - AT SUBPERIOD 8/12
+[2026-04-23 16:45:29] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:45:29] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:45:29] INFO - train(): T 3000 N 47
+[2026-04-23 16:45:30] INFO - train(): windows.shape (2916, 47, 84) idxs_selected.shape torch.Size([2916, 47])
+[2026-04-23 16:45:30] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 47])
+[2026-04-23 16:45:32] INFO - Epoch: 0/100, train Sharpe: 0.05, ret: 0.0140, std: 0.2567, turnover: 0.616, short proportion: 0.979 
+        time per epoch: 2.90s, dev loss 0.05, dev Sharpe: 0.84, ret: 0.2449, std: 0.2895, turnover: 0.133, short proportion: 0.997
+
+[2026-04-23 16:46:00] INFO - Epoch: 10/100, train Sharpe: 0.30, ret: 0.0569, std: 0.1880, turnover: 0.803, short proportion: 0.815 
+        time per epoch: 2.80s, dev loss 0.09, dev Sharpe: 1.37, ret: 0.3432, std: 0.2505, turnover: 0.340, short proportion: 0.782
+
+[2026-04-23 16:46:28] INFO - Epoch: 20/100, train Sharpe: 0.24, ret: 0.0477, std: 0.1983, turnover: 0.709, short proportion: 0.713 
+        time per epoch: 2.80s, dev loss 0.09, dev Sharpe: 1.51, ret: 0.2538, std: 0.1682, turnover: 0.318, short proportion: 0.644
+
+[2026-04-23 16:46:56] INFO - Epoch: 30/100, train Sharpe: 0.38, ret: 0.0716, std: 0.1867, turnover: 0.778, short proportion: 0.714 
+        time per epoch: 2.79s, dev loss 0.07, dev Sharpe: 1.11, ret: 0.1781, std: 0.1606, turnover: 0.390, short proportion: 0.607
+
+[2026-04-23 16:46:56] INFO - Reducing learning rate
+[2026-04-23 16:47:24] INFO - Epoch: 40/100, train Sharpe: 0.32, ret: 0.0598, std: 0.1840, turnover: 0.810, short proportion: 0.708 
+        time per epoch: 2.79s, dev loss 0.09, dev Sharpe: 1.36, ret: 0.2163, std: 0.1590, turnover: 0.414, short proportion: 0.637
+
+[2026-04-23 16:47:24] INFO - Reducing learning rate
+[2026-04-23 16:47:52] INFO - Epoch: 50/100, train Sharpe: 0.34, ret: 0.0646, std: 0.1905, turnover: 0.779, short proportion: 0.710 
+        time per epoch: 2.79s, dev loss 0.09, dev Sharpe: 1.38, ret: 0.2235, std: 0.1612, turnover: 0.367, short proportion: 0.636
+
+[2026-04-23 16:47:52] INFO - Reducing learning rate
+[2026-04-23 16:48:20] INFO - Epoch: 60/100, train Sharpe: 0.31, ret: 0.0588, std: 0.1921, turnover: 0.757, short proportion: 0.716 
+        time per epoch: 2.79s, dev loss 0.10, dev Sharpe: 1.53, ret: 0.2619, std: 0.1705, turnover: 0.357, short proportion: 0.658
+
+[2026-04-23 16:48:47] INFO - Epoch: 70/100, train Sharpe: 0.31, ret: 0.0581, std: 0.1879, turnover: 0.799, short proportion: 0.733 
+        time per epoch: 2.79s, dev loss 0.09, dev Sharpe: 1.42, ret: 0.2624, std: 0.1840, turnover: 0.407, short proportion: 0.689
+
+[2026-04-23 16:48:47] INFO - Reducing learning rate
+[2026-04-23 16:49:15] INFO - Epoch: 80/100, train Sharpe: 0.36, ret: 0.0685, std: 0.1888, turnover: 0.778, short proportion: 0.727 
+        time per epoch: 2.79s, dev loss 0.10, dev Sharpe: 1.52, ret: 0.2698, std: 0.1770, turnover: 0.380, short proportion: 0.677
+
+[2026-04-23 16:49:15] INFO - Reducing learning rate
+[2026-04-23 16:49:43] INFO - Epoch: 90/100, train Sharpe: 0.38, ret: 0.0719, std: 0.1909, turnover: 0.773, short proportion: 0.715 
+        time per epoch: 2.79s, dev loss 0.09, dev Sharpe: 1.50, ret: 0.2574, std: 0.1709, turnover: 0.364, short proportion: 0.655
+
+[2026-04-23 16:49:43] INFO - Early stopping max trials reached
+[2026-04-23 16:49:43] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod8, seed: 0
+[2026-04-23 16:49:43] INFO - AT SUBPERIOD 9/12
+[2026-04-23 16:49:43] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:49:43] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:49:43] INFO - train(): T 3000 N 46
+[2026-04-23 16:49:43] INFO - train(): windows.shape (2916, 46, 84) idxs_selected.shape torch.Size([2916, 46])
+[2026-04-23 16:49:43] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 46])
+[2026-04-23 16:49:46] INFO - Epoch: 0/100, train Sharpe: 0.06, ret: 0.0161, std: 0.2643, turnover: 0.624, short proportion: 0.979 
+        time per epoch: 2.90s, dev loss 0.03, dev Sharpe: 0.51, ret: 0.1195, std: 0.2330, turnover: 0.144, short proportion: 0.997
+
+[2026-04-23 16:50:14] INFO - Epoch: 10/100, train Sharpe: 0.20, ret: 0.0516, std: 0.2619, turnover: 0.547, short proportion: 0.960 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.42, ret: 0.0969, std: 0.2279, turnover: 0.214, short proportion: 0.976
+
+[2026-04-23 16:50:14] INFO - Reducing learning rate
+[2026-04-23 16:50:42] INFO - Epoch: 20/100, train Sharpe: 0.15, ret: 0.0403, std: 0.2668, turnover: 0.541, short proportion: 0.982 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.45, ret: 0.1035, std: 0.2305, turnover: 0.203, short proportion: 0.989
+
+[2026-04-23 16:50:42] INFO - Reducing learning rate
+[2026-04-23 16:51:10] INFO - Epoch: 30/100, train Sharpe: 0.13, ret: 0.0361, std: 0.2691, turnover: 0.479, short proportion: 0.989 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.50, ret: 0.1175, std: 0.2324, turnover: 0.160, short proportion: 0.995
+
+[2026-04-23 16:51:10] INFO - Reducing learning rate
+[2026-04-23 16:51:38] INFO - Epoch: 40/100, train Sharpe: 0.10, ret: 0.0261, std: 0.2686, turnover: 0.508, short proportion: 0.988 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.51, ret: 0.1184, std: 0.2328, turnover: 0.147, short proportion: 0.996
+
+[2026-04-23 16:51:38] INFO - Reducing learning rate
+[2026-04-23 16:52:06] INFO - Epoch: 50/100, train Sharpe: 0.10, ret: 0.0268, std: 0.2693, turnover: 0.527, short proportion: 0.989 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.51, ret: 0.1199, std: 0.2328, turnover: 0.142, short proportion: 0.997
+
+[2026-04-23 16:52:34] INFO - Epoch: 60/100, train Sharpe: 0.10, ret: 0.0272, std: 0.2692, turnover: 0.512, short proportion: 0.989 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.52, ret: 0.1207, std: 0.2326, turnover: 0.144, short proportion: 0.996
+
+[2026-04-23 16:53:02] INFO - Epoch: 70/100, train Sharpe: 0.10, ret: 0.0267, std: 0.2688, turnover: 0.501, short proportion: 0.990 
+        time per epoch: 2.79s, dev loss 0.03, dev Sharpe: 0.52, ret: 0.1206, std: 0.2323, turnover: 0.148, short proportion: 0.996
+
+[2026-04-23 16:53:29] INFO - Epoch: 80/100, train Sharpe: 0.13, ret: 0.0342, std: 0.2694, turnover: 0.491, short proportion: 0.990 
+        time per epoch: 2.79s, dev loss 0.03, dev Sharpe: 0.52, ret: 0.1210, std: 0.2320, turnover: 0.153, short proportion: 0.995
+
+[2026-04-23 16:53:57] INFO - Epoch: 90/100, train Sharpe: 0.09, ret: 0.0252, std: 0.2675, turnover: 0.509, short proportion: 0.988 
+        time per epoch: 2.79s, dev loss 0.03, dev Sharpe: 0.52, ret: 0.1214, std: 0.2314, turnover: 0.163, short proportion: 0.994
+
+[2026-04-23 16:54:22] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod9, seed: 0
+[2026-04-23 16:54:22] INFO - AT SUBPERIOD 10/12
+[2026-04-23 16:54:22] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:54:22] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:54:22] INFO - train(): T 3000 N 46
+[2026-04-23 16:54:23] INFO - train(): windows.shape (2916, 46, 84) idxs_selected.shape torch.Size([2916, 46])
+[2026-04-23 16:54:23] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 46])
+[2026-04-23 16:54:26] INFO - Epoch: 0/100, train Sharpe: 0.07, ret: 0.0186, std: 0.2563, turnover: 0.659, short proportion: 0.971 
+        time per epoch: 2.92s, dev loss 0.08, dev Sharpe: 1.33, ret: 0.2952, std: 0.2213, turnover: 0.147, short proportion: 0.995
+
+[2026-04-23 16:54:53] INFO - Epoch: 10/100, train Sharpe: 0.47, ret: 0.0958, std: 0.2054, turnover: 0.827, short proportion: 0.682 
+        time per epoch: 2.80s, dev loss 0.05, dev Sharpe: 0.74, ret: 0.1403, std: 0.1883, turnover: 0.566, short proportion: 0.549
+
+[2026-04-23 16:54:53] INFO - Reducing learning rate
+[2026-04-23 16:55:21] INFO - Epoch: 20/100, train Sharpe: 0.28, ret: 0.0517, std: 0.1867, turnover: 0.870, short proportion: 0.691 
+        time per epoch: 2.80s, dev loss 0.04, dev Sharpe: 0.57, ret: 0.1076, std: 0.1892, turnover: 0.428, short proportion: 0.549
+
+[2026-04-23 16:55:21] INFO - Reducing learning rate
+[2026-04-23 16:55:49] INFO - Epoch: 30/100, train Sharpe: 0.28, ret: 0.0521, std: 0.1882, turnover: 0.850, short proportion: 0.694 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.44, ret: 0.0836, std: 0.1888, turnover: 0.351, short proportion: 0.536
+
+[2026-04-23 16:55:49] INFO - Reducing learning rate
+[2026-04-23 16:56:17] INFO - Epoch: 40/100, train Sharpe: 0.25, ret: 0.0519, std: 0.2078, turnover: 0.813, short proportion: 0.874 
+        time per epoch: 2.80s, dev loss 0.11, dev Sharpe: 1.78, ret: 0.3790, std: 0.2121, turnover: 0.379, short proportion: 0.875
+
+[2026-04-23 16:56:45] INFO - Epoch: 50/100, train Sharpe: 0.42, ret: 0.0780, std: 0.1857, turnover: 0.883, short proportion: 0.700 
+        time per epoch: 2.80s, dev loss 0.03, dev Sharpe: 0.46, ret: 0.0862, std: 0.1882, turnover: 0.363, short proportion: 0.546
+
+[2026-04-23 16:56:45] INFO - Reducing learning rate
+[2026-04-23 16:57:13] INFO - Epoch: 60/100, train Sharpe: 0.35, ret: 0.0640, std: 0.1814, turnover: 0.875, short proportion: 0.743 
+        time per epoch: 2.80s, dev loss 0.05, dev Sharpe: 0.85, ret: 0.1613, std: 0.1892, turnover: 0.408, short proportion: 0.626
+
+[2026-04-23 16:57:13] INFO - Reducing learning rate
+[2026-04-23 16:57:41] INFO - Epoch: 70/100, train Sharpe: 0.37, ret: 0.0715, std: 0.1909, turnover: 0.864, short proportion: 0.789 
+        time per epoch: 2.80s, dev loss 0.10, dev Sharpe: 1.52, ret: 0.2930, std: 0.1929, turnover: 0.436, short proportion: 0.732
+
+[2026-04-23 16:57:41] INFO - Early stopping max trials reached
+[2026-04-23 16:57:41] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod10, seed: 0
+[2026-04-23 16:57:41] INFO - AT SUBPERIOD 11/12
+[2026-04-23 16:57:41] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:57:41] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:57:41] INFO - train(): T 3000 N 46
+[2026-04-23 16:57:42] INFO - train(): windows.shape (2916, 46, 84) idxs_selected.shape torch.Size([2916, 46])
+[2026-04-23 16:57:42] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 46])
+[2026-04-23 16:57:44] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0660, std: 0.2604, turnover: 0.664, short proportion: 0.974 
+        time per epoch: 2.89s, dev loss 0.01, dev Sharpe: 0.13, ret: 0.0198, std: 0.1522, turnover: 0.181, short proportion: 0.995
+
+[2026-04-23 16:58:12] INFO - Epoch: 10/100, train Sharpe: 0.43, ret: 0.0818, std: 0.1885, turnover: 1.017, short proportion: 0.655 
+        time per epoch: 2.80s, dev loss 0.12, dev Sharpe: 1.87, ret: 0.2394, std: 0.1279, turnover: 0.739, short proportion: 0.704
+
+[2026-04-23 16:58:40] INFO - Epoch: 20/100, train Sharpe: 0.69, ret: 0.1490, std: 0.2154, turnover: 1.016, short proportion: 0.682 
+        time per epoch: 2.79s, dev loss 0.08, dev Sharpe: 1.22, ret: 0.1581, std: 0.1292, turnover: 0.830, short proportion: 0.736
+
+[2026-04-23 16:58:40] INFO - Reducing learning rate
+[2026-04-23 16:59:08] INFO - Epoch: 30/100, train Sharpe: 0.65, ret: 0.1335, std: 0.2057, turnover: 1.028, short proportion: 0.709 
+        time per epoch: 2.79s, dev loss 0.08, dev Sharpe: 1.26, ret: 0.1632, std: 0.1295, turnover: 0.794, short proportion: 0.757
+
+[2026-04-23 16:59:08] INFO - Reducing learning rate
+[2026-04-23 16:59:36] INFO - Epoch: 40/100, train Sharpe: 0.56, ret: 0.1111, std: 0.1981, turnover: 1.011, short proportion: 0.692 
+        time per epoch: 2.79s, dev loss 0.09, dev Sharpe: 1.50, ret: 0.1938, std: 0.1288, turnover: 0.766, short proportion: 0.745
+
+[2026-04-23 16:59:36] INFO - Reducing learning rate
+[2026-04-23 17:00:04] INFO - Epoch: 50/100, train Sharpe: 0.56, ret: 0.1091, std: 0.1939, turnover: 1.025, short proportion: 0.677 
+        time per epoch: 2.79s, dev loss 0.11, dev Sharpe: 1.72, ret: 0.2209, std: 0.1281, turnover: 0.751, short proportion: 0.723
+
+[2026-04-23 17:00:04] INFO - Reducing learning rate
+[2026-04-23 17:00:32] INFO - Epoch: 60/100, train Sharpe: 0.62, ret: 0.1208, std: 0.1936, turnover: 1.028, short proportion: 0.684 
+        time per epoch: 2.79s, dev loss 0.11, dev Sharpe: 1.70, ret: 0.2184, std: 0.1282, turnover: 0.754, short proportion: 0.727
+
+[2026-04-23 17:00:32] INFO - Reducing learning rate
+[2026-04-23 17:01:00] INFO - Epoch: 70/100, train Sharpe: 0.56, ret: 0.1074, std: 0.1920, turnover: 1.027, short proportion: 0.672 
+        time per epoch: 2.79s, dev loss 0.11, dev Sharpe: 1.78, ret: 0.2289, std: 0.1280, turnover: 0.747, short proportion: 0.717
+
+[2026-04-23 17:01:00] INFO - Early stopping max trials reached
+[2026-04-23 17:01:00] INFO - Training done - Model: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__normal-teal__subperiod11, seed: 0
+[2026-04-23 17:01:00] INFO - TRAIN/TEST COMPLETE
+[2026-04-23 17:01:01] INFO - ==> Sharpe: 0.52, ret: 0.1148, std: 0.2227, turnover: 0.3508, short_proportion: 0.8294

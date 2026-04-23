@@ -1,0 +1,61 @@
+[2026-04-23 19:28:15] INFO - Logging initialized for 'CNNTransformer' by 'onyxia' on host 'vscode-pytorch-gpu-146534-0' with ID 'trusty-molly'
+[2026-04-23 19:28:15] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 1440,
+    "dropout": 0.5,
+    "filter_numbers": [
+      1,
+      8
+    ],
+    "filter_size": 2,
+    "attention_heads": 2,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 1440,
+  "retrain_freq": 1440,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-23 19:28:15] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_1440_rollingWindow_0.01_Cap.npy
+[2026-04-23 19:28:15] INFO - Loading residuals
+[2026-04-23 19:28:15] INFO - Residuals loaded
+[2026-04-23 19:28:15] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__1440lookback__3000length_training__trusty-molly
+[2026-04-23 19:28:15] INFO - Running on devices ['cpu']
+[2026-04-23 19:28:15] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-23 19:28:15] INFO - AT SUBPERIOD 0/25
+[2026-04-23 19:28:15] INFO - train(): data_train.shape (3000, 52)
+[2026-04-23 19:28:15] INFO - train(): assets_to_trade.shape (52,)
+[2026-04-23 19:28:15] INFO - train(): T 3000 N 32
+[2026-04-23 19:28:15] INFO - train(): windows.shape (1560, 32, 1440) idxs_selected.shape torch.Size([1560, 32])
+[2026-04-23 19:28:18] INFO - epoch 0 batch 0 weights.shape torch.Size([1440, 32])

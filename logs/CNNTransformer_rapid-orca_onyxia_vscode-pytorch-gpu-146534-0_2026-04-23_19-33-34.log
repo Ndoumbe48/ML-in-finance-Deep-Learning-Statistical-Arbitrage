@@ -1,0 +1,133 @@
+[2026-04-23 19:33:34] INFO - Logging initialized for 'CNNTransformer' by 'onyxia' on host 'vscode-pytorch-gpu-146534-0' with ID 'rapid-orca'
+[2026-04-23 19:33:34] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 1440,
+    "dropout": 0.5,
+    "filter_numbers": [
+      1,
+      8
+    ],
+    "filter_size": 2,
+    "attention_heads": 2,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 1440,
+  "retrain_freq": 1440,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-23 19:33:34] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_1440_rollingWindow_0.01_Cap.npy
+[2026-04-23 19:33:34] INFO - Loading residuals
+[2026-04-23 19:33:34] INFO - Residuals loaded
+[2026-04-23 19:33:34] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__1440lookback__3000length_training__rapid-orca
+[2026-04-23 19:33:34] INFO - Running on devices ['cuda:0']
+[2026-04-23 19:33:34] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-23 19:33:34] INFO - AT SUBPERIOD 0/25
+[2026-04-23 19:33:34] INFO - train(): data_train.shape (3000, 52)
+[2026-04-23 19:33:34] INFO - train(): assets_to_trade.shape (52,)
+[2026-04-23 19:33:34] INFO - train(): T 3000 N 32
+[2026-04-23 19:33:34] INFO - train(): windows.shape (1560, 32, 1440) idxs_selected.shape torch.Size([1560, 32])
+[2026-04-23 19:33:35] INFO - epoch 0 batch 0 weights.shape torch.Size([1440, 32])
+[2026-04-23 19:33:36] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/home/onyxia/work/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 234, in run
+    rets,sharpe,ret,std,turnover,short_proportion = test(residuals,
+                                                    ~~~~^^^^^^^^^^^
+                                                         daily_dates,
+                                                         ^^^^^^^^^^^^
+    ...<22 lines>...
+                                                         objective = config['objective'],
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                         )
+                                                         ^
+  File "/home/onyxia/work/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 464, in test
+    rets_t,turns_t,shorts_t,weights_t,a2t = train(model_t,
+                                            ~~~~~^^^^^^^^^
+                                      preprocess = preprocess,
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<20 lines>...
+                                      hold_cost = hold_cost,
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+                                      objective = objective,)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/onyxia/work/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 99, in train
+    weights[idxs_batch_i] = model(torch.tensor(input_data_batch_i, device=device))
+                            ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/onyxia/work/ML-in-finance-Deep-Learning-Statistical-Arbitrage/models/CNNTransformer.py", line 82, in forward
+    x = self.encoder(x) #the input of the transformer is (T,N,C)
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/transformer.py", line 904, in forward
+    + self._sa_block(x, src_mask, src_key_padding_mask, is_causal=is_causal)
+      ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/transformer.py", line 918, in _sa_block
+    x = self.self_attn(
+        ~~~~~~~~~~~~~~^
+        x,
+        ^^
+    ...<5 lines>...
+        is_causal=is_causal,
+        ^^^^^^^^^^^^^^^^^^^^
+    )[0]
+    ^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/modules/activation.py", line 1368, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        query,
+        ^^^^^^
+    ...<17 lines>...
+        is_causal=is_causal,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/functional.py", line 6097, in multi_head_attention_forward
+    q, k, v = _in_projection_packed(query, key, value, in_proj_weight, in_proj_bias)
+              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/python/lib/python3.13/site-packages/torch/nn/functional.py", line 5508, in _in_projection_packed
+    .contiguous()
+     ~~~~~~~~~~^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.14 GiB. GPU 0 has a total capacity of 14.61 GiB of which 386.50 MiB is free. Including non-PyTorch memory, this process has 14.23 GiB memory in use. Of the allocated memory 14.15 GiB is allocated by PyTorch, and 11.25 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

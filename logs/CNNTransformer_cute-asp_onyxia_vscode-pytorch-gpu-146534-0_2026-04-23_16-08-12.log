@@ -1,0 +1,64 @@
+[2026-04-23 16:08:12] INFO - Logging initialized for 'CNNTransformer' by 'onyxia' on host 'vscode-pytorch-gpu-146534-0' with ID 'cute-asp'
+[2026-04-23 16:08:12] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 84,
+    "dropout": 0.4,
+    "filter_numbers": [
+      1,
+      8
+    ],
+    "filter_size": 2,
+    "attention_heads": 4,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 360,
+  "retrain_freq": 360,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-23 16:08:12] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-23 16:08:12] INFO - Loading residuals
+[2026-04-23 16:08:12] INFO - Residuals loaded
+[2026-04-23 16:08:12] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__84lookback__3000length_training__cute-asp
+[2026-04-23 16:08:12] INFO - Running on devices ['cpu']
+[2026-04-23 16:08:12] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-23 16:08:12] INFO - AT SUBPERIOD 0/12
+[2026-04-23 16:08:12] INFO - train(): data_train.shape (3000, 51)
+[2026-04-23 16:08:12] INFO - train(): assets_to_trade.shape (51,)
+[2026-04-23 16:08:12] INFO - train(): T 3000 N 50
+[2026-04-23 16:08:12] INFO - train(): windows.shape (2916, 50, 84) idxs_selected.shape torch.Size([2916, 50])
+[2026-04-23 16:08:18] INFO - epoch 0 batch 0 weights.shape torch.Size([360, 50])
+[2026-04-23 16:09:53] INFO - Epoch: 0/100, train Sharpe: -0.02, ret: -0.0047, std: 0.2004, turnover: 0.746, short proportion: 0.948 
+        time per epoch: 94.30s, dev loss 0.02, dev Sharpe: 0.32, ret: 0.0669, std: 0.2102, turnover: 0.236, short proportion: 0.989
+

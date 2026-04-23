@@ -18,7 +18,7 @@ import pandas as pd
 import torch
 
 from train_test import test, estimate
-from data import perturb
+
 from preprocess import *
 from models import *
 from utils import initialize_logging, nploadp, import_string, get_free_gpu_ids, send_twilio_message
@@ -126,7 +126,7 @@ def run(config:dict,
         cryptomtag = "Crypto_PCAMatrixresiduals"
         for factor in factor_models.get("Crypto", []):
             ioy = 2022
-            w = 360
+            w = 1440
             filepaths += [f"residuals/{cryptodir}/{cryptortag}_{factor}_factors_{ioy}_initialOOSYear_{w}_rollingWindow_{cap}_Cap.npy"]
             datanames += ['Crypto'+str(factor)]
             residual_weightsNames += [f"residuals/{cryptodir}/{cryptomtag}_{factor}_factors_{ioy}_initialOOSYear_{w}_rollingWindow_{cap}_Cap.npy"]
@@ -142,7 +142,7 @@ def run(config:dict,
         #    format ='%Y%m%d')
         #del FamaFrenchDailyData
 
-        daily_dates = pd.date_range(start='2022-01-01', end='2026-04-01', freq='4H')
+        daily_dates = pd.date_range(start='2022-01-01', end='2026-04-01', freq='1h')
 
         # Test loop
         for i in range(len(filepaths)):

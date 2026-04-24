@@ -18,7 +18,7 @@ import pandas as pd
 import torch
 
 from train_test import test, estimate
-from data import perturb
+
 from preprocess import *
 from models import *
 from utils import initialize_logging, nploadp, import_string, get_free_gpu_ids, send_twilio_message
@@ -142,7 +142,7 @@ def run(config:dict,
         #    format ='%Y%m%d')
         #del FamaFrenchDailyData
 
-        daily_dates = pd.date_range(start='2022-01-01', end='2026-04-01', freq='4H')
+        daily_dates = pd.date_range(start='2021-01-01', end='2026-04-01', freq='4H')
 
         # Test loop
         for i in range(len(filepaths)):
@@ -173,7 +173,7 @@ def run(config:dict,
                 residual_weight_marker = ""
                 residual_weights = None
 
-            if objective not in ["sharpe", "meanvar", "sqrtMeanSharpe"]:
+            if objective not in ["sharpe", "meanvar", "sqrtMeanSharpe", "sortino", "calmar"]:
                 raise Exception(f"Invalid objective '{objective}'")
 
             # define model and preprocess function

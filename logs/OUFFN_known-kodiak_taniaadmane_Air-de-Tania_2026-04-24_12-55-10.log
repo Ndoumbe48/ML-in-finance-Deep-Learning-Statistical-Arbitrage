@@ -1,0 +1,120 @@
+[2026-04-24 12:55:10] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'Air-de-Tania' with ID 'known-kodiak'
+[2026-04-24 12:55:10] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 180,
+    "dropout": 0.25,
+    "hidden_units": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 750,
+  "retrain_freq": 750,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 6000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 12:55:10] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 12:55:10] INFO - Loading residuals
+[2026-04-24 12:55:10] INFO - Residuals loaded
+[2026-04-24 12:55:10] INFO - STARTING: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__180lookback__6000length_training__known-kodiak
+[2026-04-24 12:55:10] INFO - Running on devices ['mps']
+[2026-04-24 12:55:10] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 12:55:10] INFO - AT SUBPERIOD 0/5
+[2026-04-24 12:55:10] INFO - train(): data_train.shape (6000, 69)
+[2026-04-24 12:55:10] INFO - train(): assets_to_trade.shape (69,)
+[2026-04-24 12:55:10] INFO - train(): T 6000 N 63
+[2026-04-24 12:55:10] INFO - Start OU preprocess
+[2026-04-24 12:55:11] INFO - Finish OU preprocess
+[2026-04-24 12:55:11] INFO - train(): windows.shape (5820, 63, 4) idxs_selected.shape torch.Size([5820, 63])
+[2026-04-24 12:55:12] INFO - epoch 0 batch 0 weights.shape torch.Size([750, 63])
+[2026-04-24 12:55:15] INFO - Start OU preprocess
+[2026-04-24 12:55:15] INFO - Finish OU preprocess
+[2026-04-24 12:55:17] INFO - Epoch: 0/100, train Sharpe: -0.22, ret: -0.0551, std: 0.2469, turnover: 0.357, short proportion: 0.000 
+        time per epoch: 5.62s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0725, std: 0.3129, turnover: 0.035, short proportion: 0.000
+
+[2026-04-24 12:55:19] INFO - Start OU preprocess
+[2026-04-24 12:55:19] INFO - Finish OU preprocess
+[2026-04-24 12:55:19] INFO - Epoch: 10/100, train Sharpe: -0.20, ret: -0.0487, std: 0.2468, turnover: 0.346, short proportion: 0.000 
+        time per epoch: 0.68s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0725, std: 0.3129, turnover: 0.035, short proportion: 0.000
+
+[2026-04-24 12:55:20] INFO - Start OU preprocess
+[2026-04-24 12:55:21] INFO - Finish OU preprocess
+[2026-04-24 12:55:21] INFO - Epoch: 20/100, train Sharpe: -0.21, ret: -0.0511, std: 0.2469, turnover: 0.357, short proportion: 0.000 
+        time per epoch: 0.45s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0725, std: 0.3129, turnover: 0.035, short proportion: 0.000
+
+[2026-04-24 12:55:23] INFO - Start OU preprocess
+[2026-04-24 12:55:23] INFO - Finish OU preprocess
+[2026-04-24 12:55:23] INFO - Epoch: 30/100, train Sharpe: -0.23, ret: -0.0556, std: 0.2469, turnover: 0.330, short proportion: 0.000 
+        time per epoch: 0.38s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:25] INFO - Start OU preprocess
+[2026-04-24 12:55:25] INFO - Finish OU preprocess
+[2026-04-24 12:55:25] INFO - Epoch: 40/100, train Sharpe: -0.23, ret: -0.0557, std: 0.2470, turnover: 0.331, short proportion: 0.000 
+        time per epoch: 0.33s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:26] INFO - Start OU preprocess
+[2026-04-24 12:55:26] INFO - Finish OU preprocess
+[2026-04-24 12:55:27] INFO - Epoch: 50/100, train Sharpe: -0.22, ret: -0.0549, std: 0.2470, turnover: 0.321, short proportion: 0.000 
+        time per epoch: 0.30s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:28] INFO - Start OU preprocess
+[2026-04-24 12:55:28] INFO - Finish OU preprocess
+[2026-04-24 12:55:29] INFO - Epoch: 60/100, train Sharpe: -0.20, ret: -0.0504, std: 0.2473, turnover: 0.315, short proportion: 0.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:30] INFO - Start OU preprocess
+[2026-04-24 12:55:30] INFO - Finish OU preprocess
+[2026-04-24 12:55:31] INFO - Epoch: 70/100, train Sharpe: -0.20, ret: -0.0498, std: 0.2470, turnover: 0.336, short proportion: 0.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:32] INFO - Start OU preprocess
+[2026-04-24 12:55:32] INFO - Finish OU preprocess
+[2026-04-24 12:55:33] INFO - Epoch: 80/100, train Sharpe: -0.20, ret: -0.0499, std: 0.2470, turnover: 0.359, short proportion: 0.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:34] INFO - Start OU preprocess
+[2026-04-24 12:55:34] INFO - Finish OU preprocess
+[2026-04-24 12:55:35] INFO - Epoch: 90/100, train Sharpe: -0.20, ret: -0.0488, std: 0.2466, turnover: 0.365, short proportion: 0.000 
+        time per epoch: 0.25s, dev loss 0.01, dev Sharpe: 0.23, ret: 0.0726, std: 0.3129, turnover: 0.034, short proportion: 0.000
+
+[2026-04-24 12:55:36] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__180lookback__6000length_training__known-kodiak__subperiod0, seed: 0
+[2026-04-24 12:55:36] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 234, in run
+    rets,sharpe,ret,std,turnover,short_proportion = test(residuals,
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 514, in test
+    with torch.cuda.device(device):
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/cuda/__init__.py", line 600, in __init__
+    self.idx = _get_device_index(device, optional=True)
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/cuda/_utils.py", line 542, in _get_device_index
+    raise ValueError(f"Expected a cuda device, but got: {device}")
+ValueError: Expected a cuda device, but got: mps

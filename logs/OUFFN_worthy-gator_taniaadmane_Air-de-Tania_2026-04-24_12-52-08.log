@@ -1,0 +1,56 @@
+[2026-04-24 12:52:08] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'Air-de-Tania' with ID 'worthy-gator'
+[2026-04-24 12:52:08] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 180,
+    "dropout": 0.25,
+    "hidden_units": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [
+      0
+    ],
+    "PCA": [
+      5
+    ],
+    "FamaFrench": [
+      0
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 750,
+  "retrain_freq": 750,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 6000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 12:52:08] INFO - Testing residuals/ipca_normalized/IPCA_DailyOOSresiduals_0_factors_420_initialMonths_240_window_12_reestimationFreq_0.01_cap.npy
+[2026-04-24 12:52:08] INFO - Loading residuals
+[2026-04-24 12:52:08] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 158, in run
+    residuals = np.load(filepath).astype(np.float32)
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/numpy/lib/_npyio_impl.py", line 451, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'residuals/ipca_normalized/IPCA_DailyOOSresiduals_0_factors_420_initialMonths_240_window_12_reestimationFreq_0.01_cap.npy'

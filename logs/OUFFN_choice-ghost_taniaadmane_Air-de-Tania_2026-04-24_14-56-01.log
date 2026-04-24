@@ -1,0 +1,55 @@
+[2026-04-24 14:56:01] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'Air-de-Tania' with ID 'choice-ghost'
+[2026-04-24 14:56:01] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 80,
+    "dropout": 0.3,
+    "hidden_units": [
+      4,
+      8,
+      8,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      1,
+      3,
+      5,
+      8
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 5e-05
+  },
+  "batch_size": 512,
+  "retrain_freq": 512,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 5000,
+  "early_stopping": true,
+  "objective": "calmar",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 14:56:01] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_1_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 14:56:01] INFO - Loading residuals
+[2026-04-24 14:56:01] INFO - Residuals loaded
+[2026-04-24 14:56:01] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 177, in run
+    raise Exception(f"Invalid objective '{objective}'")
+Exception: Invalid objective 'calmar'

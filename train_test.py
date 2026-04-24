@@ -1,6 +1,7 @@
 import logging
 import os
 import time
+import contextlib
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -176,6 +177,16 @@ def train(model,
                 loss = -mean_ret*252 + std*15.9
             elif objective == "sqrtMeanSharpe":
                 loss = -torch.sign(mean_ret)*np.sqrt(np.abs(mean_ret))/std
+            elif objective == "sortino":
+                downside_rets = rets_train[rets_train < 0]
+                downside_std = torch.std(downside_rets) if len(downside_rets) > 0 else std
+                loss = -mean_ret / (downside_std + 1e-8)
+            elif objective == "calmar":
+                cum_rets = torch.cumprod(1 + rets_train, dim=0)
+                running_max = torch.cummax(cum_rets, dim=0)[0]
+                drawdown = (cum_rets - running_max) / running_max
+                max_dd = torch.min(drawdown)
+                loss = -mean_ret / (torch.abs(max_dd) + 1e-8)
             else:
                 raise Exception(f"Invalid objective loss {objective}")
             
@@ -399,6 +410,16 @@ def get_returns(model,
             loss = -mean*252 + std*15.9
         elif objective == "sqrtMeanSharpe":
             loss = -torch.sign(mean)*torch.sqrt(torch.abs(mean))/std
+        elif objective == "sortino":
+            downside_rets = rets_test[rets_test < 0]
+            downside_std = torch.std(downside_rets) if len(downside_rets) > 0 else std
+            loss = -mean / (downside_std + 1e-8)
+        elif objective == "calmar":
+            cum_rets = torch.cumprod(1 + rets_test, dim=0)
+            running_max = torch.cummax(cum_rets, dim=0)[0]
+            drawdown = (cum_rets - running_max) / running_max
+            max_dd = torch.min(drawdown)
+            loss = -mean / (torch.abs(max_dd) + 1e-8)
         else:
             raise Exception(f"Invalid objective loss {objective}")
     return (rets_test.cpu().numpy(), loss, sharpe, turnover.cpu().numpy(), short_proportion.cpu().numpy(), weights.cpu().numpy(), 
@@ -510,10 +531,11 @@ def test(Data,
         logging.debug(f"weights selected shape {all_weights[t*retrain_freq:min((t+1)*retrain_freq,T-length_training),assets_to_trade].shape}")
         logging.debug(f"sum(assets_to_trade) {np.sum(assets_to_trade)}")
         all_weights[t*retrain_freq:min((t+1)*retrain_freq,T-length_training),assets_to_trade] = w
-        if 'cpu' not in device:
+        if 'cuda' in device:
             with torch.cuda.device(device):
-                torch.cuda.empty_cache() 
-        
+                torch.cuda.empty_cache()
+        elif device == 'mps':
+            torch.mps.empty_cache()
     logging.info(f'TRAIN/TEST COMPLETE')
     cumRets = np.cumprod(1+returns)
     plt.figure()
@@ -542,7 +564,7 @@ def test(Data,
                  f"turnover: {np.mean(turnovers) :.4f}, "\
                  f"short_proportion: {np.mean(short_proportions) :.4f}")
                    
-    return returns, full_sharpe, full_ret, full_std, turnovers, short_proportions
+    return returns, full_sharpe * np.sqrt(252), full_ret * np.sqrt(252), full_std * np.sqrt(252), turnovers, short_proportions
 
 def estimate(Data, 
              daily_dates,
@@ -645,4 +667,4 @@ def estimate(Data,
                  f"turnover: {np.mean(turnovers) :.4f}, "\
                  f"short_proportion: {np.mean(short_proportions) :.4f}")
                    
-    return returns, full_sharpe, full_ret, full_std, turnovers, short_proportions
+    return returns, full_sharpe * np.sqrt(252), full_ret * np.sqrt(252), full_std * np.sqrt(252), turnovers, short_proportions

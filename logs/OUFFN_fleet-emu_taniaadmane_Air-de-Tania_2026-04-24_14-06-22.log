@@ -1,0 +1,2150 @@
+[2026-04-24 14:06:22] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'Air-de-Tania' with ID 'fleet-emu'
+[2026-04-24 14:06:22] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 80,
+    "dropout": 0.3,
+    "hidden_units": [
+      4,
+      8,
+      8,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      1,
+      3,
+      5,
+      8
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 5e-05
+  },
+  "batch_size": 512,
+  "retrain_freq": 512,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 5000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 14:06:22] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_1_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 14:06:22] INFO - Loading residuals
+[2026-04-24 14:06:22] INFO - Residuals loaded
+[2026-04-24 14:06:22] INFO - STARTING: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu
+[2026-04-24 14:06:22] INFO - Running on devices ['mps']
+[2026-04-24 14:06:22] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 14:06:22] INFO - AT SUBPERIOD 0/9
+[2026-04-24 14:06:22] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:06:22] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:06:22] INFO - train(): T 5000 N 62
+[2026-04-24 14:06:22] INFO - Start OU preprocess
+[2026-04-24 14:06:23] INFO - Finish OU preprocess
+[2026-04-24 14:06:23] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:06:23] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:06:24] INFO - Start OU preprocess
+[2026-04-24 14:06:24] INFO - Finish OU preprocess
+[2026-04-24 14:06:25] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0624, std: 0.2532, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 1.25s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:26] INFO - Start OU preprocess
+[2026-04-24 14:06:27] INFO - Finish OU preprocess
+[2026-04-24 14:06:27] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0610, std: 0.2528, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:29] INFO - Start OU preprocess
+[2026-04-24 14:06:29] INFO - Finish OU preprocess
+[2026-04-24 14:06:29] INFO - Epoch: 20/100, train Sharpe: 0.22, ret: 0.0568, std: 0.2527, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:29] INFO - Reducing learning rate
+[2026-04-24 14:06:32] INFO - Start OU preprocess
+[2026-04-24 14:06:32] INFO - Finish OU preprocess
+[2026-04-24 14:06:32] INFO - Epoch: 30/100, train Sharpe: 0.24, ret: 0.0615, std: 0.2532, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:32] INFO - Reducing learning rate
+[2026-04-24 14:06:34] INFO - Start OU preprocess
+[2026-04-24 14:06:34] INFO - Finish OU preprocess
+[2026-04-24 14:06:35] INFO - Epoch: 40/100, train Sharpe: 0.25, ret: 0.0625, std: 0.2528, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:35] INFO - Reducing learning rate
+[2026-04-24 14:06:37] INFO - Start OU preprocess
+[2026-04-24 14:06:37] INFO - Finish OU preprocess
+[2026-04-24 14:06:37] INFO - Epoch: 50/100, train Sharpe: 0.23, ret: 0.0585, std: 0.2523, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:37] INFO - Reducing learning rate
+[2026-04-24 14:06:39] INFO - Start OU preprocess
+[2026-04-24 14:06:39] INFO - Finish OU preprocess
+[2026-04-24 14:06:39] INFO - Epoch: 60/100, train Sharpe: 0.25, ret: 0.0635, std: 0.2529, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:39] INFO - Reducing learning rate
+[2026-04-24 14:06:42] INFO - Start OU preprocess
+[2026-04-24 14:06:42] INFO - Finish OU preprocess
+[2026-04-24 14:06:42] INFO - Epoch: 70/100, train Sharpe: 0.24, ret: 0.0616, std: 0.2527, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:44] INFO - Start OU preprocess
+[2026-04-24 14:06:44] INFO - Finish OU preprocess
+[2026-04-24 14:06:45] INFO - Epoch: 80/100, train Sharpe: 0.23, ret: 0.0581, std: 0.2528, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.78, ret: 0.1976, std: 0.2540, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:06:45] INFO - Early stopping max trials reached
+[2026-04-24 14:06:45] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod0, seed: 0
+[2026-04-24 14:06:45] INFO - AT SUBPERIOD 1/9
+[2026-04-24 14:06:45] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:06:45] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:06:45] INFO - train(): T 5000 N 62
+[2026-04-24 14:06:45] INFO - Start OU preprocess
+[2026-04-24 14:06:45] INFO - Finish OU preprocess
+[2026-04-24 14:06:45] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:06:45] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:06:45] INFO - Start OU preprocess
+[2026-04-24 14:06:45] INFO - Finish OU preprocess
+[2026-04-24 14:06:46] INFO - Epoch: 0/100, train Sharpe: 0.28, ret: 0.0690, std: 0.2486, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.57s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:48] INFO - Start OU preprocess
+[2026-04-24 14:06:48] INFO - Finish OU preprocess
+[2026-04-24 14:06:48] INFO - Epoch: 10/100, train Sharpe: 0.26, ret: 0.0635, std: 0.2477, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:50] INFO - Start OU preprocess
+[2026-04-24 14:06:50] INFO - Finish OU preprocess
+[2026-04-24 14:06:50] INFO - Epoch: 20/100, train Sharpe: 0.26, ret: 0.0648, std: 0.2479, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:53] INFO - Start OU preprocess
+[2026-04-24 14:06:53] INFO - Finish OU preprocess
+[2026-04-24 14:06:53] INFO - Epoch: 30/100, train Sharpe: 0.27, ret: 0.0675, std: 0.2480, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:55] INFO - Start OU preprocess
+[2026-04-24 14:06:55] INFO - Finish OU preprocess
+[2026-04-24 14:06:55] INFO - Epoch: 40/100, train Sharpe: 0.27, ret: 0.0675, std: 0.2484, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:57] INFO - Start OU preprocess
+[2026-04-24 14:06:57] INFO - Finish OU preprocess
+[2026-04-24 14:06:57] INFO - Epoch: 50/100, train Sharpe: 0.26, ret: 0.0654, std: 0.2482, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:06:59] INFO - Start OU preprocess
+[2026-04-24 14:06:59] INFO - Finish OU preprocess
+[2026-04-24 14:07:00] INFO - Epoch: 60/100, train Sharpe: 0.27, ret: 0.0662, std: 0.2479, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:07:01] INFO - Start OU preprocess
+[2026-04-24 14:07:02] INFO - Finish OU preprocess
+[2026-04-24 14:07:02] INFO - Epoch: 70/100, train Sharpe: 0.27, ret: 0.0663, std: 0.2475, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:07:04] INFO - Start OU preprocess
+[2026-04-24 14:07:04] INFO - Finish OU preprocess
+[2026-04-24 14:07:04] INFO - Epoch: 80/100, train Sharpe: 0.26, ret: 0.0650, std: 0.2478, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:07:06] INFO - Start OU preprocess
+[2026-04-24 14:07:06] INFO - Finish OU preprocess
+[2026-04-24 14:07:06] INFO - Epoch: 90/100, train Sharpe: 0.27, ret: 0.0668, std: 0.2479, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.23s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0147, std: 0.2434, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:07:08] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod1, seed: 0
+[2026-04-24 14:07:08] INFO - AT SUBPERIOD 2/9
+[2026-04-24 14:07:08] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:07:08] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:07:08] INFO - train(): T 5000 N 61
+[2026-04-24 14:07:08] INFO - Start OU preprocess
+[2026-04-24 14:07:08] INFO - Finish OU preprocess
+[2026-04-24 14:07:08] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:07:08] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:07:09] INFO - Start OU preprocess
+[2026-04-24 14:07:09] INFO - Finish OU preprocess
+[2026-04-24 14:07:09] INFO - Epoch: 0/100, train Sharpe: 0.02, ret: 0.0041, std: 0.2306, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.58s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:11] INFO - Start OU preprocess
+[2026-04-24 14:07:11] INFO - Finish OU preprocess
+[2026-04-24 14:07:11] INFO - Epoch: 10/100, train Sharpe: 0.05, ret: 0.0105, std: 0.2309, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:11] INFO - Reducing learning rate
+[2026-04-24 14:07:14] INFO - Start OU preprocess
+[2026-04-24 14:07:14] INFO - Finish OU preprocess
+[2026-04-24 14:07:14] INFO - Epoch: 20/100, train Sharpe: 0.05, ret: 0.0108, std: 0.2304, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:14] INFO - Reducing learning rate
+[2026-04-24 14:07:17] INFO - Start OU preprocess
+[2026-04-24 14:07:17] INFO - Finish OU preprocess
+[2026-04-24 14:07:17] INFO - Epoch: 30/100, train Sharpe: 0.01, ret: 0.0026, std: 0.2305, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:17] INFO - Reducing learning rate
+[2026-04-24 14:07:21] INFO - Start OU preprocess
+[2026-04-24 14:07:21] INFO - Finish OU preprocess
+[2026-04-24 14:07:22] INFO - Epoch: 40/100, train Sharpe: 0.03, ret: 0.0059, std: 0.2300, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:22] INFO - Reducing learning rate
+[2026-04-24 14:07:25] INFO - Start OU preprocess
+[2026-04-24 14:07:25] INFO - Finish OU preprocess
+[2026-04-24 14:07:25] INFO - Epoch: 50/100, train Sharpe: 0.03, ret: 0.0068, std: 0.2301, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.33s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:28] INFO - Start OU preprocess
+[2026-04-24 14:07:28] INFO - Finish OU preprocess
+[2026-04-24 14:07:28] INFO - Epoch: 60/100, train Sharpe: 0.04, ret: 0.0098, std: 0.2312, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:28] INFO - Reducing learning rate
+[2026-04-24 14:07:30] INFO - Start OU preprocess
+[2026-04-24 14:07:30] INFO - Finish OU preprocess
+[2026-04-24 14:07:30] INFO - Epoch: 70/100, train Sharpe: 0.03, ret: 0.0073, std: 0.2302, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.31s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3178, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:07:30] INFO - Early stopping max trials reached
+[2026-04-24 14:07:30] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod2, seed: 0
+[2026-04-24 14:07:30] INFO - AT SUBPERIOD 3/9
+[2026-04-24 14:07:30] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:07:30] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:07:30] INFO - train(): T 5000 N 61
+[2026-04-24 14:07:30] INFO - Start OU preprocess
+[2026-04-24 14:07:31] INFO - Finish OU preprocess
+[2026-04-24 14:07:31] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:07:31] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:07:31] INFO - Start OU preprocess
+[2026-04-24 14:07:31] INFO - Finish OU preprocess
+[2026-04-24 14:07:31] INFO - Epoch: 0/100, train Sharpe: -0.05, ret: -0.0118, std: 0.2389, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.56s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:33] INFO - Start OU preprocess
+[2026-04-24 14:07:33] INFO - Finish OU preprocess
+[2026-04-24 14:07:33] INFO - Epoch: 10/100, train Sharpe: -0.06, ret: -0.0135, std: 0.2395, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:33] INFO - Reducing learning rate
+[2026-04-24 14:07:36] INFO - Start OU preprocess
+[2026-04-24 14:07:36] INFO - Finish OU preprocess
+[2026-04-24 14:07:36] INFO - Epoch: 20/100, train Sharpe: -0.05, ret: -0.0126, std: 0.2392, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:36] INFO - Reducing learning rate
+[2026-04-24 14:07:38] INFO - Start OU preprocess
+[2026-04-24 14:07:38] INFO - Finish OU preprocess
+[2026-04-24 14:07:38] INFO - Epoch: 30/100, train Sharpe: -0.05, ret: -0.0116, std: 0.2390, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:38] INFO - Reducing learning rate
+[2026-04-24 14:07:41] INFO - Start OU preprocess
+[2026-04-24 14:07:41] INFO - Finish OU preprocess
+[2026-04-24 14:07:41] INFO - Epoch: 40/100, train Sharpe: -0.05, ret: -0.0117, std: 0.2386, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:41] INFO - Reducing learning rate
+[2026-04-24 14:07:43] INFO - Start OU preprocess
+[2026-04-24 14:07:43] INFO - Finish OU preprocess
+[2026-04-24 14:07:43] INFO - Epoch: 50/100, train Sharpe: -0.05, ret: -0.0115, std: 0.2387, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:43] INFO - Reducing learning rate
+[2026-04-24 14:07:45] INFO - Start OU preprocess
+[2026-04-24 14:07:45] INFO - Finish OU preprocess
+[2026-04-24 14:07:46] INFO - Epoch: 60/100, train Sharpe: -0.05, ret: -0.0123, std: 0.2390, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.04, ret: 0.3329, std: 0.3203, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:07:46] INFO - Early stopping max trials reached
+[2026-04-24 14:07:46] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod3, seed: 0
+[2026-04-24 14:07:46] INFO - AT SUBPERIOD 4/9
+[2026-04-24 14:07:46] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:07:46] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:07:46] INFO - train(): T 5000 N 62
+[2026-04-24 14:07:46] INFO - Start OU preprocess
+[2026-04-24 14:07:46] INFO - Finish OU preprocess
+[2026-04-24 14:07:46] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:07:46] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:07:46] INFO - Start OU preprocess
+[2026-04-24 14:07:46] INFO - Finish OU preprocess
+[2026-04-24 14:07:46] INFO - Epoch: 0/100, train Sharpe: 0.01, ret: 0.0023, std: 0.2490, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.57s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:07:49] INFO - Start OU preprocess
+[2026-04-24 14:07:49] INFO - Finish OU preprocess
+[2026-04-24 14:07:50] INFO - Epoch: 10/100, train Sharpe: 0.00, ret: 0.0011, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.33s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:07:52] INFO - Start OU preprocess
+[2026-04-24 14:07:52] INFO - Finish OU preprocess
+[2026-04-24 14:07:52] INFO - Epoch: 20/100, train Sharpe: -0.00, ret: -0.0007, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:07:54] INFO - Start OU preprocess
+[2026-04-24 14:07:54] INFO - Finish OU preprocess
+[2026-04-24 14:07:55] INFO - Epoch: 30/100, train Sharpe: 0.01, ret: 0.0020, std: 0.2488, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:07:57] INFO - Start OU preprocess
+[2026-04-24 14:07:57] INFO - Finish OU preprocess
+[2026-04-24 14:07:57] INFO - Epoch: 40/100, train Sharpe: 0.01, ret: 0.0037, std: 0.2487, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:07:59] INFO - Start OU preprocess
+[2026-04-24 14:08:00] INFO - Finish OU preprocess
+[2026-04-24 14:08:00] INFO - Epoch: 50/100, train Sharpe: 0.01, ret: 0.0019, std: 0.2482, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:08:02] INFO - Start OU preprocess
+[2026-04-24 14:08:02] INFO - Finish OU preprocess
+[2026-04-24 14:08:02] INFO - Epoch: 60/100, train Sharpe: -0.00, ret: -0.0002, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:08:04] INFO - Start OU preprocess
+[2026-04-24 14:08:05] INFO - Finish OU preprocess
+[2026-04-24 14:08:05] INFO - Epoch: 70/100, train Sharpe: 0.00, ret: 0.0003, std: 0.2487, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:08:07] INFO - Start OU preprocess
+[2026-04-24 14:08:07] INFO - Finish OU preprocess
+[2026-04-24 14:08:07] INFO - Epoch: 80/100, train Sharpe: 0.00, ret: 0.0005, std: 0.2485, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:08:09] INFO - Start OU preprocess
+[2026-04-24 14:08:09] INFO - Finish OU preprocess
+[2026-04-24 14:08:09] INFO - Epoch: 90/100, train Sharpe: -0.01, ret: -0.0016, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0249, std: 0.2446, turnover: 0.058, short proportion: 1.000
+
+[2026-04-24 14:08:11] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod4, seed: 0
+[2026-04-24 14:08:11] INFO - AT SUBPERIOD 5/9
+[2026-04-24 14:08:11] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:08:11] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:08:11] INFO - train(): T 5000 N 64
+[2026-04-24 14:08:11] INFO - Start OU preprocess
+[2026-04-24 14:08:12] INFO - Finish OU preprocess
+[2026-04-24 14:08:12] INFO - train(): windows.shape (4920, 64, 4) idxs_selected.shape torch.Size([4920, 64])
+[2026-04-24 14:08:12] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 64])
+[2026-04-24 14:08:12] INFO - Start OU preprocess
+[2026-04-24 14:08:12] INFO - Finish OU preprocess
+[2026-04-24 14:08:12] INFO - Epoch: 0/100, train Sharpe: 0.08, ret: 0.0209, std: 0.2495, turnover: 0.371, short proportion: 1.000 
+        time per epoch: 0.64s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:14] INFO - Start OU preprocess
+[2026-04-24 14:08:14] INFO - Finish OU preprocess
+[2026-04-24 14:08:15] INFO - Epoch: 10/100, train Sharpe: 0.09, ret: 0.0224, std: 0.2488, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:17] INFO - Start OU preprocess
+[2026-04-24 14:08:17] INFO - Finish OU preprocess
+[2026-04-24 14:08:17] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0215, std: 0.2486, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:19] INFO - Start OU preprocess
+[2026-04-24 14:08:19] INFO - Finish OU preprocess
+[2026-04-24 14:08:19] INFO - Epoch: 30/100, train Sharpe: 0.08, ret: 0.0207, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:21] INFO - Start OU preprocess
+[2026-04-24 14:08:21] INFO - Finish OU preprocess
+[2026-04-24 14:08:22] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0228, std: 0.2492, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:24] INFO - Start OU preprocess
+[2026-04-24 14:08:24] INFO - Finish OU preprocess
+[2026-04-24 14:08:24] INFO - Epoch: 50/100, train Sharpe: 0.11, ret: 0.0277, std: 0.2490, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:27] INFO - Start OU preprocess
+[2026-04-24 14:08:27] INFO - Finish OU preprocess
+[2026-04-24 14:08:28] INFO - Epoch: 60/100, train Sharpe: 0.09, ret: 0.0225, std: 0.2486, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:30] INFO - Start OU preprocess
+[2026-04-24 14:08:30] INFO - Finish OU preprocess
+[2026-04-24 14:08:30] INFO - Epoch: 70/100, train Sharpe: 0.09, ret: 0.0231, std: 0.2489, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:32] INFO - Start OU preprocess
+[2026-04-24 14:08:32] INFO - Finish OU preprocess
+[2026-04-24 14:08:33] INFO - Epoch: 80/100, train Sharpe: 0.08, ret: 0.0190, std: 0.2491, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:35] INFO - Start OU preprocess
+[2026-04-24 14:08:35] INFO - Finish OU preprocess
+[2026-04-24 14:08:35] INFO - Epoch: 90/100, train Sharpe: 0.09, ret: 0.0230, std: 0.2488, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0537, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:08:37] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod5, seed: 0
+[2026-04-24 14:08:37] INFO - AT SUBPERIOD 6/9
+[2026-04-24 14:08:37] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:08:37] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:08:37] INFO - train(): T 5000 N 62
+[2026-04-24 14:08:37] INFO - Start OU preprocess
+[2026-04-24 14:08:37] INFO - Finish OU preprocess
+[2026-04-24 14:08:37] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:08:37] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:08:37] INFO - Start OU preprocess
+[2026-04-24 14:08:37] INFO - Finish OU preprocess
+[2026-04-24 14:08:38] INFO - Epoch: 0/100, train Sharpe: -0.01, ret: -0.0030, std: 0.2498, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.61s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:40] INFO - Start OU preprocess
+[2026-04-24 14:08:40] INFO - Finish OU preprocess
+[2026-04-24 14:08:40] INFO - Epoch: 10/100, train Sharpe: -0.01, ret: -0.0028, std: 0.2505, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:40] INFO - Reducing learning rate
+[2026-04-24 14:08:43] INFO - Start OU preprocess
+[2026-04-24 14:08:43] INFO - Finish OU preprocess
+[2026-04-24 14:08:43] INFO - Epoch: 20/100, train Sharpe: -0.03, ret: -0.0077, std: 0.2503, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:43] INFO - Reducing learning rate
+[2026-04-24 14:08:45] INFO - Start OU preprocess
+[2026-04-24 14:08:45] INFO - Finish OU preprocess
+[2026-04-24 14:08:46] INFO - Epoch: 30/100, train Sharpe: -0.01, ret: -0.0015, std: 0.2501, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:46] INFO - Reducing learning rate
+[2026-04-24 14:08:48] INFO - Start OU preprocess
+[2026-04-24 14:08:48] INFO - Finish OU preprocess
+[2026-04-24 14:08:48] INFO - Epoch: 40/100, train Sharpe: -0.02, ret: -0.0050, std: 0.2498, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:48] INFO - Reducing learning rate
+[2026-04-24 14:08:50] INFO - Start OU preprocess
+[2026-04-24 14:08:50] INFO - Finish OU preprocess
+[2026-04-24 14:08:51] INFO - Epoch: 50/100, train Sharpe: -0.01, ret: -0.0029, std: 0.2503, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:51] INFO - Reducing learning rate
+[2026-04-24 14:08:53] INFO - Start OU preprocess
+[2026-04-24 14:08:53] INFO - Finish OU preprocess
+[2026-04-24 14:08:53] INFO - Epoch: 60/100, train Sharpe: -0.00, ret: -0.0008, std: 0.2496, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2934, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:08:53] INFO - Early stopping max trials reached
+[2026-04-24 14:08:53] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod6, seed: 0
+[2026-04-24 14:08:53] INFO - AT SUBPERIOD 7/9
+[2026-04-24 14:08:53] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:08:53] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:08:53] INFO - train(): T 5000 N 62
+[2026-04-24 14:08:53] INFO - Start OU preprocess
+[2026-04-24 14:08:53] INFO - Finish OU preprocess
+[2026-04-24 14:08:53] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:08:53] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:08:54] INFO - Start OU preprocess
+[2026-04-24 14:08:54] INFO - Finish OU preprocess
+[2026-04-24 14:08:54] INFO - Epoch: 0/100, train Sharpe: 0.08, ret: 0.0215, std: 0.2613, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.56s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:08:56] INFO - Start OU preprocess
+[2026-04-24 14:08:56] INFO - Finish OU preprocess
+[2026-04-24 14:08:56] INFO - Epoch: 10/100, train Sharpe: 0.09, ret: 0.0238, std: 0.2611, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:08:59] INFO - Start OU preprocess
+[2026-04-24 14:08:59] INFO - Finish OU preprocess
+[2026-04-24 14:08:59] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0243, std: 0.2607, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:01] INFO - Start OU preprocess
+[2026-04-24 14:09:01] INFO - Finish OU preprocess
+[2026-04-24 14:09:02] INFO - Epoch: 30/100, train Sharpe: 0.09, ret: 0.0224, std: 0.2604, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:04] INFO - Start OU preprocess
+[2026-04-24 14:09:04] INFO - Finish OU preprocess
+[2026-04-24 14:09:04] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0233, std: 0.2612, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:06] INFO - Start OU preprocess
+[2026-04-24 14:09:06] INFO - Finish OU preprocess
+[2026-04-24 14:09:07] INFO - Epoch: 50/100, train Sharpe: 0.08, ret: 0.0219, std: 0.2610, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:09] INFO - Start OU preprocess
+[2026-04-24 14:09:09] INFO - Finish OU preprocess
+[2026-04-24 14:09:09] INFO - Epoch: 60/100, train Sharpe: 0.09, ret: 0.0235, std: 0.2603, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:11] INFO - Start OU preprocess
+[2026-04-24 14:09:11] INFO - Finish OU preprocess
+[2026-04-24 14:09:12] INFO - Epoch: 70/100, train Sharpe: 0.09, ret: 0.0229, std: 0.2612, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:14] INFO - Start OU preprocess
+[2026-04-24 14:09:14] INFO - Finish OU preprocess
+[2026-04-24 14:09:14] INFO - Epoch: 80/100, train Sharpe: 0.06, ret: 0.0165, std: 0.2606, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:16] INFO - Start OU preprocess
+[2026-04-24 14:09:16] INFO - Finish OU preprocess
+[2026-04-24 14:09:16] INFO - Epoch: 90/100, train Sharpe: 0.10, ret: 0.0252, std: 0.2608, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2210, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:09:18] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod7, seed: 0
+[2026-04-24 14:09:18] INFO - AT SUBPERIOD 8/9
+[2026-04-24 14:09:18] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:09:18] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:09:18] INFO - train(): T 5000 N 62
+[2026-04-24 14:09:18] INFO - Start OU preprocess
+[2026-04-24 14:09:18] INFO - Finish OU preprocess
+[2026-04-24 14:09:18] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:09:18] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:09:19] INFO - Start OU preprocess
+[2026-04-24 14:09:19] INFO - Finish OU preprocess
+[2026-04-24 14:09:19] INFO - Epoch: 0/100, train Sharpe: 0.27, ret: 0.0699, std: 0.2627, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.96s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:22] INFO - Start OU preprocess
+[2026-04-24 14:09:22] INFO - Finish OU preprocess
+[2026-04-24 14:09:22] INFO - Epoch: 10/100, train Sharpe: 0.26, ret: 0.0681, std: 0.2625, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.31s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:25] INFO - Start OU preprocess
+[2026-04-24 14:09:25] INFO - Finish OU preprocess
+[2026-04-24 14:09:25] INFO - Epoch: 20/100, train Sharpe: 0.25, ret: 0.0647, std: 0.2629, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:28] INFO - Start OU preprocess
+[2026-04-24 14:09:28] INFO - Finish OU preprocess
+[2026-04-24 14:09:28] INFO - Epoch: 30/100, train Sharpe: 0.25, ret: 0.0660, std: 0.2631, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:30] INFO - Start OU preprocess
+[2026-04-24 14:09:30] INFO - Finish OU preprocess
+[2026-04-24 14:09:31] INFO - Epoch: 40/100, train Sharpe: 0.26, ret: 0.0688, std: 0.2624, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:34] INFO - Start OU preprocess
+[2026-04-24 14:09:34] INFO - Finish OU preprocess
+[2026-04-24 14:09:34] INFO - Epoch: 50/100, train Sharpe: 0.26, ret: 0.0677, std: 0.2626, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:36] INFO - Start OU preprocess
+[2026-04-24 14:09:36] INFO - Finish OU preprocess
+[2026-04-24 14:09:37] INFO - Epoch: 60/100, train Sharpe: 0.26, ret: 0.0671, std: 0.2627, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:39] INFO - Start OU preprocess
+[2026-04-24 14:09:39] INFO - Finish OU preprocess
+[2026-04-24 14:09:39] INFO - Epoch: 70/100, train Sharpe: 0.26, ret: 0.0680, std: 0.2626, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:41] INFO - Start OU preprocess
+[2026-04-24 14:09:41] INFO - Finish OU preprocess
+[2026-04-24 14:09:41] INFO - Epoch: 80/100, train Sharpe: 0.25, ret: 0.0665, std: 0.2624, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:43] INFO - Start OU preprocess
+[2026-04-24 14:09:43] INFO - Finish OU preprocess
+[2026-04-24 14:09:43] INFO - Epoch: 90/100, train Sharpe: 0.25, ret: 0.0651, std: 0.2628, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0385, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:09:45] INFO - Training done - Model: Crypto1__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod8, seed: 0
+[2026-04-24 14:09:45] INFO - TRAIN/TEST COMPLETE
+[2026-04-24 14:09:45] INFO - ==> Sharpe: 0.35, ret: 0.0901, std: 0.2597, turnover: 0.0488, short_proportion: 1.0000
+[2026-04-24 14:09:45] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_3_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 14:09:45] INFO - Loading residuals
+[2026-04-24 14:09:45] INFO - Residuals loaded
+[2026-04-24 14:09:45] INFO - STARTING: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu
+[2026-04-24 14:09:45] INFO - Running on devices ['mps']
+[2026-04-24 14:09:45] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 14:09:45] INFO - AT SUBPERIOD 0/9
+[2026-04-24 14:09:45] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:09:45] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:09:45] INFO - train(): T 5000 N 62
+[2026-04-24 14:09:45] INFO - Start OU preprocess
+[2026-04-24 14:09:46] INFO - Finish OU preprocess
+[2026-04-24 14:09:46] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:09:46] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:09:46] INFO - Start OU preprocess
+[2026-04-24 14:09:46] INFO - Finish OU preprocess
+[2026-04-24 14:09:46] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0618, std: 0.2523, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.79s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:09:48] INFO - Start OU preprocess
+[2026-04-24 14:09:48] INFO - Finish OU preprocess
+[2026-04-24 14:09:49] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0600, std: 0.2529, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:09:52] INFO - Start OU preprocess
+[2026-04-24 14:09:52] INFO - Finish OU preprocess
+[2026-04-24 14:09:52] INFO - Epoch: 20/100, train Sharpe: 0.23, ret: 0.0578, std: 0.2527, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:09:55] INFO - Start OU preprocess
+[2026-04-24 14:09:55] INFO - Finish OU preprocess
+[2026-04-24 14:09:55] INFO - Epoch: 30/100, train Sharpe: 0.24, ret: 0.0617, std: 0.2533, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:09:57] INFO - Start OU preprocess
+[2026-04-24 14:09:57] INFO - Finish OU preprocess
+[2026-04-24 14:09:57] INFO - Epoch: 40/100, train Sharpe: 0.25, ret: 0.0628, std: 0.2528, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:09:57] INFO - Reducing learning rate
+[2026-04-24 14:09:59] INFO - Start OU preprocess
+[2026-04-24 14:09:59] INFO - Finish OU preprocess
+[2026-04-24 14:10:00] INFO - Epoch: 50/100, train Sharpe: 0.23, ret: 0.0576, std: 0.2524, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:10:02] INFO - Start OU preprocess
+[2026-04-24 14:10:02] INFO - Finish OU preprocess
+[2026-04-24 14:10:02] INFO - Epoch: 60/100, train Sharpe: 0.22, ret: 0.0549, std: 0.2527, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:10:04] INFO - Start OU preprocess
+[2026-04-24 14:10:04] INFO - Finish OU preprocess
+[2026-04-24 14:10:05] INFO - Epoch: 70/100, train Sharpe: 0.25, ret: 0.0628, std: 0.2531, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:10:07] INFO - Start OU preprocess
+[2026-04-24 14:10:07] INFO - Finish OU preprocess
+[2026-04-24 14:10:07] INFO - Epoch: 80/100, train Sharpe: 0.25, ret: 0.0628, std: 0.2526, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:10:09] INFO - Start OU preprocess
+[2026-04-24 14:10:09] INFO - Finish OU preprocess
+[2026-04-24 14:10:09] INFO - Epoch: 90/100, train Sharpe: 0.23, ret: 0.0585, std: 0.2533, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1937, std: 0.2537, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:10:11] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod0, seed: 0
+[2026-04-24 14:10:11] INFO - AT SUBPERIOD 1/9
+[2026-04-24 14:10:11] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:10:11] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:10:11] INFO - train(): T 5000 N 62
+[2026-04-24 14:10:11] INFO - Start OU preprocess
+[2026-04-24 14:10:12] INFO - Finish OU preprocess
+[2026-04-24 14:10:12] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:10:12] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:10:12] INFO - Start OU preprocess
+[2026-04-24 14:10:12] INFO - Finish OU preprocess
+[2026-04-24 14:10:12] INFO - Epoch: 0/100, train Sharpe: 0.26, ret: 0.0650, std: 0.2475, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.59s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:14] INFO - Start OU preprocess
+[2026-04-24 14:10:14] INFO - Finish OU preprocess
+[2026-04-24 14:10:15] INFO - Epoch: 10/100, train Sharpe: 0.28, ret: 0.0696, std: 0.2484, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:17] INFO - Start OU preprocess
+[2026-04-24 14:10:17] INFO - Finish OU preprocess
+[2026-04-24 14:10:17] INFO - Epoch: 20/100, train Sharpe: 0.27, ret: 0.0660, std: 0.2480, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:20] INFO - Start OU preprocess
+[2026-04-24 14:10:20] INFO - Finish OU preprocess
+[2026-04-24 14:10:20] INFO - Epoch: 30/100, train Sharpe: 0.27, ret: 0.0676, std: 0.2470, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:22] INFO - Start OU preprocess
+[2026-04-24 14:10:22] INFO - Finish OU preprocess
+[2026-04-24 14:10:22] INFO - Epoch: 40/100, train Sharpe: 0.27, ret: 0.0673, std: 0.2480, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:24] INFO - Start OU preprocess
+[2026-04-24 14:10:25] INFO - Finish OU preprocess
+[2026-04-24 14:10:25] INFO - Epoch: 50/100, train Sharpe: 0.25, ret: 0.0621, std: 0.2476, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:27] INFO - Start OU preprocess
+[2026-04-24 14:10:27] INFO - Finish OU preprocess
+[2026-04-24 14:10:27] INFO - Epoch: 60/100, train Sharpe: 0.27, ret: 0.0679, std: 0.2478, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:29] INFO - Start OU preprocess
+[2026-04-24 14:10:29] INFO - Finish OU preprocess
+[2026-04-24 14:10:29] INFO - Epoch: 70/100, train Sharpe: 0.29, ret: 0.0716, std: 0.2480, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:31] INFO - Start OU preprocess
+[2026-04-24 14:10:31] INFO - Finish OU preprocess
+[2026-04-24 14:10:32] INFO - Epoch: 80/100, train Sharpe: 0.28, ret: 0.0688, std: 0.2475, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:34] INFO - Start OU preprocess
+[2026-04-24 14:10:34] INFO - Finish OU preprocess
+[2026-04-24 14:10:34] INFO - Epoch: 90/100, train Sharpe: 0.28, ret: 0.0687, std: 0.2474, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.05, ret: 0.0122, std: 0.2424, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:10:36] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod1, seed: 0
+[2026-04-24 14:10:36] INFO - AT SUBPERIOD 2/9
+[2026-04-24 14:10:36] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:10:36] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:10:36] INFO - train(): T 5000 N 61
+[2026-04-24 14:10:36] INFO - Start OU preprocess
+[2026-04-24 14:10:36] INFO - Finish OU preprocess
+[2026-04-24 14:10:36] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:10:36] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:10:36] INFO - Start OU preprocess
+[2026-04-24 14:10:36] INFO - Finish OU preprocess
+[2026-04-24 14:10:37] INFO - Epoch: 0/100, train Sharpe: 0.01, ret: 0.0027, std: 0.2305, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.60s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:39] INFO - Start OU preprocess
+[2026-04-24 14:10:39] INFO - Finish OU preprocess
+[2026-04-24 14:10:39] INFO - Epoch: 10/100, train Sharpe: 0.03, ret: 0.0066, std: 0.2310, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:39] INFO - Reducing learning rate
+[2026-04-24 14:10:42] INFO - Start OU preprocess
+[2026-04-24 14:10:42] INFO - Finish OU preprocess
+[2026-04-24 14:10:42] INFO - Epoch: 20/100, train Sharpe: 0.04, ret: 0.0083, std: 0.2307, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:42] INFO - Reducing learning rate
+[2026-04-24 14:10:45] INFO - Start OU preprocess
+[2026-04-24 14:10:45] INFO - Finish OU preprocess
+[2026-04-24 14:10:45] INFO - Epoch: 30/100, train Sharpe: 0.03, ret: 0.0059, std: 0.2302, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:45] INFO - Reducing learning rate
+[2026-04-24 14:10:48] INFO - Start OU preprocess
+[2026-04-24 14:10:48] INFO - Finish OU preprocess
+[2026-04-24 14:10:48] INFO - Epoch: 40/100, train Sharpe: 0.01, ret: 0.0034, std: 0.2303, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:50] INFO - Start OU preprocess
+[2026-04-24 14:10:50] INFO - Finish OU preprocess
+[2026-04-24 14:10:51] INFO - Epoch: 50/100, train Sharpe: 0.02, ret: 0.0035, std: 0.2304, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:51] INFO - Reducing learning rate
+[2026-04-24 14:10:53] INFO - Start OU preprocess
+[2026-04-24 14:10:53] INFO - Finish OU preprocess
+[2026-04-24 14:10:53] INFO - Epoch: 60/100, train Sharpe: 0.02, ret: 0.0044, std: 0.2303, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:53] INFO - Reducing learning rate
+[2026-04-24 14:10:55] INFO - Start OU preprocess
+[2026-04-24 14:10:55] INFO - Finish OU preprocess
+[2026-04-24 14:10:55] INFO - Epoch: 70/100, train Sharpe: 0.03, ret: 0.0072, std: 0.2305, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2239, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:10:55] INFO - Early stopping max trials reached
+[2026-04-24 14:10:55] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod2, seed: 0
+[2026-04-24 14:10:55] INFO - AT SUBPERIOD 3/9
+[2026-04-24 14:10:55] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:10:55] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:10:55] INFO - train(): T 5000 N 61
+[2026-04-24 14:10:55] INFO - Start OU preprocess
+[2026-04-24 14:10:56] INFO - Finish OU preprocess
+[2026-04-24 14:10:56] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:10:56] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:10:56] INFO - Start OU preprocess
+[2026-04-24 14:10:56] INFO - Finish OU preprocess
+[2026-04-24 14:10:56] INFO - Epoch: 0/100, train Sharpe: -0.06, ret: -0.0133, std: 0.2392, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.54s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:10:59] INFO - Start OU preprocess
+[2026-04-24 14:10:59] INFO - Finish OU preprocess
+[2026-04-24 14:10:59] INFO - Epoch: 10/100, train Sharpe: -0.06, ret: -0.0139, std: 0.2395, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:01] INFO - Start OU preprocess
+[2026-04-24 14:11:01] INFO - Finish OU preprocess
+[2026-04-24 14:11:01] INFO - Epoch: 20/100, train Sharpe: -0.06, ret: -0.0133, std: 0.2393, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:04] INFO - Start OU preprocess
+[2026-04-24 14:11:04] INFO - Finish OU preprocess
+[2026-04-24 14:11:05] INFO - Epoch: 30/100, train Sharpe: -0.05, ret: -0.0110, std: 0.2385, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:07] INFO - Start OU preprocess
+[2026-04-24 14:11:07] INFO - Finish OU preprocess
+[2026-04-24 14:11:07] INFO - Epoch: 40/100, train Sharpe: -0.05, ret: -0.0116, std: 0.2387, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:10] INFO - Start OU preprocess
+[2026-04-24 14:11:10] INFO - Finish OU preprocess
+[2026-04-24 14:11:10] INFO - Epoch: 50/100, train Sharpe: -0.04, ret: -0.0093, std: 0.2383, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:12] INFO - Start OU preprocess
+[2026-04-24 14:11:12] INFO - Finish OU preprocess
+[2026-04-24 14:11:12] INFO - Epoch: 60/100, train Sharpe: -0.05, ret: -0.0124, std: 0.2385, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:15] INFO - Start OU preprocess
+[2026-04-24 14:11:15] INFO - Finish OU preprocess
+[2026-04-24 14:11:15] INFO - Epoch: 70/100, train Sharpe: -0.04, ret: -0.0090, std: 0.2387, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:17] INFO - Start OU preprocess
+[2026-04-24 14:11:17] INFO - Finish OU preprocess
+[2026-04-24 14:11:17] INFO - Epoch: 80/100, train Sharpe: -0.04, ret: -0.0090, std: 0.2382, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:19] INFO - Start OU preprocess
+[2026-04-24 14:11:19] INFO - Finish OU preprocess
+[2026-04-24 14:11:20] INFO - Epoch: 90/100, train Sharpe: -0.06, ret: -0.0148, std: 0.2385, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3302, std: 0.3207, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:11:20] INFO - Reducing learning rate
+[2026-04-24 14:11:22] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod3, seed: 0
+[2026-04-24 14:11:22] INFO - AT SUBPERIOD 4/9
+[2026-04-24 14:11:22] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:11:22] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:11:22] INFO - train(): T 5000 N 62
+[2026-04-24 14:11:22] INFO - Start OU preprocess
+[2026-04-24 14:11:22] INFO - Finish OU preprocess
+[2026-04-24 14:11:22] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:11:22] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:11:22] INFO - Start OU preprocess
+[2026-04-24 14:11:22] INFO - Finish OU preprocess
+[2026-04-24 14:11:23] INFO - Epoch: 0/100, train Sharpe: 0.00, ret: 0.0006, std: 0.2491, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.61s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:25] INFO - Start OU preprocess
+[2026-04-24 14:11:25] INFO - Finish OU preprocess
+[2026-04-24 14:11:25] INFO - Epoch: 10/100, train Sharpe: 0.00, ret: 0.0004, std: 0.2483, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:27] INFO - Start OU preprocess
+[2026-04-24 14:11:27] INFO - Finish OU preprocess
+[2026-04-24 14:11:27] INFO - Epoch: 20/100, train Sharpe: -0.00, ret: -0.0012, std: 0.2489, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:30] INFO - Start OU preprocess
+[2026-04-24 14:11:30] INFO - Finish OU preprocess
+[2026-04-24 14:11:30] INFO - Epoch: 30/100, train Sharpe: 0.01, ret: 0.0013, std: 0.2491, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:33] INFO - Start OU preprocess
+[2026-04-24 14:11:33] INFO - Finish OU preprocess
+[2026-04-24 14:11:33] INFO - Epoch: 40/100, train Sharpe: 0.00, ret: 0.0010, std: 0.2483, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:36] INFO - Start OU preprocess
+[2026-04-24 14:11:36] INFO - Finish OU preprocess
+[2026-04-24 14:11:36] INFO - Epoch: 50/100, train Sharpe: -0.01, ret: -0.0031, std: 0.2491, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:38] INFO - Start OU preprocess
+[2026-04-24 14:11:38] INFO - Finish OU preprocess
+[2026-04-24 14:11:38] INFO - Epoch: 60/100, train Sharpe: -0.02, ret: -0.0059, std: 0.2486, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:40] INFO - Start OU preprocess
+[2026-04-24 14:11:40] INFO - Finish OU preprocess
+[2026-04-24 14:11:41] INFO - Epoch: 70/100, train Sharpe: 0.00, ret: 0.0003, std: 0.2489, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:43] INFO - Start OU preprocess
+[2026-04-24 14:11:43] INFO - Finish OU preprocess
+[2026-04-24 14:11:44] INFO - Epoch: 80/100, train Sharpe: 0.02, ret: 0.0041, std: 0.2481, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:46] INFO - Start OU preprocess
+[2026-04-24 14:11:46] INFO - Finish OU preprocess
+[2026-04-24 14:11:47] INFO - Epoch: 90/100, train Sharpe: 0.01, ret: 0.0023, std: 0.2482, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0248, std: 0.2446, turnover: 0.059, short proportion: 1.000
+
+[2026-04-24 14:11:49] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod4, seed: 0
+[2026-04-24 14:11:49] INFO - AT SUBPERIOD 5/9
+[2026-04-24 14:11:49] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:11:49] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:11:49] INFO - train(): T 5000 N 64
+[2026-04-24 14:11:49] INFO - Start OU preprocess
+[2026-04-24 14:11:49] INFO - Finish OU preprocess
+[2026-04-24 14:11:49] INFO - train(): windows.shape (4920, 64, 4) idxs_selected.shape torch.Size([4920, 64])
+[2026-04-24 14:11:49] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 64])
+[2026-04-24 14:11:49] INFO - Start OU preprocess
+[2026-04-24 14:11:49] INFO - Finish OU preprocess
+[2026-04-24 14:11:50] INFO - Epoch: 0/100, train Sharpe: 0.09, ret: 0.0215, std: 0.2480, turnover: 0.371, short proportion: 1.000 
+        time per epoch: 0.65s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:11:52] INFO - Start OU preprocess
+[2026-04-24 14:11:52] INFO - Finish OU preprocess
+[2026-04-24 14:11:52] INFO - Epoch: 10/100, train Sharpe: 0.09, ret: 0.0224, std: 0.2487, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:11:55] INFO - Start OU preprocess
+[2026-04-24 14:11:55] INFO - Finish OU preprocess
+[2026-04-24 14:11:55] INFO - Epoch: 20/100, train Sharpe: 0.08, ret: 0.0195, std: 0.2481, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:11:57] INFO - Start OU preprocess
+[2026-04-24 14:11:57] INFO - Finish OU preprocess
+[2026-04-24 14:11:58] INFO - Epoch: 30/100, train Sharpe: 0.09, ret: 0.0215, std: 0.2490, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:00] INFO - Start OU preprocess
+[2026-04-24 14:12:00] INFO - Finish OU preprocess
+[2026-04-24 14:12:00] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0233, std: 0.2485, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:02] INFO - Start OU preprocess
+[2026-04-24 14:12:02] INFO - Finish OU preprocess
+[2026-04-24 14:12:02] INFO - Epoch: 50/100, train Sharpe: 0.09, ret: 0.0219, std: 0.2482, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:05] INFO - Start OU preprocess
+[2026-04-24 14:12:05] INFO - Finish OU preprocess
+[2026-04-24 14:12:05] INFO - Epoch: 60/100, train Sharpe: 0.09, ret: 0.0230, std: 0.2493, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:07] INFO - Start OU preprocess
+[2026-04-24 14:12:07] INFO - Finish OU preprocess
+[2026-04-24 14:12:07] INFO - Epoch: 70/100, train Sharpe: 0.10, ret: 0.0239, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:09] INFO - Start OU preprocess
+[2026-04-24 14:12:09] INFO - Finish OU preprocess
+[2026-04-24 14:12:09] INFO - Epoch: 80/100, train Sharpe: 0.08, ret: 0.0190, std: 0.2485, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:11] INFO - Start OU preprocess
+[2026-04-24 14:12:11] INFO - Finish OU preprocess
+[2026-04-24 14:12:12] INFO - Epoch: 90/100, train Sharpe: 0.08, ret: 0.0205, std: 0.2488, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0535, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:12:13] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod5, seed: 0
+[2026-04-24 14:12:13] INFO - AT SUBPERIOD 6/9
+[2026-04-24 14:12:13] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:12:13] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:12:13] INFO - train(): T 5000 N 62
+[2026-04-24 14:12:13] INFO - Start OU preprocess
+[2026-04-24 14:12:14] INFO - Finish OU preprocess
+[2026-04-24 14:12:14] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:12:14] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:12:14] INFO - Start OU preprocess
+[2026-04-24 14:12:14] INFO - Finish OU preprocess
+[2026-04-24 14:12:14] INFO - Epoch: 0/100, train Sharpe: -0.03, ret: -0.0067, std: 0.2498, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.58s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:16] INFO - Start OU preprocess
+[2026-04-24 14:12:16] INFO - Finish OU preprocess
+[2026-04-24 14:12:17] INFO - Epoch: 10/100, train Sharpe: -0.01, ret: -0.0028, std: 0.2493, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:17] INFO - Reducing learning rate
+[2026-04-24 14:12:19] INFO - Start OU preprocess
+[2026-04-24 14:12:19] INFO - Finish OU preprocess
+[2026-04-24 14:12:19] INFO - Epoch: 20/100, train Sharpe: -0.03, ret: -0.0085, std: 0.2497, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:19] INFO - Reducing learning rate
+[2026-04-24 14:12:22] INFO - Start OU preprocess
+[2026-04-24 14:12:22] INFO - Finish OU preprocess
+[2026-04-24 14:12:23] INFO - Epoch: 30/100, train Sharpe: -0.02, ret: -0.0043, std: 0.2495, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:26] INFO - Start OU preprocess
+[2026-04-24 14:12:26] INFO - Finish OU preprocess
+[2026-04-24 14:12:26] INFO - Epoch: 40/100, train Sharpe: -0.02, ret: -0.0041, std: 0.2499, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:26] INFO - Reducing learning rate
+[2026-04-24 14:12:28] INFO - Start OU preprocess
+[2026-04-24 14:12:28] INFO - Finish OU preprocess
+[2026-04-24 14:12:29] INFO - Epoch: 50/100, train Sharpe: -0.02, ret: -0.0057, std: 0.2504, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:29] INFO - Reducing learning rate
+[2026-04-24 14:12:31] INFO - Start OU preprocess
+[2026-04-24 14:12:31] INFO - Finish OU preprocess
+[2026-04-24 14:12:32] INFO - Epoch: 60/100, train Sharpe: -0.01, ret: -0.0025, std: 0.2500, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:32] INFO - Reducing learning rate
+[2026-04-24 14:12:34] INFO - Start OU preprocess
+[2026-04-24 14:12:34] INFO - Finish OU preprocess
+[2026-04-24 14:12:35] INFO - Epoch: 70/100, train Sharpe: -0.02, ret: -0.0050, std: 0.2494, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2938, std: 0.2914, turnover: 0.050, short proportion: 1.000
+
+[2026-04-24 14:12:35] INFO - Early stopping max trials reached
+[2026-04-24 14:12:35] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod6, seed: 0
+[2026-04-24 14:12:35] INFO - AT SUBPERIOD 7/9
+[2026-04-24 14:12:35] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:12:35] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:12:35] INFO - train(): T 5000 N 62
+[2026-04-24 14:12:35] INFO - Start OU preprocess
+[2026-04-24 14:12:35] INFO - Finish OU preprocess
+[2026-04-24 14:12:35] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:12:35] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:12:35] INFO - Start OU preprocess
+[2026-04-24 14:12:35] INFO - Finish OU preprocess
+[2026-04-24 14:12:35] INFO - Epoch: 0/100, train Sharpe: 0.09, ret: 0.0244, std: 0.2612, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.59s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:38] INFO - Start OU preprocess
+[2026-04-24 14:12:38] INFO - Finish OU preprocess
+[2026-04-24 14:12:38] INFO - Epoch: 10/100, train Sharpe: 0.09, ret: 0.0229, std: 0.2610, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:41] INFO - Start OU preprocess
+[2026-04-24 14:12:41] INFO - Finish OU preprocess
+[2026-04-24 14:12:41] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0236, std: 0.2607, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:43] INFO - Start OU preprocess
+[2026-04-24 14:12:43] INFO - Finish OU preprocess
+[2026-04-24 14:12:44] INFO - Epoch: 30/100, train Sharpe: 0.09, ret: 0.0234, std: 0.2604, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:46] INFO - Start OU preprocess
+[2026-04-24 14:12:46] INFO - Finish OU preprocess
+[2026-04-24 14:12:46] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0229, std: 0.2614, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:48] INFO - Start OU preprocess
+[2026-04-24 14:12:48] INFO - Finish OU preprocess
+[2026-04-24 14:12:49] INFO - Epoch: 50/100, train Sharpe: 0.08, ret: 0.0208, std: 0.2605, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:51] INFO - Start OU preprocess
+[2026-04-24 14:12:51] INFO - Finish OU preprocess
+[2026-04-24 14:12:51] INFO - Epoch: 60/100, train Sharpe: 0.08, ret: 0.0210, std: 0.2606, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:53] INFO - Start OU preprocess
+[2026-04-24 14:12:53] INFO - Finish OU preprocess
+[2026-04-24 14:12:53] INFO - Epoch: 70/100, train Sharpe: 0.09, ret: 0.0223, std: 0.2608, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:55] INFO - Start OU preprocess
+[2026-04-24 14:12:55] INFO - Finish OU preprocess
+[2026-04-24 14:12:55] INFO - Epoch: 80/100, train Sharpe: 0.07, ret: 0.0193, std: 0.2605, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:12:57] INFO - Start OU preprocess
+[2026-04-24 14:12:57] INFO - Finish OU preprocess
+[2026-04-24 14:12:58] INFO - Epoch: 90/100, train Sharpe: 0.09, ret: 0.0234, std: 0.2611, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2199, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:13:00] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod7, seed: 0
+[2026-04-24 14:13:00] INFO - AT SUBPERIOD 8/9
+[2026-04-24 14:13:00] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:13:00] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:13:00] INFO - train(): T 5000 N 62
+[2026-04-24 14:13:00] INFO - Start OU preprocess
+[2026-04-24 14:13:00] INFO - Finish OU preprocess
+[2026-04-24 14:13:00] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:13:00] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:13:00] INFO - Start OU preprocess
+[2026-04-24 14:13:00] INFO - Finish OU preprocess
+[2026-04-24 14:13:01] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0653, std: 0.2628, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.52s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:03] INFO - Start OU preprocess
+[2026-04-24 14:13:03] INFO - Finish OU preprocess
+[2026-04-24 14:13:03] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0637, std: 0.2624, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:06] INFO - Start OU preprocess
+[2026-04-24 14:13:06] INFO - Finish OU preprocess
+[2026-04-24 14:13:06] INFO - Epoch: 20/100, train Sharpe: 0.25, ret: 0.0658, std: 0.2631, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:08] INFO - Start OU preprocess
+[2026-04-24 14:13:08] INFO - Finish OU preprocess
+[2026-04-24 14:13:08] INFO - Epoch: 30/100, train Sharpe: 0.24, ret: 0.0632, std: 0.2631, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:10] INFO - Start OU preprocess
+[2026-04-24 14:13:10] INFO - Finish OU preprocess
+[2026-04-24 14:13:11] INFO - Epoch: 40/100, train Sharpe: 0.24, ret: 0.0622, std: 0.2619, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:13] INFO - Start OU preprocess
+[2026-04-24 14:13:13] INFO - Finish OU preprocess
+[2026-04-24 14:13:13] INFO - Epoch: 50/100, train Sharpe: 0.27, ret: 0.0700, std: 0.2628, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:15] INFO - Start OU preprocess
+[2026-04-24 14:13:15] INFO - Finish OU preprocess
+[2026-04-24 14:13:15] INFO - Epoch: 60/100, train Sharpe: 0.23, ret: 0.0606, std: 0.2627, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:17] INFO - Start OU preprocess
+[2026-04-24 14:13:17] INFO - Finish OU preprocess
+[2026-04-24 14:13:17] INFO - Epoch: 70/100, train Sharpe: 0.25, ret: 0.0651, std: 0.2624, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:19] INFO - Start OU preprocess
+[2026-04-24 14:13:19] INFO - Finish OU preprocess
+[2026-04-24 14:13:19] INFO - Epoch: 80/100, train Sharpe: 0.26, ret: 0.0677, std: 0.2632, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:21] INFO - Start OU preprocess
+[2026-04-24 14:13:21] INFO - Finish OU preprocess
+[2026-04-24 14:13:22] INFO - Epoch: 90/100, train Sharpe: 0.24, ret: 0.0635, std: 0.2627, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0386, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:13:23] INFO - Training done - Model: Crypto3__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod8, seed: 0
+[2026-04-24 14:13:23] INFO - TRAIN/TEST COMPLETE
+[2026-04-24 14:13:24] INFO - ==> Sharpe: 0.34, ret: 0.0890, std: 0.2596, turnover: 0.0490, short_proportion: 1.0000
+[2026-04-24 14:13:24] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 14:13:24] INFO - Loading residuals
+[2026-04-24 14:13:24] INFO - Residuals loaded
+[2026-04-24 14:13:24] INFO - STARTING: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu
+[2026-04-24 14:13:24] INFO - Running on devices ['mps']
+[2026-04-24 14:13:24] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 14:13:24] INFO - AT SUBPERIOD 0/9
+[2026-04-24 14:13:24] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:13:24] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:13:24] INFO - train(): T 5000 N 62
+[2026-04-24 14:13:24] INFO - Start OU preprocess
+[2026-04-24 14:13:24] INFO - Finish OU preprocess
+[2026-04-24 14:13:24] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:13:24] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:13:24] INFO - Start OU preprocess
+[2026-04-24 14:13:24] INFO - Finish OU preprocess
+[2026-04-24 14:13:25] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0621, std: 0.2526, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.79s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:27] INFO - Start OU preprocess
+[2026-04-24 14:13:27] INFO - Finish OU preprocess
+[2026-04-24 14:13:27] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0608, std: 0.2533, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:30] INFO - Start OU preprocess
+[2026-04-24 14:13:30] INFO - Finish OU preprocess
+[2026-04-24 14:13:30] INFO - Epoch: 20/100, train Sharpe: 0.24, ret: 0.0602, std: 0.2529, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:33] INFO - Start OU preprocess
+[2026-04-24 14:13:33] INFO - Finish OU preprocess
+[2026-04-24 14:13:33] INFO - Epoch: 30/100, train Sharpe: 0.25, ret: 0.0638, std: 0.2530, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:35] INFO - Start OU preprocess
+[2026-04-24 14:13:35] INFO - Finish OU preprocess
+[2026-04-24 14:13:35] INFO - Epoch: 40/100, train Sharpe: 0.23, ret: 0.0587, std: 0.2532, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:37] INFO - Start OU preprocess
+[2026-04-24 14:13:38] INFO - Finish OU preprocess
+[2026-04-24 14:13:38] INFO - Epoch: 50/100, train Sharpe: 0.22, ret: 0.0544, std: 0.2522, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:40] INFO - Start OU preprocess
+[2026-04-24 14:13:40] INFO - Finish OU preprocess
+[2026-04-24 14:13:40] INFO - Epoch: 60/100, train Sharpe: 0.23, ret: 0.0585, std: 0.2532, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:42] INFO - Start OU preprocess
+[2026-04-24 14:13:42] INFO - Finish OU preprocess
+[2026-04-24 14:13:43] INFO - Epoch: 70/100, train Sharpe: 0.24, ret: 0.0603, std: 0.2525, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:45] INFO - Start OU preprocess
+[2026-04-24 14:13:45] INFO - Finish OU preprocess
+[2026-04-24 14:13:45] INFO - Epoch: 80/100, train Sharpe: 0.23, ret: 0.0591, std: 0.2533, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:47] INFO - Start OU preprocess
+[2026-04-24 14:13:47] INFO - Finish OU preprocess
+[2026-04-24 14:13:47] INFO - Epoch: 90/100, train Sharpe: 0.23, ret: 0.0578, std: 0.2532, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1938, std: 0.2538, turnover: 0.053, short proportion: 1.000
+
+[2026-04-24 14:13:49] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod0, seed: 0
+[2026-04-24 14:13:49] INFO - AT SUBPERIOD 1/9
+[2026-04-24 14:13:49] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:13:49] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:13:49] INFO - train(): T 5000 N 62
+[2026-04-24 14:13:49] INFO - Start OU preprocess
+[2026-04-24 14:13:49] INFO - Finish OU preprocess
+[2026-04-24 14:13:49] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:13:49] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:13:50] INFO - Start OU preprocess
+[2026-04-24 14:13:50] INFO - Finish OU preprocess
+[2026-04-24 14:13:50] INFO - Epoch: 0/100, train Sharpe: 0.28, ret: 0.0694, std: 0.2477, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.64s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:13:52] INFO - Start OU preprocess
+[2026-04-24 14:13:52] INFO - Finish OU preprocess
+[2026-04-24 14:13:52] INFO - Epoch: 10/100, train Sharpe: 0.26, ret: 0.0646, std: 0.2470, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:13:55] INFO - Start OU preprocess
+[2026-04-24 14:13:55] INFO - Finish OU preprocess
+[2026-04-24 14:13:55] INFO - Epoch: 20/100, train Sharpe: 0.26, ret: 0.0641, std: 0.2482, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:13:57] INFO - Start OU preprocess
+[2026-04-24 14:13:58] INFO - Finish OU preprocess
+[2026-04-24 14:13:58] INFO - Epoch: 30/100, train Sharpe: 0.26, ret: 0.0649, std: 0.2481, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:00] INFO - Start OU preprocess
+[2026-04-24 14:14:00] INFO - Finish OU preprocess
+[2026-04-24 14:14:00] INFO - Epoch: 40/100, train Sharpe: 0.27, ret: 0.0666, std: 0.2478, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:02] INFO - Start OU preprocess
+[2026-04-24 14:14:02] INFO - Finish OU preprocess
+[2026-04-24 14:14:03] INFO - Epoch: 50/100, train Sharpe: 0.27, ret: 0.0661, std: 0.2475, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:05] INFO - Start OU preprocess
+[2026-04-24 14:14:05] INFO - Finish OU preprocess
+[2026-04-24 14:14:05] INFO - Epoch: 60/100, train Sharpe: 0.27, ret: 0.0672, std: 0.2481, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:07] INFO - Start OU preprocess
+[2026-04-24 14:14:07] INFO - Finish OU preprocess
+[2026-04-24 14:14:07] INFO - Epoch: 70/100, train Sharpe: 0.27, ret: 0.0673, std: 0.2471, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:09] INFO - Start OU preprocess
+[2026-04-24 14:14:09] INFO - Finish OU preprocess
+[2026-04-24 14:14:09] INFO - Epoch: 80/100, train Sharpe: 0.24, ret: 0.0591, std: 0.2471, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:11] INFO - Start OU preprocess
+[2026-04-24 14:14:11] INFO - Finish OU preprocess
+[2026-04-24 14:14:12] INFO - Epoch: 90/100, train Sharpe: 0.26, ret: 0.0640, std: 0.2490, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0136, std: 0.2433, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:14:13] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod1, seed: 0
+[2026-04-24 14:14:13] INFO - AT SUBPERIOD 2/9
+[2026-04-24 14:14:13] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:14:13] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:14:13] INFO - train(): T 5000 N 61
+[2026-04-24 14:14:13] INFO - Start OU preprocess
+[2026-04-24 14:14:14] INFO - Finish OU preprocess
+[2026-04-24 14:14:14] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:14:14] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:14:14] INFO - Start OU preprocess
+[2026-04-24 14:14:14] INFO - Finish OU preprocess
+[2026-04-24 14:14:14] INFO - Epoch: 0/100, train Sharpe: 0.03, ret: 0.0079, std: 0.2308, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.62s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:16] INFO - Start OU preprocess
+[2026-04-24 14:14:17] INFO - Finish OU preprocess
+[2026-04-24 14:14:17] INFO - Epoch: 10/100, train Sharpe: 0.01, ret: 0.0027, std: 0.2306, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:17] INFO - Reducing learning rate
+[2026-04-24 14:14:19] INFO - Start OU preprocess
+[2026-04-24 14:14:19] INFO - Finish OU preprocess
+[2026-04-24 14:14:20] INFO - Epoch: 20/100, train Sharpe: 0.04, ret: 0.0095, std: 0.2304, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:20] INFO - Reducing learning rate
+[2026-04-24 14:14:22] INFO - Start OU preprocess
+[2026-04-24 14:14:22] INFO - Finish OU preprocess
+[2026-04-24 14:14:23] INFO - Epoch: 30/100, train Sharpe: 0.03, ret: 0.0078, std: 0.2307, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:23] INFO - Reducing learning rate
+[2026-04-24 14:14:25] INFO - Start OU preprocess
+[2026-04-24 14:14:25] INFO - Finish OU preprocess
+[2026-04-24 14:14:25] INFO - Epoch: 40/100, train Sharpe: 0.04, ret: 0.0092, std: 0.2307, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:25] INFO - Reducing learning rate
+[2026-04-24 14:14:27] INFO - Start OU preprocess
+[2026-04-24 14:14:27] INFO - Finish OU preprocess
+[2026-04-24 14:14:28] INFO - Epoch: 50/100, train Sharpe: 0.02, ret: 0.0043, std: 0.2307, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:28] INFO - Reducing learning rate
+[2026-04-24 14:14:30] INFO - Start OU preprocess
+[2026-04-24 14:14:30] INFO - Finish OU preprocess
+[2026-04-24 14:14:30] INFO - Epoch: 60/100, train Sharpe: 0.03, ret: 0.0073, std: 0.2306, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.04, dev Sharpe: -0.70, ret: -0.2237, std: 0.3177, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:14:30] INFO - Early stopping max trials reached
+[2026-04-24 14:14:30] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod2, seed: 0
+[2026-04-24 14:14:30] INFO - AT SUBPERIOD 3/9
+[2026-04-24 14:14:30] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:14:30] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:14:30] INFO - train(): T 5000 N 61
+[2026-04-24 14:14:30] INFO - Start OU preprocess
+[2026-04-24 14:14:30] INFO - Finish OU preprocess
+[2026-04-24 14:14:30] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:14:30] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:14:31] INFO - Start OU preprocess
+[2026-04-24 14:14:31] INFO - Finish OU preprocess
+[2026-04-24 14:14:31] INFO - Epoch: 0/100, train Sharpe: -0.06, ret: -0.0153, std: 0.2391, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.58s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:33] INFO - Start OU preprocess
+[2026-04-24 14:14:33] INFO - Finish OU preprocess
+[2026-04-24 14:14:33] INFO - Epoch: 10/100, train Sharpe: -0.06, ret: -0.0150, std: 0.2387, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:33] INFO - Reducing learning rate
+[2026-04-24 14:14:36] INFO - Start OU preprocess
+[2026-04-24 14:14:36] INFO - Finish OU preprocess
+[2026-04-24 14:14:36] INFO - Epoch: 20/100, train Sharpe: -0.05, ret: -0.0130, std: 0.2387, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:39] INFO - Start OU preprocess
+[2026-04-24 14:14:39] INFO - Finish OU preprocess
+[2026-04-24 14:14:39] INFO - Epoch: 30/100, train Sharpe: -0.04, ret: -0.0106, std: 0.2385, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:41] INFO - Start OU preprocess
+[2026-04-24 14:14:41] INFO - Finish OU preprocess
+[2026-04-24 14:14:42] INFO - Epoch: 40/100, train Sharpe: -0.06, ret: -0.0141, std: 0.2385, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:44] INFO - Start OU preprocess
+[2026-04-24 14:14:44] INFO - Finish OU preprocess
+[2026-04-24 14:14:44] INFO - Epoch: 50/100, train Sharpe: -0.04, ret: -0.0086, std: 0.2383, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:44] INFO - Reducing learning rate
+[2026-04-24 14:14:46] INFO - Start OU preprocess
+[2026-04-24 14:14:46] INFO - Finish OU preprocess
+[2026-04-24 14:14:46] INFO - Epoch: 60/100, train Sharpe: -0.06, ret: -0.0139, std: 0.2385, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:49] INFO - Start OU preprocess
+[2026-04-24 14:14:49] INFO - Finish OU preprocess
+[2026-04-24 14:14:49] INFO - Epoch: 70/100, train Sharpe: -0.04, ret: -0.0089, std: 0.2395, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:49] INFO - Reducing learning rate
+[2026-04-24 14:14:51] INFO - Start OU preprocess
+[2026-04-24 14:14:51] INFO - Finish OU preprocess
+[2026-04-24 14:14:51] INFO - Epoch: 80/100, train Sharpe: -0.04, ret: -0.0099, std: 0.2387, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:51] INFO - Reducing learning rate
+[2026-04-24 14:14:54] INFO - Start OU preprocess
+[2026-04-24 14:14:54] INFO - Finish OU preprocess
+[2026-04-24 14:14:54] INFO - Epoch: 90/100, train Sharpe: -0.05, ret: -0.0118, std: 0.2385, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3299, std: 0.3206, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:14:54] INFO - Reducing learning rate
+[2026-04-24 14:14:56] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod3, seed: 0
+[2026-04-24 14:14:56] INFO - AT SUBPERIOD 4/9
+[2026-04-24 14:14:56] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:14:56] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:14:56] INFO - train(): T 5000 N 62
+[2026-04-24 14:14:56] INFO - Start OU preprocess
+[2026-04-24 14:14:56] INFO - Finish OU preprocess
+[2026-04-24 14:14:56] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:14:56] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:14:56] INFO - Start OU preprocess
+[2026-04-24 14:14:57] INFO - Finish OU preprocess
+[2026-04-24 14:14:57] INFO - Epoch: 0/100, train Sharpe: 0.00, ret: 0.0002, std: 0.2488, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.61s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:14:59] INFO - Start OU preprocess
+[2026-04-24 14:14:59] INFO - Finish OU preprocess
+[2026-04-24 14:14:59] INFO - Epoch: 10/100, train Sharpe: 0.01, ret: 0.0026, std: 0.2483, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:01] INFO - Start OU preprocess
+[2026-04-24 14:15:01] INFO - Finish OU preprocess
+[2026-04-24 14:15:02] INFO - Epoch: 20/100, train Sharpe: -0.00, ret: -0.0001, std: 0.2487, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:05] INFO - Start OU preprocess
+[2026-04-24 14:15:05] INFO - Finish OU preprocess
+[2026-04-24 14:15:05] INFO - Epoch: 30/100, train Sharpe: 0.00, ret: 0.0002, std: 0.2495, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:07] INFO - Start OU preprocess
+[2026-04-24 14:15:07] INFO - Finish OU preprocess
+[2026-04-24 14:15:07] INFO - Epoch: 40/100, train Sharpe: -0.00, ret: -0.0005, std: 0.2482, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:09] INFO - Start OU preprocess
+[2026-04-24 14:15:09] INFO - Finish OU preprocess
+[2026-04-24 14:15:10] INFO - Epoch: 50/100, train Sharpe: 0.00, ret: 0.0006, std: 0.2496, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:12] INFO - Start OU preprocess
+[2026-04-24 14:15:12] INFO - Finish OU preprocess
+[2026-04-24 14:15:12] INFO - Epoch: 60/100, train Sharpe: -0.01, ret: -0.0022, std: 0.2483, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:14] INFO - Start OU preprocess
+[2026-04-24 14:15:14] INFO - Finish OU preprocess
+[2026-04-24 14:15:14] INFO - Epoch: 70/100, train Sharpe: -0.00, ret: -0.0005, std: 0.2487, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:16] INFO - Start OU preprocess
+[2026-04-24 14:15:16] INFO - Finish OU preprocess
+[2026-04-24 14:15:17] INFO - Epoch: 80/100, train Sharpe: -0.00, ret: -0.0011, std: 0.2483, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:19] INFO - Start OU preprocess
+[2026-04-24 14:15:19] INFO - Finish OU preprocess
+[2026-04-24 14:15:19] INFO - Epoch: 90/100, train Sharpe: 0.01, ret: 0.0021, std: 0.2484, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.01, dev Sharpe: 0.10, ret: 0.0246, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:15:21] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod4, seed: 0
+[2026-04-24 14:15:21] INFO - AT SUBPERIOD 5/9
+[2026-04-24 14:15:21] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:15:21] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:15:21] INFO - train(): T 5000 N 64
+[2026-04-24 14:15:21] INFO - Start OU preprocess
+[2026-04-24 14:15:22] INFO - Finish OU preprocess
+[2026-04-24 14:15:22] INFO - train(): windows.shape (4920, 64, 4) idxs_selected.shape torch.Size([4920, 64])
+[2026-04-24 14:15:22] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 64])
+[2026-04-24 14:15:22] INFO - Start OU preprocess
+[2026-04-24 14:15:22] INFO - Finish OU preprocess
+[2026-04-24 14:15:23] INFO - Epoch: 0/100, train Sharpe: 0.07, ret: 0.0181, std: 0.2487, turnover: 0.371, short proportion: 1.000 
+        time per epoch: 0.74s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:26] INFO - Start OU preprocess
+[2026-04-24 14:15:26] INFO - Finish OU preprocess
+[2026-04-24 14:15:26] INFO - Epoch: 10/100, train Sharpe: 0.07, ret: 0.0185, std: 0.2487, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.38s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:29] INFO - Start OU preprocess
+[2026-04-24 14:15:29] INFO - Finish OU preprocess
+[2026-04-24 14:15:29] INFO - Epoch: 20/100, train Sharpe: 0.07, ret: 0.0182, std: 0.2489, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.35s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:31] INFO - Start OU preprocess
+[2026-04-24 14:15:31] INFO - Finish OU preprocess
+[2026-04-24 14:15:31] INFO - Epoch: 30/100, train Sharpe: 0.07, ret: 0.0181, std: 0.2489, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.31s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:34] INFO - Start OU preprocess
+[2026-04-24 14:15:34] INFO - Finish OU preprocess
+[2026-04-24 14:15:34] INFO - Epoch: 40/100, train Sharpe: 0.08, ret: 0.0190, std: 0.2487, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.30s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:36] INFO - Start OU preprocess
+[2026-04-24 14:15:36] INFO - Finish OU preprocess
+[2026-04-24 14:15:36] INFO - Epoch: 50/100, train Sharpe: 0.07, ret: 0.0181, std: 0.2487, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:38] INFO - Start OU preprocess
+[2026-04-24 14:15:38] INFO - Finish OU preprocess
+[2026-04-24 14:15:38] INFO - Epoch: 60/100, train Sharpe: 0.08, ret: 0.0199, std: 0.2495, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:40] INFO - Start OU preprocess
+[2026-04-24 14:15:40] INFO - Finish OU preprocess
+[2026-04-24 14:15:41] INFO - Epoch: 70/100, train Sharpe: 0.08, ret: 0.0200, std: 0.2488, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:43] INFO - Start OU preprocess
+[2026-04-24 14:15:43] INFO - Finish OU preprocess
+[2026-04-24 14:15:43] INFO - Epoch: 80/100, train Sharpe: 0.08, ret: 0.0193, std: 0.2485, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:45] INFO - Start OU preprocess
+[2026-04-24 14:15:45] INFO - Finish OU preprocess
+[2026-04-24 14:15:45] INFO - Epoch: 90/100, train Sharpe: 0.10, ret: 0.0254, std: 0.2490, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0527, std: 0.2194, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:15:47] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod5, seed: 0
+[2026-04-24 14:15:47] INFO - AT SUBPERIOD 6/9
+[2026-04-24 14:15:47] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:15:47] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:15:47] INFO - train(): T 5000 N 62
+[2026-04-24 14:15:47] INFO - Start OU preprocess
+[2026-04-24 14:15:47] INFO - Finish OU preprocess
+[2026-04-24 14:15:47] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:15:47] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:15:48] INFO - Start OU preprocess
+[2026-04-24 14:15:48] INFO - Finish OU preprocess
+[2026-04-24 14:15:48] INFO - Epoch: 0/100, train Sharpe: -0.02, ret: -0.0049, std: 0.2500, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.60s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:15:50] INFO - Start OU preprocess
+[2026-04-24 14:15:50] INFO - Finish OU preprocess
+[2026-04-24 14:15:50] INFO - Epoch: 10/100, train Sharpe: -0.02, ret: -0.0041, std: 0.2498, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:15:50] INFO - Reducing learning rate
+[2026-04-24 14:15:53] INFO - Start OU preprocess
+[2026-04-24 14:15:53] INFO - Finish OU preprocess
+[2026-04-24 14:15:53] INFO - Epoch: 20/100, train Sharpe: -0.02, ret: -0.0041, std: 0.2497, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:15:53] INFO - Reducing learning rate
+[2026-04-24 14:15:55] INFO - Start OU preprocess
+[2026-04-24 14:15:55] INFO - Finish OU preprocess
+[2026-04-24 14:15:55] INFO - Epoch: 30/100, train Sharpe: -0.02, ret: -0.0047, std: 0.2496, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:15:55] INFO - Reducing learning rate
+[2026-04-24 14:15:58] INFO - Start OU preprocess
+[2026-04-24 14:15:58] INFO - Finish OU preprocess
+[2026-04-24 14:15:58] INFO - Epoch: 40/100, train Sharpe: -0.02, ret: -0.0050, std: 0.2496, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:15:58] INFO - Reducing learning rate
+[2026-04-24 14:16:00] INFO - Start OU preprocess
+[2026-04-24 14:16:00] INFO - Finish OU preprocess
+[2026-04-24 14:16:00] INFO - Epoch: 50/100, train Sharpe: -0.02, ret: -0.0059, std: 0.2503, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:16:00] INFO - Reducing learning rate
+[2026-04-24 14:16:02] INFO - Start OU preprocess
+[2026-04-24 14:16:02] INFO - Finish OU preprocess
+[2026-04-24 14:16:03] INFO - Epoch: 60/100, train Sharpe: -0.02, ret: -0.0057, std: 0.2499, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2941, std: 0.2914, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:16:03] INFO - Early stopping max trials reached
+[2026-04-24 14:16:03] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod6, seed: 0
+[2026-04-24 14:16:03] INFO - AT SUBPERIOD 7/9
+[2026-04-24 14:16:03] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:16:03] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:16:03] INFO - train(): T 5000 N 62
+[2026-04-24 14:16:03] INFO - Start OU preprocess
+[2026-04-24 14:16:03] INFO - Finish OU preprocess
+[2026-04-24 14:16:03] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:16:03] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:16:03] INFO - Start OU preprocess
+[2026-04-24 14:16:03] INFO - Finish OU preprocess
+[2026-04-24 14:16:04] INFO - Epoch: 0/100, train Sharpe: 0.08, ret: 0.0198, std: 0.2613, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.58s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:06] INFO - Start OU preprocess
+[2026-04-24 14:16:06] INFO - Finish OU preprocess
+[2026-04-24 14:16:06] INFO - Epoch: 10/100, train Sharpe: 0.08, ret: 0.0217, std: 0.2616, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:08] INFO - Start OU preprocess
+[2026-04-24 14:16:08] INFO - Finish OU preprocess
+[2026-04-24 14:16:09] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0235, std: 0.2608, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:11] INFO - Start OU preprocess
+[2026-04-24 14:16:11] INFO - Finish OU preprocess
+[2026-04-24 14:16:11] INFO - Epoch: 30/100, train Sharpe: 0.09, ret: 0.0235, std: 0.2601, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:13] INFO - Start OU preprocess
+[2026-04-24 14:16:13] INFO - Finish OU preprocess
+[2026-04-24 14:16:13] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0247, std: 0.2619, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:15] INFO - Start OU preprocess
+[2026-04-24 14:16:15] INFO - Finish OU preprocess
+[2026-04-24 14:16:15] INFO - Epoch: 50/100, train Sharpe: 0.08, ret: 0.0200, std: 0.2610, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:17] INFO - Start OU preprocess
+[2026-04-24 14:16:17] INFO - Finish OU preprocess
+[2026-04-24 14:16:18] INFO - Epoch: 60/100, train Sharpe: 0.09, ret: 0.0230, std: 0.2606, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:20] INFO - Start OU preprocess
+[2026-04-24 14:16:20] INFO - Finish OU preprocess
+[2026-04-24 14:16:20] INFO - Epoch: 70/100, train Sharpe: 0.08, ret: 0.0210, std: 0.2610, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:22] INFO - Start OU preprocess
+[2026-04-24 14:16:22] INFO - Finish OU preprocess
+[2026-04-24 14:16:22] INFO - Epoch: 80/100, train Sharpe: 0.08, ret: 0.0213, std: 0.2607, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:25] INFO - Start OU preprocess
+[2026-04-24 14:16:25] INFO - Finish OU preprocess
+[2026-04-24 14:16:25] INFO - Epoch: 90/100, train Sharpe: 0.08, ret: 0.0220, std: 0.2609, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2196, std: 0.2075, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:16:27] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod7, seed: 0
+[2026-04-24 14:16:27] INFO - AT SUBPERIOD 8/9
+[2026-04-24 14:16:27] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:16:27] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:16:27] INFO - train(): T 5000 N 62
+[2026-04-24 14:16:27] INFO - Start OU preprocess
+[2026-04-24 14:16:27] INFO - Finish OU preprocess
+[2026-04-24 14:16:27] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:16:27] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:16:28] INFO - Start OU preprocess
+[2026-04-24 14:16:28] INFO - Finish OU preprocess
+[2026-04-24 14:16:28] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0650, std: 0.2628, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.51s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:30] INFO - Start OU preprocess
+[2026-04-24 14:16:30] INFO - Finish OU preprocess
+[2026-04-24 14:16:30] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0622, std: 0.2629, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:33] INFO - Start OU preprocess
+[2026-04-24 14:16:33] INFO - Finish OU preprocess
+[2026-04-24 14:16:33] INFO - Epoch: 20/100, train Sharpe: 0.23, ret: 0.0614, std: 0.2634, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:35] INFO - Start OU preprocess
+[2026-04-24 14:16:35] INFO - Finish OU preprocess
+[2026-04-24 14:16:35] INFO - Epoch: 30/100, train Sharpe: 0.23, ret: 0.0616, std: 0.2632, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:38] INFO - Start OU preprocess
+[2026-04-24 14:16:38] INFO - Finish OU preprocess
+[2026-04-24 14:16:38] INFO - Epoch: 40/100, train Sharpe: 0.24, ret: 0.0620, std: 0.2618, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:41] INFO - Start OU preprocess
+[2026-04-24 14:16:41] INFO - Finish OU preprocess
+[2026-04-24 14:16:41] INFO - Epoch: 50/100, train Sharpe: 0.25, ret: 0.0664, std: 0.2631, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:43] INFO - Start OU preprocess
+[2026-04-24 14:16:43] INFO - Finish OU preprocess
+[2026-04-24 14:16:43] INFO - Epoch: 60/100, train Sharpe: 0.25, ret: 0.0668, std: 0.2626, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:45] INFO - Start OU preprocess
+[2026-04-24 14:16:45] INFO - Finish OU preprocess
+[2026-04-24 14:16:45] INFO - Epoch: 70/100, train Sharpe: 0.24, ret: 0.0619, std: 0.2630, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:48] INFO - Start OU preprocess
+[2026-04-24 14:16:48] INFO - Finish OU preprocess
+[2026-04-24 14:16:48] INFO - Epoch: 80/100, train Sharpe: 0.25, ret: 0.0664, std: 0.2629, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:50] INFO - Start OU preprocess
+[2026-04-24 14:16:50] INFO - Finish OU preprocess
+[2026-04-24 14:16:50] INFO - Epoch: 90/100, train Sharpe: 0.24, ret: 0.0635, std: 0.2630, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0388, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:16:52] INFO - Training done - Model: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod8, seed: 0
+[2026-04-24 14:16:52] INFO - TRAIN/TEST COMPLETE
+[2026-04-24 14:16:52] INFO - ==> Sharpe: 0.34, ret: 0.0892, std: 0.2597, turnover: 0.0491, short_proportion: 1.0000
+[2026-04-24 14:16:52] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_8_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 14:16:52] INFO - Loading residuals
+[2026-04-24 14:16:52] INFO - Residuals loaded
+[2026-04-24 14:16:52] INFO - STARTING: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu
+[2026-04-24 14:16:52] INFO - Running on devices ['mps']
+[2026-04-24 14:16:52] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 14:16:52] INFO - AT SUBPERIOD 0/9
+[2026-04-24 14:16:52] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:16:52] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:16:52] INFO - train(): T 5000 N 62
+[2026-04-24 14:16:52] INFO - Start OU preprocess
+[2026-04-24 14:16:53] INFO - Finish OU preprocess
+[2026-04-24 14:16:53] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:16:53] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:16:53] INFO - Start OU preprocess
+[2026-04-24 14:16:53] INFO - Finish OU preprocess
+[2026-04-24 14:16:54] INFO - Epoch: 0/100, train Sharpe: 0.25, ret: 0.0635, std: 0.2529, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.91s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:16:56] INFO - Start OU preprocess
+[2026-04-24 14:16:56] INFO - Finish OU preprocess
+[2026-04-24 14:16:56] INFO - Epoch: 10/100, train Sharpe: 0.24, ret: 0.0617, std: 0.2531, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.33s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:16:59] INFO - Start OU preprocess
+[2026-04-24 14:16:59] INFO - Finish OU preprocess
+[2026-04-24 14:16:59] INFO - Epoch: 20/100, train Sharpe: 0.23, ret: 0.0590, std: 0.2525, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:02] INFO - Start OU preprocess
+[2026-04-24 14:17:02] INFO - Finish OU preprocess
+[2026-04-24 14:17:02] INFO - Epoch: 30/100, train Sharpe: 0.20, ret: 0.0516, std: 0.2532, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:04] INFO - Start OU preprocess
+[2026-04-24 14:17:04] INFO - Finish OU preprocess
+[2026-04-24 14:17:04] INFO - Epoch: 40/100, train Sharpe: 0.24, ret: 0.0605, std: 0.2531, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:07] INFO - Start OU preprocess
+[2026-04-24 14:17:07] INFO - Finish OU preprocess
+[2026-04-24 14:17:07] INFO - Epoch: 50/100, train Sharpe: 0.24, ret: 0.0606, std: 0.2526, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:09] INFO - Start OU preprocess
+[2026-04-24 14:17:09] INFO - Finish OU preprocess
+[2026-04-24 14:17:10] INFO - Epoch: 60/100, train Sharpe: 0.24, ret: 0.0604, std: 0.2533, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:12] INFO - Start OU preprocess
+[2026-04-24 14:17:12] INFO - Finish OU preprocess
+[2026-04-24 14:17:12] INFO - Epoch: 70/100, train Sharpe: 0.24, ret: 0.0607, std: 0.2532, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:15] INFO - Start OU preprocess
+[2026-04-24 14:17:15] INFO - Finish OU preprocess
+[2026-04-24 14:17:15] INFO - Epoch: 80/100, train Sharpe: 0.23, ret: 0.0584, std: 0.2528, turnover: 0.378, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:17] INFO - Start OU preprocess
+[2026-04-24 14:17:17] INFO - Finish OU preprocess
+[2026-04-24 14:17:17] INFO - Epoch: 90/100, train Sharpe: 0.23, ret: 0.0581, std: 0.2531, turnover: 0.379, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.05, dev Sharpe: 0.76, ret: 0.1934, std: 0.2534, turnover: 0.052, short proportion: 1.000
+
+[2026-04-24 14:17:19] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod0, seed: 0
+[2026-04-24 14:17:19] INFO - AT SUBPERIOD 1/9
+[2026-04-24 14:17:19] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:17:19] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:17:19] INFO - train(): T 5000 N 62
+[2026-04-24 14:17:19] INFO - Start OU preprocess
+[2026-04-24 14:17:19] INFO - Finish OU preprocess
+[2026-04-24 14:17:19] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:17:19] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:17:20] INFO - Start OU preprocess
+[2026-04-24 14:17:20] INFO - Finish OU preprocess
+[2026-04-24 14:17:20] INFO - Epoch: 0/100, train Sharpe: 0.29, ret: 0.0708, std: 0.2480, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.50s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:22] INFO - Start OU preprocess
+[2026-04-24 14:17:22] INFO - Finish OU preprocess
+[2026-04-24 14:17:22] INFO - Epoch: 10/100, train Sharpe: 0.27, ret: 0.0662, std: 0.2479, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:24] INFO - Start OU preprocess
+[2026-04-24 14:17:24] INFO - Finish OU preprocess
+[2026-04-24 14:17:25] INFO - Epoch: 20/100, train Sharpe: 0.26, ret: 0.0635, std: 0.2480, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:27] INFO - Start OU preprocess
+[2026-04-24 14:17:27] INFO - Finish OU preprocess
+[2026-04-24 14:17:27] INFO - Epoch: 30/100, train Sharpe: 0.24, ret: 0.0606, std: 0.2475, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:29] INFO - Start OU preprocess
+[2026-04-24 14:17:29] INFO - Finish OU preprocess
+[2026-04-24 14:17:30] INFO - Epoch: 40/100, train Sharpe: 0.26, ret: 0.0654, std: 0.2479, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:32] INFO - Start OU preprocess
+[2026-04-24 14:17:32] INFO - Finish OU preprocess
+[2026-04-24 14:17:32] INFO - Epoch: 50/100, train Sharpe: 0.26, ret: 0.0638, std: 0.2474, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:35] INFO - Start OU preprocess
+[2026-04-24 14:17:35] INFO - Finish OU preprocess
+[2026-04-24 14:17:36] INFO - Epoch: 60/100, train Sharpe: 0.28, ret: 0.0684, std: 0.2477, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:38] INFO - Start OU preprocess
+[2026-04-24 14:17:38] INFO - Finish OU preprocess
+[2026-04-24 14:17:39] INFO - Epoch: 70/100, train Sharpe: 0.27, ret: 0.0676, std: 0.2471, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:41] INFO - Start OU preprocess
+[2026-04-24 14:17:41] INFO - Finish OU preprocess
+[2026-04-24 14:17:41] INFO - Epoch: 80/100, train Sharpe: 0.27, ret: 0.0673, std: 0.2469, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:43] INFO - Start OU preprocess
+[2026-04-24 14:17:43] INFO - Finish OU preprocess
+[2026-04-24 14:17:44] INFO - Epoch: 90/100, train Sharpe: 0.26, ret: 0.0640, std: 0.2481, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.00, dev Sharpe: 0.06, ret: 0.0151, std: 0.2432, turnover: 0.056, short proportion: 1.000
+
+[2026-04-24 14:17:46] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod1, seed: 0
+[2026-04-24 14:17:46] INFO - AT SUBPERIOD 2/9
+[2026-04-24 14:17:46] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:17:46] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:17:46] INFO - train(): T 5000 N 61
+[2026-04-24 14:17:46] INFO - Start OU preprocess
+[2026-04-24 14:17:46] INFO - Finish OU preprocess
+[2026-04-24 14:17:46] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:17:46] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:17:46] INFO - Start OU preprocess
+[2026-04-24 14:17:46] INFO - Finish OU preprocess
+[2026-04-24 14:17:47] INFO - Epoch: 0/100, train Sharpe: 0.05, ret: 0.0110, std: 0.2298, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.67s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:17:49] INFO - Start OU preprocess
+[2026-04-24 14:17:49] INFO - Finish OU preprocess
+[2026-04-24 14:17:49] INFO - Epoch: 10/100, train Sharpe: 0.04, ret: 0.0088, std: 0.2300, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:17:49] INFO - Reducing learning rate
+[2026-04-24 14:17:52] INFO - Start OU preprocess
+[2026-04-24 14:17:52] INFO - Finish OU preprocess
+[2026-04-24 14:17:52] INFO - Epoch: 20/100, train Sharpe: 0.03, ret: 0.0067, std: 0.2301, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:17:52] INFO - Reducing learning rate
+[2026-04-24 14:17:56] INFO - Start OU preprocess
+[2026-04-24 14:17:56] INFO - Finish OU preprocess
+[2026-04-24 14:17:56] INFO - Epoch: 30/100, train Sharpe: 0.03, ret: 0.0080, std: 0.2306, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:17:56] INFO - Reducing learning rate
+[2026-04-24 14:17:59] INFO - Start OU preprocess
+[2026-04-24 14:17:59] INFO - Finish OU preprocess
+[2026-04-24 14:17:59] INFO - Epoch: 40/100, train Sharpe: 0.02, ret: 0.0055, std: 0.2305, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:17:59] INFO - Reducing learning rate
+[2026-04-24 14:18:02] INFO - Start OU preprocess
+[2026-04-24 14:18:02] INFO - Finish OU preprocess
+[2026-04-24 14:18:02] INFO - Epoch: 50/100, train Sharpe: 0.03, ret: 0.0065, std: 0.2308, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.31s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:18:02] INFO - Reducing learning rate
+[2026-04-24 14:18:05] INFO - Start OU preprocess
+[2026-04-24 14:18:05] INFO - Finish OU preprocess
+[2026-04-24 14:18:05] INFO - Epoch: 60/100, train Sharpe: 0.03, ret: 0.0078, std: 0.2302, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.31s, dev loss -0.04, dev Sharpe: -0.71, ret: -0.2244, std: 0.3176, turnover: 0.054, short proportion: 1.000
+
+[2026-04-24 14:18:05] INFO - Early stopping max trials reached
+[2026-04-24 14:18:05] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod2, seed: 0
+[2026-04-24 14:18:05] INFO - AT SUBPERIOD 3/9
+[2026-04-24 14:18:05] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:18:05] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:18:05] INFO - train(): T 5000 N 61
+[2026-04-24 14:18:05] INFO - Start OU preprocess
+[2026-04-24 14:18:05] INFO - Finish OU preprocess
+[2026-04-24 14:18:05] INFO - train(): windows.shape (4920, 61, 4) idxs_selected.shape torch.Size([4920, 61])
+[2026-04-24 14:18:05] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 61])
+[2026-04-24 14:18:06] INFO - Start OU preprocess
+[2026-04-24 14:18:06] INFO - Finish OU preprocess
+[2026-04-24 14:18:06] INFO - Epoch: 0/100, train Sharpe: -0.05, ret: -0.0114, std: 0.2387, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.71s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:08] INFO - Start OU preprocess
+[2026-04-24 14:18:08] INFO - Finish OU preprocess
+[2026-04-24 14:18:08] INFO - Epoch: 10/100, train Sharpe: -0.06, ret: -0.0132, std: 0.2383, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:10] INFO - Start OU preprocess
+[2026-04-24 14:18:10] INFO - Finish OU preprocess
+[2026-04-24 14:18:11] INFO - Epoch: 20/100, train Sharpe: -0.06, ret: -0.0148, std: 0.2391, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:13] INFO - Start OU preprocess
+[2026-04-24 14:18:13] INFO - Finish OU preprocess
+[2026-04-24 14:18:13] INFO - Epoch: 30/100, train Sharpe: -0.05, ret: -0.0129, std: 0.2392, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:16] INFO - Start OU preprocess
+[2026-04-24 14:18:16] INFO - Finish OU preprocess
+[2026-04-24 14:18:16] INFO - Epoch: 40/100, train Sharpe: -0.05, ret: -0.0111, std: 0.2387, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:18] INFO - Start OU preprocess
+[2026-04-24 14:18:18] INFO - Finish OU preprocess
+[2026-04-24 14:18:19] INFO - Epoch: 50/100, train Sharpe: -0.07, ret: -0.0172, std: 0.2390, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:21] INFO - Start OU preprocess
+[2026-04-24 14:18:21] INFO - Finish OU preprocess
+[2026-04-24 14:18:21] INFO - Epoch: 60/100, train Sharpe: -0.06, ret: -0.0138, std: 0.2392, turnover: 0.377, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:23] INFO - Start OU preprocess
+[2026-04-24 14:18:23] INFO - Finish OU preprocess
+[2026-04-24 14:18:23] INFO - Epoch: 70/100, train Sharpe: -0.05, ret: -0.0125, std: 0.2392, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:25] INFO - Start OU preprocess
+[2026-04-24 14:18:25] INFO - Finish OU preprocess
+[2026-04-24 14:18:26] INFO - Epoch: 80/100, train Sharpe: -0.06, ret: -0.0133, std: 0.2387, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:29] INFO - Start OU preprocess
+[2026-04-24 14:18:29] INFO - Finish OU preprocess
+[2026-04-24 14:18:29] INFO - Epoch: 90/100, train Sharpe: -0.04, ret: -0.0104, std: 0.2388, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.03, ret: 0.3296, std: 0.3205, turnover: 0.034, short proportion: 1.000
+
+[2026-04-24 14:18:32] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod3, seed: 0
+[2026-04-24 14:18:32] INFO - AT SUBPERIOD 4/9
+[2026-04-24 14:18:32] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:18:32] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:18:32] INFO - train(): T 5000 N 62
+[2026-04-24 14:18:32] INFO - Start OU preprocess
+[2026-04-24 14:18:32] INFO - Finish OU preprocess
+[2026-04-24 14:18:32] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:18:32] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:18:33] INFO - Start OU preprocess
+[2026-04-24 14:18:33] INFO - Finish OU preprocess
+[2026-04-24 14:18:33] INFO - Epoch: 0/100, train Sharpe: 0.02, ret: 0.0037, std: 0.2479, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.70s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:35] INFO - Start OU preprocess
+[2026-04-24 14:18:35] INFO - Finish OU preprocess
+[2026-04-24 14:18:36] INFO - Epoch: 10/100, train Sharpe: -0.00, ret: -0.0008, std: 0.2487, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.32s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:38] INFO - Start OU preprocess
+[2026-04-24 14:18:38] INFO - Finish OU preprocess
+[2026-04-24 14:18:38] INFO - Epoch: 20/100, train Sharpe: -0.01, ret: -0.0021, std: 0.2487, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:41] INFO - Start OU preprocess
+[2026-04-24 14:18:41] INFO - Finish OU preprocess
+[2026-04-24 14:18:41] INFO - Epoch: 30/100, train Sharpe: -0.01, ret: -0.0020, std: 0.2483, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.29s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:43] INFO - Start OU preprocess
+[2026-04-24 14:18:43] INFO - Finish OU preprocess
+[2026-04-24 14:18:44] INFO - Epoch: 40/100, train Sharpe: 0.00, ret: 0.0005, std: 0.2487, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:46] INFO - Start OU preprocess
+[2026-04-24 14:18:46] INFO - Finish OU preprocess
+[2026-04-24 14:18:46] INFO - Epoch: 50/100, train Sharpe: -0.00, ret: -0.0004, std: 0.2488, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:48] INFO - Start OU preprocess
+[2026-04-24 14:18:48] INFO - Finish OU preprocess
+[2026-04-24 14:18:48] INFO - Epoch: 60/100, train Sharpe: 0.00, ret: 0.0002, std: 0.2489, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:51] INFO - Start OU preprocess
+[2026-04-24 14:18:51] INFO - Finish OU preprocess
+[2026-04-24 14:18:51] INFO - Epoch: 70/100, train Sharpe: 0.00, ret: 0.0004, std: 0.2483, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:54] INFO - Start OU preprocess
+[2026-04-24 14:18:54] INFO - Finish OU preprocess
+[2026-04-24 14:18:54] INFO - Epoch: 80/100, train Sharpe: 0.01, ret: 0.0033, std: 0.2482, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.28s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:56] INFO - Start OU preprocess
+[2026-04-24 14:18:57] INFO - Finish OU preprocess
+[2026-04-24 14:18:57] INFO - Epoch: 90/100, train Sharpe: -0.00, ret: -0.0002, std: 0.2484, turnover: 0.376, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.01, dev Sharpe: 0.09, ret: 0.0232, std: 0.2446, turnover: 0.060, short proportion: 1.000
+
+[2026-04-24 14:18:59] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod4, seed: 0
+[2026-04-24 14:18:59] INFO - AT SUBPERIOD 5/9
+[2026-04-24 14:18:59] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:18:59] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:18:59] INFO - train(): T 5000 N 64
+[2026-04-24 14:18:59] INFO - Start OU preprocess
+[2026-04-24 14:18:59] INFO - Finish OU preprocess
+[2026-04-24 14:18:59] INFO - train(): windows.shape (4920, 64, 4) idxs_selected.shape torch.Size([4920, 64])
+[2026-04-24 14:18:59] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 64])
+[2026-04-24 14:18:59] INFO - Start OU preprocess
+[2026-04-24 14:18:59] INFO - Finish OU preprocess
+[2026-04-24 14:19:00] INFO - Epoch: 0/100, train Sharpe: 0.06, ret: 0.0147, std: 0.2485, turnover: 0.371, short proportion: 1.000 
+        time per epoch: 0.60s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:02] INFO - Start OU preprocess
+[2026-04-24 14:19:02] INFO - Finish OU preprocess
+[2026-04-24 14:19:02] INFO - Epoch: 10/100, train Sharpe: 0.09, ret: 0.0216, std: 0.2486, turnover: 0.371, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:04] INFO - Start OU preprocess
+[2026-04-24 14:19:04] INFO - Finish OU preprocess
+[2026-04-24 14:19:05] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0219, std: 0.2486, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:07] INFO - Start OU preprocess
+[2026-04-24 14:19:07] INFO - Finish OU preprocess
+[2026-04-24 14:19:07] INFO - Epoch: 30/100, train Sharpe: 0.10, ret: 0.0237, std: 0.2488, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:09] INFO - Start OU preprocess
+[2026-04-24 14:19:09] INFO - Finish OU preprocess
+[2026-04-24 14:19:09] INFO - Epoch: 40/100, train Sharpe: 0.08, ret: 0.0197, std: 0.2486, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:11] INFO - Start OU preprocess
+[2026-04-24 14:19:11] INFO - Finish OU preprocess
+[2026-04-24 14:19:12] INFO - Epoch: 50/100, train Sharpe: 0.08, ret: 0.0208, std: 0.2487, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:14] INFO - Start OU preprocess
+[2026-04-24 14:19:14] INFO - Finish OU preprocess
+[2026-04-24 14:19:14] INFO - Epoch: 60/100, train Sharpe: 0.08, ret: 0.0202, std: 0.2487, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:16] INFO - Start OU preprocess
+[2026-04-24 14:19:16] INFO - Finish OU preprocess
+[2026-04-24 14:19:16] INFO - Epoch: 70/100, train Sharpe: 0.08, ret: 0.0196, std: 0.2488, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:18] INFO - Start OU preprocess
+[2026-04-24 14:19:18] INFO - Finish OU preprocess
+[2026-04-24 14:19:18] INFO - Epoch: 80/100, train Sharpe: 0.08, ret: 0.0207, std: 0.2487, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:20] INFO - Start OU preprocess
+[2026-04-24 14:19:20] INFO - Finish OU preprocess
+[2026-04-24 14:19:21] INFO - Epoch: 90/100, train Sharpe: 0.08, ret: 0.0206, std: 0.2493, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.02, dev Sharpe: -0.24, ret: -0.0530, std: 0.2193, turnover: 0.046, short proportion: 1.000
+
+[2026-04-24 14:19:22] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod5, seed: 0
+[2026-04-24 14:19:22] INFO - AT SUBPERIOD 6/9
+[2026-04-24 14:19:22] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:19:22] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:19:22] INFO - train(): T 5000 N 62
+[2026-04-24 14:19:22] INFO - Start OU preprocess
+[2026-04-24 14:19:23] INFO - Finish OU preprocess
+[2026-04-24 14:19:23] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:19:23] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:19:23] INFO - Start OU preprocess
+[2026-04-24 14:19:23] INFO - Finish OU preprocess
+[2026-04-24 14:19:23] INFO - Epoch: 0/100, train Sharpe: -0.02, ret: -0.0046, std: 0.2496, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.53s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:25] INFO - Start OU preprocess
+[2026-04-24 14:19:25] INFO - Finish OU preprocess
+[2026-04-24 14:19:25] INFO - Epoch: 10/100, train Sharpe: -0.02, ret: -0.0055, std: 0.2497, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:25] INFO - Reducing learning rate
+[2026-04-24 14:19:28] INFO - Start OU preprocess
+[2026-04-24 14:19:28] INFO - Finish OU preprocess
+[2026-04-24 14:19:28] INFO - Epoch: 20/100, train Sharpe: -0.02, ret: -0.0054, std: 0.2497, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:28] INFO - Reducing learning rate
+[2026-04-24 14:19:31] INFO - Start OU preprocess
+[2026-04-24 14:19:31] INFO - Finish OU preprocess
+[2026-04-24 14:19:31] INFO - Epoch: 30/100, train Sharpe: -0.00, ret: -0.0010, std: 0.2494, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:31] INFO - Reducing learning rate
+[2026-04-24 14:19:33] INFO - Start OU preprocess
+[2026-04-24 14:19:33] INFO - Finish OU preprocess
+[2026-04-24 14:19:34] INFO - Epoch: 40/100, train Sharpe: -0.02, ret: -0.0062, std: 0.2499, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:34] INFO - Reducing learning rate
+[2026-04-24 14:19:36] INFO - Start OU preprocess
+[2026-04-24 14:19:36] INFO - Finish OU preprocess
+[2026-04-24 14:19:36] INFO - Epoch: 50/100, train Sharpe: -0.03, ret: -0.0076, std: 0.2499, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:36] INFO - Reducing learning rate
+[2026-04-24 14:19:38] INFO - Start OU preprocess
+[2026-04-24 14:19:38] INFO - Finish OU preprocess
+[2026-04-24 14:19:39] INFO - Epoch: 60/100, train Sharpe: -0.02, ret: -0.0061, std: 0.2498, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.06, dev Sharpe: 1.01, ret: 0.2939, std: 0.2913, turnover: 0.051, short proportion: 1.000
+
+[2026-04-24 14:19:39] INFO - Early stopping max trials reached
+[2026-04-24 14:19:39] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod6, seed: 0
+[2026-04-24 14:19:39] INFO - AT SUBPERIOD 7/9
+[2026-04-24 14:19:39] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:19:39] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:19:39] INFO - train(): T 5000 N 62
+[2026-04-24 14:19:39] INFO - Start OU preprocess
+[2026-04-24 14:19:39] INFO - Finish OU preprocess
+[2026-04-24 14:19:39] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:19:39] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:19:39] INFO - Start OU preprocess
+[2026-04-24 14:19:39] INFO - Finish OU preprocess
+[2026-04-24 14:19:39] INFO - Epoch: 0/100, train Sharpe: 0.08, ret: 0.0211, std: 0.2614, turnover: 0.372, short proportion: 1.000 
+        time per epoch: 0.59s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:41] INFO - Start OU preprocess
+[2026-04-24 14:19:42] INFO - Finish OU preprocess
+[2026-04-24 14:19:42] INFO - Epoch: 10/100, train Sharpe: 0.08, ret: 0.0217, std: 0.2609, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:44] INFO - Start OU preprocess
+[2026-04-24 14:19:44] INFO - Finish OU preprocess
+[2026-04-24 14:19:45] INFO - Epoch: 20/100, train Sharpe: 0.09, ret: 0.0230, std: 0.2607, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:45] INFO - Reducing learning rate
+[2026-04-24 14:19:47] INFO - Start OU preprocess
+[2026-04-24 14:19:47] INFO - Finish OU preprocess
+[2026-04-24 14:19:47] INFO - Epoch: 30/100, train Sharpe: 0.08, ret: 0.0208, std: 0.2605, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:49] INFO - Start OU preprocess
+[2026-04-24 14:19:49] INFO - Finish OU preprocess
+[2026-04-24 14:19:49] INFO - Epoch: 40/100, train Sharpe: 0.09, ret: 0.0241, std: 0.2611, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:52] INFO - Start OU preprocess
+[2026-04-24 14:19:52] INFO - Finish OU preprocess
+[2026-04-24 14:19:52] INFO - Epoch: 50/100, train Sharpe: 0.08, ret: 0.0207, std: 0.2605, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:54] INFO - Start OU preprocess
+[2026-04-24 14:19:54] INFO - Finish OU preprocess
+[2026-04-24 14:19:54] INFO - Epoch: 60/100, train Sharpe: 0.09, ret: 0.0223, std: 0.2606, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:54] INFO - Reducing learning rate
+[2026-04-24 14:19:56] INFO - Start OU preprocess
+[2026-04-24 14:19:56] INFO - Finish OU preprocess
+[2026-04-24 14:19:57] INFO - Epoch: 70/100, train Sharpe: 0.08, ret: 0.0219, std: 0.2604, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:57] INFO - Reducing learning rate
+[2026-04-24 14:19:59] INFO - Start OU preprocess
+[2026-04-24 14:19:59] INFO - Finish OU preprocess
+[2026-04-24 14:19:59] INFO - Epoch: 80/100, train Sharpe: 0.07, ret: 0.0195, std: 0.2603, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:19:59] INFO - Reducing learning rate
+[2026-04-24 14:20:01] INFO - Start OU preprocess
+[2026-04-24 14:20:01] INFO - Finish OU preprocess
+[2026-04-24 14:20:01] INFO - Epoch: 90/100, train Sharpe: 0.08, ret: 0.0222, std: 0.2612, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss 0.07, dev Sharpe: 1.06, ret: 0.2204, std: 0.2074, turnover: 0.062, short proportion: 1.000
+
+[2026-04-24 14:20:01] INFO - Reducing learning rate
+[2026-04-24 14:20:03] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod7, seed: 0
+[2026-04-24 14:20:03] INFO - AT SUBPERIOD 8/9
+[2026-04-24 14:20:03] INFO - train(): data_train.shape (5000, 70)
+[2026-04-24 14:20:03] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 14:20:03] INFO - train(): T 5000 N 62
+[2026-04-24 14:20:03] INFO - Start OU preprocess
+[2026-04-24 14:20:04] INFO - Finish OU preprocess
+[2026-04-24 14:20:04] INFO - train(): windows.shape (4920, 62, 4) idxs_selected.shape torch.Size([4920, 62])
+[2026-04-24 14:20:04] INFO - epoch 0 batch 0 weights.shape torch.Size([512, 62])
+[2026-04-24 14:20:04] INFO - Start OU preprocess
+[2026-04-24 14:20:04] INFO - Finish OU preprocess
+[2026-04-24 14:20:04] INFO - Epoch: 0/100, train Sharpe: 0.24, ret: 0.0629, std: 0.2626, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.55s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:06] INFO - Start OU preprocess
+[2026-04-24 14:20:06] INFO - Finish OU preprocess
+[2026-04-24 14:20:07] INFO - Epoch: 10/100, train Sharpe: 0.26, ret: 0.0679, std: 0.2624, turnover: 0.373, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:09] INFO - Start OU preprocess
+[2026-04-24 14:20:09] INFO - Finish OU preprocess
+[2026-04-24 14:20:09] INFO - Epoch: 20/100, train Sharpe: 0.24, ret: 0.0636, std: 0.2630, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.27s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:12] INFO - Start OU preprocess
+[2026-04-24 14:20:12] INFO - Finish OU preprocess
+[2026-04-24 14:20:12] INFO - Epoch: 30/100, train Sharpe: 0.24, ret: 0.0623, std: 0.2628, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.26s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:14] INFO - Start OU preprocess
+[2026-04-24 14:20:14] INFO - Finish OU preprocess
+[2026-04-24 14:20:14] INFO - Epoch: 40/100, train Sharpe: 0.25, ret: 0.0654, std: 0.2625, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:16] INFO - Start OU preprocess
+[2026-04-24 14:20:16] INFO - Finish OU preprocess
+[2026-04-24 14:20:16] INFO - Epoch: 50/100, train Sharpe: 0.25, ret: 0.0663, std: 0.2633, turnover: 0.375, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:19] INFO - Start OU preprocess
+[2026-04-24 14:20:19] INFO - Finish OU preprocess
+[2026-04-24 14:20:19] INFO - Epoch: 60/100, train Sharpe: 0.27, ret: 0.0703, std: 0.2629, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:21] INFO - Start OU preprocess
+[2026-04-24 14:20:21] INFO - Finish OU preprocess
+[2026-04-24 14:20:21] INFO - Epoch: 70/100, train Sharpe: 0.25, ret: 0.0645, std: 0.2628, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:23] INFO - Start OU preprocess
+[2026-04-24 14:20:24] INFO - Finish OU preprocess
+[2026-04-24 14:20:24] INFO - Epoch: 80/100, train Sharpe: 0.25, ret: 0.0666, std: 0.2625, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.25s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:26] INFO - Start OU preprocess
+[2026-04-24 14:20:26] INFO - Finish OU preprocess
+[2026-04-24 14:20:26] INFO - Epoch: 90/100, train Sharpe: 0.25, ret: 0.0662, std: 0.2632, turnover: 0.374, short proportion: 1.000 
+        time per epoch: 0.24s, dev loss -0.01, dev Sharpe: -0.22, ret: -0.0392, std: 0.1748, turnover: 0.015, short proportion: 1.000
+
+[2026-04-24 14:20:28] INFO - Training done - Model: Crypto8__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__5000length_training__fleet-emu__subperiod8, seed: 0
+[2026-04-24 14:20:28] INFO - TRAIN/TEST COMPLETE
+[2026-04-24 14:20:28] INFO - ==> Sharpe: 0.34, ret: 0.0890, std: 0.2596, turnover: 0.0491, short_proportion: 1.0000

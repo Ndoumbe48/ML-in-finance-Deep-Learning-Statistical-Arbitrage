@@ -308,13 +308,14 @@ class PCA_Crypto:
             if save:
                 filename_residuals = os.path.join(
                     self._logdir,
-                    f"CryptoPCA_OOSresiduals_factor{factor}_initialOOSYear{initialOOSYear}_"
-                    f"window{sizeWindow}_cov{sizeCovarianceWindow}.npy"
+                    f"Crypto_PCAresiduals_{factor}_factors_{initialOOSYear}_initialOOSYear_"
+                    f"{sizeWindow}_rollingWindow_0.01_Cap.npy"
                 )
                 np.save(filename_residuals, residualsOOS)
                 
                 if printOnConsole:
                     print(f"Saved: {filename_residuals}")
+                   
         
         return
     
@@ -425,8 +426,8 @@ class PCA_Crypto:
             for i, factor in enumerate(factorList):
                 filename = os.path.join(
                     self._logdir,
-                    f"CryptoPCA_OOSresiduals_factor{factor}_initialOOSYear{initialOOSYear}_"
-                    f"window{sizeWindow}_cov{sizeCovarianceWindow}.npy"
+                    f"Crypto_PCAresiduals_{factor}_factors_{initialOOSYear}_initialOOSYear_"
+                    f"{sizeWindow}_rollingWindow_0.01_Cap.npy"
                 )
                 np.save(filename, residualsOOS_all[i, :, :])
                 
@@ -444,7 +445,7 @@ if __name__ == "__main__":
     # Chemins vers tes fichiers
     prices_file = "./crypto_output/crypto_prices_4h_2022_2026.csv"
     top40_file = "./crypto_output/crypto_top40_by_marketcap_2022_2026.csv"
-    output_dir = "./crypto_pca_results"
+    output_dir = "./residuals/crypto_pca_4h"
     
     # Crée le répertoire de sortie s'il n'existe pas
     os.makedirs(output_dir, exist_ok=True)
@@ -458,8 +459,8 @@ if __name__ == "__main__":
         printOnConsole=True,
         initialOOSYear=2022,
         sizeWindow=360,           
-        sizeCovarianceWindow=1512, 
-        factorList=range(0, 16)
+        sizeCovarianceWindow=1080, 
+        factorList={0,1,3,5,8,10}
     )
     
-    print("\nDone!")
+    print("\nfin")

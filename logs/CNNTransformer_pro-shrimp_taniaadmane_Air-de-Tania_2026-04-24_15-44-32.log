@@ -1,0 +1,69 @@
+[2026-04-24 15:44:32] INFO - Logging initialized for 'CNNTransformer' by 'taniaadmane' on host 'Air-de-Tania' with ID 'pro-shrimp'
+[2026-04-24 15:44:32] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 48,
+    "dropout": 0.5,
+    "filter_numbers": [
+      1,
+      4
+    ],
+    "filter_size": 3,
+    "attention_heads": 8,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 150,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 256,
+  "retrain_freq": 256,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 2000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 15:44:32] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 15:44:32] INFO - Loading residuals
+[2026-04-24 15:44:32] INFO - Residuals loaded
+[2026-04-24 15:44:32] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__48lookback__2000length_training__pro-shrimp
+[2026-04-24 15:44:32] INFO - Running on devices ['mps']
+[2026-04-24 15:44:32] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 15:44:32] INFO - AT SUBPERIOD 0/30
+[2026-04-24 15:44:32] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 234, in run
+    rets,sharpe,ret,std,turnover,short_proportion = test(residuals,
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 484, in test
+    model_t = model(logdir=output_path, **config['model'])
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/models/CNNTransformer.py", line 70, in __init__
+    self.encoder = nn.TransformerEncoderLayer(d_model=filter_numbers[-1], nhead=attention_heads, dim_feedforward=hidden_units, dropout=dropout)
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads

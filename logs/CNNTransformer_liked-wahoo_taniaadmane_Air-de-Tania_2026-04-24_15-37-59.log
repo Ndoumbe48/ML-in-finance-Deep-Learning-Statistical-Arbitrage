@@ -1,0 +1,65 @@
+[2026-04-24 15:37:59] INFO - Logging initialized for 'CNNTransformer' by 'taniaadmane' on host 'Air-de-Tania' with ID 'liked-wahoo'
+[2026-04-24 15:37:59] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 48,
+    "dropout": 0.5,
+    "filter_numbers": [
+      4,
+      16
+    ],
+    "filter_size": 3,
+    "attention_heads": 8,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 150,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 256,
+  "retrain_freq": 256,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 2000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 15:37:59] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 15:37:59] INFO - Loading residuals
+[2026-04-24 15:37:59] INFO - Residuals loaded
+[2026-04-24 15:37:59] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__48lookback__2000length_training__liked-wahoo
+[2026-04-24 15:37:59] INFO - Running on devices ['mps']
+[2026-04-24 15:37:59] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 15:37:59] INFO - AT SUBPERIOD 0/30
+[2026-04-24 15:37:59] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 234, in run
+    rets,sharpe,ret,std,turnover,short_proportion = test(residuals,
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 484, in test
+    model_t = model(logdir=output_path, **config['model'])
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/models/CNNTransformer.py", line 54, in __init__
+    raise Exception(f"`hidden_units` conflicts with `hidden_units_factor`; provide one or the other, but not both.")
+Exception: `hidden_units` conflicts with `hidden_units_factor`; provide one or the other, but not both.

@@ -1,0 +1,73 @@
+[2026-04-24 18:25:18] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'MacBook-Air-de-Tania.local' with ID 'up-husky'
+[2026-04-24 18:25:18] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 80,
+    "dropout": 0.3,
+    "hidden_units": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.0005
+  },
+  "batch_size": 252,
+  "retrain_freq": 252,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 18:25:18] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 18:25:18] INFO - Loading residuals
+[2026-04-24 18:25:18] INFO - Residuals loaded
+[2026-04-24 18:25:18] INFO - STARTING: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__80lookback__3000length_training__up-husky
+[2026-04-24 18:25:18] INFO - Running on devices ['mps']
+[2026-04-24 18:25:18] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 18:25:18] INFO - AT SUBPERIOD 0/26
+[2026-04-24 18:25:18] INFO - train(): data_train.shape (3000, 70)
+[2026-04-24 18:25:18] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 18:25:18] INFO - train(): T 3000 N 59
+[2026-04-24 18:25:18] INFO - Start OU preprocess
+[2026-04-24 18:25:18] INFO - Finish OU preprocess
+[2026-04-24 18:25:18] INFO - train(): windows.shape (2920, 59, 4) idxs_selected.shape torch.Size([2920, 59])
+[2026-04-24 18:25:19] INFO - epoch 0 batch 0 weights.shape torch.Size([252, 59])
+[2026-04-24 18:25:20] INFO - Start OU preprocess
+[2026-04-24 18:25:20] INFO - Finish OU preprocess
+[2026-04-24 18:25:20] INFO - Epoch: 0/100, train Sharpe: -1.14, ret: -0.7750, std: 0.6790, turnover: 0.429, short proportion: 0.000 
+        time per epoch: 0.94s, dev loss -0.03, dev Sharpe: -1.28, ret: -0.6512, std: 0.5059, turnover: 0.065, short proportion: 0.000
+
+[2026-04-24 18:25:22] INFO - Start OU preprocess
+[2026-04-24 18:25:22] INFO - Finish OU preprocess
+[2026-04-24 18:25:22] INFO - Epoch: 10/100, train Sharpe: -1.18, ret: -0.7988, std: 0.6774, turnover: 0.440, short proportion: 0.000 
+        time per epoch: 0.32s, dev loss -0.03, dev Sharpe: -1.28, ret: -0.6512, std: 0.5059, turnover: 0.065, short proportion: 0.000
+
+[2026-04-24 18:25:24] INFO - Start OU preprocess
+[2026-04-24 18:25:24] INFO - Finish OU preprocess
+[2026-04-24 18:25:25] INFO - Epoch: 20/100, train Sharpe: -1.20, ret: -0.8161, std: 0.6781, turnover: 0.455, short proportion: 0.000 
+        time per epoch: 0.27s, dev loss -0.03, dev Sharpe: -1.28, ret: -0.6512, std: 0.5059, turnover: 0.065, short proportion: 0.000
+

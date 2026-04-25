@@ -1,0 +1,47 @@
+[2026-04-24 16:09:02] INFO - Logging initialized for 'FourierFFN' by 'taniaadmane' on host 'Air-de-Tania' with ID 'next-fly'
+[2026-04-24 16:09:02] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "FourierFFN",
+  "model": {
+    "lookback": 24,
+    "dropout": 0.4,
+    "hidden_units": [
+      24,
+      16,
+      8,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_fourier",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 125,
+  "retrain_freq": 125,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 1000,
+  "early_stopping": false,
+  "objective": "sortino",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 16:09:02] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 92, in run
+    for factor in factor_models["IPCA"]:
+KeyError: 'IPCA'

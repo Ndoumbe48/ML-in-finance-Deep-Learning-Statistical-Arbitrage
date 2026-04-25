@@ -1,0 +1,72 @@
+[2026-04-24 17:12:18] INFO - Logging initialized for 'CNNTransformer' by 'taniaadmane' on host 'Air-de-Tania' with ID 'star-pup'
+[2026-04-24 17:12:18] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "CNNTransformer",
+  "model": {
+    "lookback": 48,
+    "dropout": 0.5,
+    "filter_numbers": [
+      1,
+      8
+    ],
+    "filter_size": 3,
+    "attention_heads": 8,
+    "hidden_units_factor": 2,
+    "normalization_conv": true,
+    "use_transformer": true,
+    "use_convolution": true
+  },
+  "preprocess_func": "preprocess_cumsum",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "perturbation": {},
+  "num_epochs": 150,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.001
+  },
+  "batch_size": 256,
+  "retrain_freq": 256,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 2000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 17:12:18] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 17:12:18] INFO - Loading residuals
+[2026-04-24 17:12:18] INFO - Residuals loaded
+[2026-04-24 17:12:18] INFO - STARTING: Crypto5__CNNTransformer__sharpe__0trans_cost__0hold_cost__48lookback__2000length_training__star-pup
+[2026-04-24 17:12:18] INFO - Running on devices ['mps']
+[2026-04-24 17:12:18] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 17:12:18] INFO - AT SUBPERIOD 0/30
+[2026-04-24 17:12:18] INFO - train(): data_train.shape (2000, 70)
+[2026-04-24 17:12:18] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 17:12:18] INFO - train(): T 2000 N 58
+[2026-04-24 17:12:18] INFO - train(): windows.shape (1952, 58, 48) idxs_selected.shape torch.Size([1952, 58])
+[2026-04-24 17:12:18] INFO - epoch 0 batch 0 weights.shape torch.Size([256, 58])
+[2026-04-24 17:12:32] INFO - Epoch: 0/150, train Sharpe: 0.35, ret: 0.0873, std: 0.2488, turnover: 0.668, short proportion: 0.674 
+        time per epoch: 13.54s, dev loss 0.12, dev Sharpe: 1.93, ret: 0.2648, std: 0.1369, turnover: 0.238, short proportion: 0.640
+
+[2026-04-24 17:14:51] INFO - Epoch: 10/150, train Sharpe: 0.90, ret: 0.2121, std: 0.2354, turnover: 0.999, short proportion: 0.855 
+        time per epoch: 13.86s, dev loss 0.03, dev Sharpe: 0.43, ret: 0.0647, std: 0.1495, turnover: 0.554, short proportion: 0.935
+
+[2026-04-24 17:14:51] INFO - Reducing learning rate
+[2026-04-24 17:18:47] INFO - Epoch: 20/150, train Sharpe: 0.73, ret: 0.1957, std: 0.2682, turnover: 0.738, short proportion: 0.942 
+        time per epoch: 18.51s, dev loss 0.02, dev Sharpe: 0.34, ret: 0.0517, std: 0.1531, turnover: 0.349, short proportion: 0.982
+
+[2026-04-24 17:18:47] INFO - Reducing learning rate

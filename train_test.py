@@ -172,7 +172,7 @@ def train(model,
             mean_ret = torch.mean(rets_train)
             std = torch.std(rets_train)
             if objective == "sharpe":
-                loss = -mean_ret/std
+                loss = -mean_ret/(std+1e-8)
             elif objective == "meanvar":
                 loss = -mean_ret*252 + std*15.9
             elif objective == "sqrtMeanSharpe":
@@ -223,9 +223,9 @@ def train(model,
                 dev_turnover  = np.mean(dev_turnovers)
                 dev_short_proportion = np.mean(dev_short_proportions)
                 dev_loss_description =  f", dev loss {-dev_loss:0.2f}, " \
-                                        f"dev Sharpe: {-dev_sharpe*np.sqrt(252):0.2f}, " \
-                                        f"ret: {dev_mean_ret*252:0.4f}, " \
-                                        f"std: {dev_std*np.sqrt(252) :0.4f}, " \
+                                        f"dev Sharpe: {-dev_sharpe*np.sqrt(6*252):0.2f}, " \
+                                        f"ret: {dev_mean_ret*6*252:0.4f}, " \
+                                        f"std: {dev_std*np.sqrt(6*252) :0.4f}, " \
                                         f"turnover: {dev_turnover:0.3f}, " \
                                         f"short proportion: {dev_short_proportion:0.3f}\n"
                
@@ -236,9 +236,9 @@ def train(model,
             full_short_proportion = np.mean(short_proportion)
             
             logging.info(f'Epoch: {epoch}/{num_epochs}, ' \
-                         f'train Sharpe: {full_sharpe*np.sqrt(252):0.2f}, ' \
-                         f'ret: {full_ret*252:0.4f}, ' \
-                         f'std: {full_std*np.sqrt(252):0.4f}, ' \
+                         f'train Sharpe: {full_sharpe*np.sqrt(6*252):0.2f}, ' \
+                         f'ret: {full_ret*6*252:0.4f}, ' \
+                         f'std: {full_std*np.sqrt(6*252):0.4f}, ' \
                          f'turnover: {full_turnover:0.3f}, ' \
                          f'short proportion: {full_short_proportion:0.3f} \n' \
                           '       ' \
@@ -402,7 +402,7 @@ def get_returns(model,
         turnover[0] = torch.mean(turnover[1:]) 
         mean = torch.mean(rets_test)
         std =  torch.std(rets_test)
-        sharpe = -mean/std
+        sharpe = -mean/(std + 1e-8)
         loss = None
         if objective == "sharpe":
             loss = sharpe
@@ -558,13 +558,13 @@ def test(Data,
     full_ret = np.mean(returns)
     full_std = np.std(returns)
     full_sharpe = full_ret/full_std
-    logging.info(f"==> Sharpe: {full_sharpe*np.sqrt(252) :.2f}, "\
-                 f"ret: {full_ret*252 :.4f}, "\
-                 f"std: {full_std*np.sqrt(252) :.4f}, "\
+    logging.info(f"==> Sharpe: {full_sharpe*np.sqrt(6*252) :.2f}, "\
+                 f"ret: {full_ret*6*252 :.4f}, "\
+                 f"std: {full_std*np.sqrt(6*252) :.4f}, "\
                  f"turnover: {np.mean(turnovers) :.4f}, "\
                  f"short_proportion: {np.mean(short_proportions) :.4f}")
                    
-    return returns, full_sharpe * np.sqrt(252), full_ret * np.sqrt(252), full_std * np.sqrt(252), turnovers, short_proportions
+    return returns, full_sharpe * np.sqrt(6*252), full_ret, full_std , turnovers, short_proportions
 
 def estimate(Data, 
              daily_dates,
@@ -661,10 +661,10 @@ def estimate(Data,
     full_ret = np.mean(returns)
     full_std = np.std(returns)
     full_sharpe = full_ret/full_std
-    logging.info(f"==> Sharpe: {full_sharpe*np.sqrt(252) :.2f}, "\
-                 f"ret: {full_ret*252 :.4f}, "\
-                 f"std: {full_std*np.sqrt(252) :.4f}, "\
+    logging.info(f"==> Sharpe: {full_sharpe*np.sqrt(6*252) :.2f}, "\
+                 f"ret: {full_ret*6*252 :.4f}, "\
+                 f"std: {full_std*np.sqrt(6*252) :.4f}, "\
                  f"turnover: {np.mean(turnovers) :.4f}, "\
                  f"short_proportion: {np.mean(short_proportions) :.4f}")
                    
-    return returns, full_sharpe * np.sqrt(252), full_ret * np.sqrt(252), full_std * np.sqrt(252), turnovers, short_proportions
+    return returns, full_sharpe * np.sqrt(6*252), full_ret, full_std , turnovers, short_proportions

@@ -1,0 +1,73 @@
+[2026-04-24 18:10:38] INFO - Logging initialized for 'OUFFN' by 'taniaadmane' on host 'MacBook-Air-de-Tania.local' with ID 'wired-dane'
+[2026-04-24 18:10:38] INFO - Config: 
+{
+  "mode": "test",
+  "results_tag": "",
+  "debug": false,
+  "model_name": "OUFFN",
+  "model": {
+    "lookback": 50,
+    "dropout": 0.25,
+    "hidden_units": [
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "preprocess_func": "preprocess_ou",
+  "use_residual_weights": false,
+  "cap_proportion": 0.01,
+  "factor_models": {
+    "IPCA": [],
+    "PCA": [],
+    "FamaFrench": [],
+    "Crypto": [
+      5
+    ]
+  },
+  "num_epochs": 100,
+  "optimizer_name": "Adam",
+  "optimizer_opts": {
+    "lr": 0.0001
+  },
+  "batch_size": 500,
+  "retrain_freq": 500,
+  "rolling_retrain": true,
+  "force_retrain": true,
+  "length_training": 3000,
+  "early_stopping": true,
+  "objective": "sharpe",
+  "market_frictions": false,
+  "trans_cost": 0,
+  "hold_cost": 0
+}
+[2026-04-24 18:10:38] INFO - Testing residuals/crypto_pca_4h/Crypto_PCAresiduals_5_factors_2022_initialOOSYear_360_rollingWindow_0.01_Cap.npy
+[2026-04-24 18:10:38] INFO - Loading residuals
+[2026-04-24 18:10:38] INFO - Residuals loaded
+[2026-04-24 18:10:38] INFO - STARTING: Crypto5__OUFFN__sharpe__0trans_cost__0hold_cost__50lookback__3000length_training__wired-dane
+[2026-04-24 18:10:38] INFO - Running on devices ['mps']
+[2026-04-24 18:10:38] INFO - test(): assets_to_trade.shape (94,)
+[2026-04-24 18:10:38] INFO - AT SUBPERIOD 0/13
+[2026-04-24 18:10:38] INFO - train(): data_train.shape (3000, 70)
+[2026-04-24 18:10:38] INFO - train(): assets_to_trade.shape (70,)
+[2026-04-24 18:10:38] INFO - train(): T 3000 N 59
+[2026-04-24 18:10:38] INFO - Start OU preprocess
+[2026-04-24 18:10:39] INFO - Finish OU preprocess
+[2026-04-24 18:10:39] INFO - train(): windows.shape (2950, 59, 4) idxs_selected.shape torch.Size([2950, 59])
+[2026-04-24 18:10:39] INFO - epoch 0 batch 0 weights.shape torch.Size([500, 59])
+[2026-04-24 18:10:39] ERROR - Uncaught exception
+Traceback (most recent call last):
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/run_train_test.py", line 234, in run
+    rets,sharpe,ret,std,turnover,short_proportion = test(residuals,
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 485, in test
+    rets_t,turns_t,shorts_t,weights_t,a2t = train(model_t,
+  File "/Users/taniaadmane/Desktop/S2 ENSAE/Ml for finance/ML-in-finance-Deep-Learning-Statistical-Arbitrage/train_test.py", line 195, in train
+    loss.backward()
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/autograd/__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "/Users/taniaadmane/miniconda3/envs/ml/lib/python3.10/site-packages/torch/autograd/graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 0th output.

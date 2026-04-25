@@ -92,7 +92,7 @@ This code is adapted from the official GitHub repository of the Deep Learning St
 
 **Original Repository:** https://github.com/gregzanotti/dlsa-public/tree/main
 
-**Paper Reference:** [Deep Learning Statistical Arbitrage](https://arxiv.org/abs/1811.02546)
+**Paper Reference:** [Deep Learning Statistical Arbitrage](https://arxiv.org/abs/2106.04028)
 
 ---
 
